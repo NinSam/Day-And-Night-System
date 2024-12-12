@@ -1,0 +1,65 @@
+{
+	"geode": "4.0.1",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "ninsam.day_and_night_system",
+	"name": "Day & Night System",
+	"version": "v1.0.0",
+	"developer": "NinSam",
+	"description": "Adds a day and night system in the GD menus!",
+	"tags":["offline","interface"],
+	"resources": {
+		"files":["resources/*.png"]
+    },
+	"settings":{
+
+		"main-settings":{
+			"name": "Events",
+			"type": "title"
+		},
+		"enable-sunrise":{
+			"name": "Sunrise Event",
+			"description": "Enable/Disable the sunrise event. (Disabling this will just be normal GD)",
+			"type": "bool",
+			"default": true
+		},
+		"enable-sunset":{
+			"name": "Sunset Event",
+			"description": "Enable/Disable the sunset event. (Disabling this will just be normal GD)",
+			"type": "bool",
+			"default": true
+		},
+		"enable-night":{
+			"name": "Night Event",
+			"description": "Enable/Disable the night event. (Disabling this will just be normal GD)",
+			"type": "bool",
+			"default": true
+		},
+		"enable-dark":{
+			"name": "Dark Event",
+			"description": "Enable/Disable the dark event. (Disabling this will just be normal GD)",
+			"type": "bool",
+			"default": true
+		},
+		"overlay-settings":{
+			"name": "Screen Overlay",
+			"type": "title"
+		},
+		"enable-dark-overlay-night":{
+			"name": "Dark Overlay In Night Event",
+			"description": "Enable/Disable the dark overlay during the night event.",
+			"type": "bool",
+			"default": true
+		},
+		"enable-dark-overlay-dark":{
+			"name": "Dark Overlay In Dark Event",
+			"description": "Enable/Disable the dark overlay during the dark event.",
+			"type": "bool",
+			"default": true
+		}
+	}
+}
