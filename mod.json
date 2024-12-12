@@ -15,6 +15,9 @@
 	"resources": {
 		"files":["resources/*.png"]
     },
+	"links": {
+		"source": "https://github.com/NinSam/Day-And-Night-System"
+	},
 	"settings":{
 
 		"main-settings":{
