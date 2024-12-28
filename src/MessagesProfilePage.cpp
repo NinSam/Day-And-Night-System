@@ -1,6 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/MessagesProfilePage.hpp>
-#include "Utils/Utils.hpp"
+#include "Utils.hpp"
 
 using namespace geode::prelude;
 

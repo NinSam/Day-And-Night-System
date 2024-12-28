@@ -1,6 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/FriendsProfilePage.hpp>
-#include "Utils/Utils.hpp"
+#include "Utils.hpp"
 
 using namespace geode::prelude;
 
