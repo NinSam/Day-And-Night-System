@@ -37,6 +37,8 @@ add_library(${PROJECT_NAME} SHARED
     src/LevelListLayer.cpp
     src/LevelListLayer.cpp
     src/GJPathsLayer.cpp
+    src/Utils/utils.hpp
+    src/Utils/utils.cpp
     # Add any extra C++ source files here
 )
 
