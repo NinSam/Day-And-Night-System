@@ -38,8 +38,8 @@ add_library(${PROJECT_NAME} SHARED
     src/LevelListLayer.cpp
     src/GJPathsLayer.cpp
     src/MoreVideoOptionsLayer.cpp
-    src/utils.hpp
-    src/utils.cpp
+    src/Utils.hpp
+    src/Utils.cpp
     # Add any extra C++ source files here
 )
 

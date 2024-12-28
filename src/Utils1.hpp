@@ -1,3 +1,4 @@
+#pragma once
 // ty alphalaneous. EditLevelLayer, LevelAreaLayer, and LevelSearchLayer are not changed due to some problems.
 
 using namespace geode::prelude;
