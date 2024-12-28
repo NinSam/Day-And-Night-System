@@ -1,5 +1,5 @@
 {
-	"geode": "4.1.0",
+	"geode": "4.1.1",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -11,6 +11,13 @@
 	"version": "v1.0.1",
 	"developer": "NinSam",
 	"description": "Adds a day and night system in the GD menus!",
+	"dependencies":[
+		{
+			"id": "geode.node-ids",
+			"version": ">=v1.18.0",
+			"importance": "required"
+		}
+	],
 	"tags":["offline","interface"],
 	"resources": {
 		"files":["resources/*.png"]
