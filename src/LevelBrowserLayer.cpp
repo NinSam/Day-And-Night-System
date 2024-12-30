@@ -10,13 +10,16 @@ class $modify(LevelBrowserLayer) {
 		if (!LevelBrowserLayer::init(p0))
 		return false;
 
-	auto bg = this->getChildByID("background");
-	bg->setZOrder(-2);
+	if (auto bg = this->getChildByID("background")){
+
+		bg->setZOrder(-2);
 
 	auto DayAndNightSystem = DayAndNightSystem::create();
 	DayAndNightSystem->setZOrder(-1);
 	DayAndNightSystem->setID("Events"_spr);
 	this->addChild(DayAndNightSystem);
+	
+	}
 
 	auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
 	DayAndNightSystemOverlay->setZOrder(106);
