@@ -42,8 +42,8 @@ bool DayAndNightSystem::init(){
 	const int endHr_fullnightfix = 7;  // end 7am
 	const int endMin_fullnightfix = 0;
 
-	if ((hr > startHr_morning || (hr == startHr_morning && min >= startMin_morning)) && (hr < endHr_morning || (hr == endHr_morning && min < endMin_morning)))
-	{
+	if ((hr > startHr_morning || (hr == startHr_morning && min >= startMin_morning)) && (hr < endHr_morning || (hr == endHr_morning && min < endMin_morning))){
+
 		if (Mod::get()->getSettingValue<bool>("enable-sunrise")){
 
 	    float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4; // used this line of code from the Minecraftify mod to make the sprites scale to the screen size. Ty alphalaneous for saving me from even more hours of pain trying to fix this
@@ -58,8 +58,8 @@ bool DayAndNightSystem::init(){
 		}
 		
 	}
-	else if ((hr > startHr_sunset || (hr == startHr_sunset && min >= startMin_sunset)) && (hr < endHr_sunset || (hr == endHr_sunset && min < endMin_sunset)))
-	{
+	else if ((hr > startHr_sunset || (hr == startHr_sunset && min >= startMin_sunset)) && (hr < endHr_sunset || (hr == endHr_sunset && min < endMin_sunset))){
+
 		if (Mod::get()->getSettingValue<bool>("enable-sunset")){
 
 	    float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
@@ -74,8 +74,8 @@ bool DayAndNightSystem::init(){
 		}
 		
 	}
-	else if ((hr > startHr_night || (hr == startHr_night && min >= startMin_night)) && (hr < endHr_night || (hr == endHr_night && min < endMin_night)))
-	{
+	else if ((hr > startHr_night || (hr == startHr_night && min >= startMin_night)) && (hr < endHr_night || (hr == endHr_night && min < endMin_night))){
+
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
 		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
@@ -91,8 +91,8 @@ bool DayAndNightSystem::init(){
 		}
 		
 	}
-	else if ((hr > startHr_fullnight || (hr == startHr_fullnight && min >= startMin_fullnight)) && (hr < endHr_fullnight || (hr == endHr_fullnight && min < endMin_fullnight)))
-	{
+	else if ((hr > startHr_fullnight || (hr == startHr_fullnight && min >= startMin_fullnight)) && (hr < endHr_fullnight || (hr == endHr_fullnight && min < endMin_fullnight))){
+
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 		
 
@@ -107,8 +107,7 @@ bool DayAndNightSystem::init(){
 
 		}
 	}
-	else if ((hr > startHr_fullnightfix || (hr == startHr_fullnightfix && min >= startMin_fullnightfix)) && (hr < endHr_fullnightfix || (hr == endHr_fullnightfix && min < endMin_fullnightfix)))
-	{
+	else if ((hr > startHr_fullnightfix || (hr == startHr_fullnightfix && min >= startMin_fullnightfix)) && (hr < endHr_fullnightfix || (hr == endHr_fullnightfix && min < endMin_fullnightfix))){
 		
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
@@ -168,8 +167,8 @@ bool DayAndNightSystemOverlay::init(){
 	const int endMin_fullnightfix = 0;
 
 
-	if ((hr > startHr_night || (hr == startHr_night && min >= startMin_night)) && (hr < endHr_night || (hr == endHr_night && min < endMin_night)))
-	{
+	if ((hr > startHr_night || (hr == startHr_night && min >= startMin_night)) && (hr < endHr_night || (hr == endHr_night && min < endMin_night))){
+
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark-overlay-night")){
@@ -187,8 +186,8 @@ bool DayAndNightSystemOverlay::init(){
 		}
 		
 	}
-	else if ((hr > startHr_fullnight || (hr == startHr_fullnight && min >= startMin_fullnight)) && (hr < endHr_fullnight || (hr == endHr_fullnight && min < endMin_fullnight)))
-	{
+	else if ((hr > startHr_fullnight || (hr == startHr_fullnight && min >= startMin_fullnight)) && (hr < endHr_fullnight || (hr == endHr_fullnight && min < endMin_fullnight))){
+
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 		
 		if (Mod::get()->getSettingValue<bool>("enable-dark-overlay-dark")){
@@ -205,8 +204,7 @@ bool DayAndNightSystemOverlay::init(){
 		}
 		}
 	}
-	else if ((hr > startHr_fullnightfix || (hr == startHr_fullnightfix && min >= startMin_fullnightfix)) && (hr < endHr_fullnightfix || (hr == endHr_fullnightfix && min < endMin_fullnightfix)))
-	{
+	else if ((hr > startHr_fullnightfix || (hr == startHr_fullnightfix && min >= startMin_fullnightfix)) && (hr < endHr_fullnightfix || (hr == endHr_fullnightfix && min < endMin_fullnightfix))){
 		
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
@@ -230,7 +228,7 @@ bool DayAndNightSystemOverlay::init(){
 	return true;
 }
 
-DayAndNightSystem* DayAndNightSystem::create(){
+    DayAndNightSystem* DayAndNightSystem::create(){
 	auto ret = new DayAndNightSystem;
 	if (ret && ret->init()){
 		
@@ -241,7 +239,7 @@ DayAndNightSystem* DayAndNightSystem::create(){
 	return nullptr;
 	}
 
-	DayAndNightSystemOverlay* DayAndNightSystemOverlay::create(){
+    DayAndNightSystemOverlay* DayAndNightSystemOverlay::create(){
 	auto ret = new DayAndNightSystemOverlay;
 	if (ret && ret->init()){
 		
