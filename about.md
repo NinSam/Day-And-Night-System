@@ -4,7 +4,6 @@ Mod by [NinSam](user:20754112)
 
 Adds a <cy>Day</c> & <cb>Night</c> System in the GD menus!
 
-
 Events:
 
 - Sunrise

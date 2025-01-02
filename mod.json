@@ -37,7 +37,7 @@
 			"default": 7,
 			"min": 0,
 			"max": 24,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-sunrise"
 		},
 		"start-sunrise-min":{
@@ -46,7 +46,7 @@
 			"default": 0,
 			"min": 0,
 			"max": 59,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-sunrise"
 		},
 		"end-sunrise-hr":{
@@ -55,7 +55,7 @@
 			"default": 8,
 			"min": 0,
 			"max": 24,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-sunrise"
 		},
 		"end-sunrise-min":{
@@ -64,7 +64,7 @@
 			"default": 0,
 			"min": 0,
 			"max": 59,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-sunrise"
 		},
 		"start-sunset-hr":{
@@ -73,7 +73,7 @@
 			"default": 18,
 			"min": 0,
 			"max": 24,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-sunset"
 		},
 		"start-sunset-min":{
@@ -82,7 +82,7 @@
 			"default": 0,
 			"min": 0,
 			"max": 59,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-sunset"
 		},
 		"end-sunset-hr":{
@@ -91,7 +91,7 @@
 			"default": 19,
 			"min": 0,
 			"max": 24,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-sunset"
 		},
 		"end-sunset-min":{
@@ -100,7 +100,7 @@
 			"default": 0,
 			"min": 0,
 			"max": 59,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-sunset"
 		},
 		"start-night-hr":{
@@ -109,7 +109,7 @@
 			"default": 19,
 			"min": 0,
 			"max": 24,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-night"
 		},
 		"start-night-min":{
@@ -118,7 +118,7 @@
 			"default": 0,
 			"min": 0,
 			"max": 59,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-night"
 		},
 		"end-night-hr":{
@@ -127,7 +127,7 @@
 			"default": 21,
 			"min": 0,
 			"max": 24,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-night"
 		},
 		"end-night-min":{
@@ -136,7 +136,7 @@
 			"default": 0,
 			"min": 0,
 			"max": 59,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-night"
 		},
 		"start-dark-hr":{
@@ -145,7 +145,7 @@
 			"default": 21,
 			"min": 0,
 			"max": 24,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-dark"
 		},
 		"start-dark-min":{
@@ -154,7 +154,7 @@
 			"default": 0,
 			"min": 0,
 			"max": 59,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-dark"
 		},
 		"end-dark-hr":{
@@ -163,7 +163,7 @@
 			"default": 7,
 			"min": 0,
 			"max": 24,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-dark"
 		},
 		"end-dark-min":{
@@ -172,7 +172,7 @@
 			"default": 0,
 			"min": 0,
 			"max": 59,
-			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"description": "1am-12pm (1-12). 1pm-12am (13-24). If you are going to make an event last forever set start hr to 0 and end hr to 24. Make sure to make the other event settings set to 0 and disable them.",
 			"enable-if": "enable-dark"
 		},
 		"main-settings":{
@@ -181,25 +181,25 @@
 		},
 		"enable-sunrise":{
 			"name": "Sunrise Event",
-			"description": "Enable/Disable the sunrise event. (Disabling this will just be normal GD)",
+			"description": "Enable/Disable the sunrise event.",
 			"type": "bool",
 			"default": true
 		},
 		"enable-sunset":{
 			"name": "Sunset Event",
-			"description": "Enable/Disable the sunset event. (Disabling this will just be normal GD)",
+			"description": "Enable/Disable the sunset event.",
 			"type": "bool",
 			"default": true
 		},
 		"enable-night":{
 			"name": "Night Event",
-			"description": "Enable/Disable the night event. (Disabling this will just be normal GD)",
+			"description": "Enable/Disable the night event.",
 			"type": "bool",
 			"default": true
 		},
 		"enable-dark":{
 			"name": "Dark Event",
-			"description": "Enable/Disable the dark event. (Disabling this will just be normal GD)",
+			"description": "Enable/Disable the dark event.",
 			"type": "bool",
 			"default": true
 		},
