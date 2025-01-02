@@ -8,7 +8,7 @@
 	},
 	"id": "ninsam.day_and_night_system",
 	"name": "Day & Night System",
-	"version": "v1.0.2",
+	"version": "v1.1.0",
 	"developer": "NinSam",
 	"description": "Adds a day and night system in the GD menus!",
 	"dependencies":[
@@ -27,6 +27,154 @@
 	},
 	"settings":{
 
+		"time-settings":{
+			"name": "Customize Time",
+			"type": "title"
+		},
+		"start-sunrise-hr":{
+			"name": "Start Sunrise Hr",
+			"type": "int",
+			"default": 7,
+			"min": 0,
+			"max": 24,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-sunrise"
+		},
+		"start-sunrise-min":{
+			"name": "Start Sunrise Min",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 59,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-sunrise"
+		},
+		"end-sunrise-hr":{
+			"name": "End Sunrise Hr",
+			"type": "int",
+			"default": 8,
+			"min": 0,
+			"max": 24,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-sunrise"
+		},
+		"end-sunrise-min":{
+			"name": "End Sunrise Min",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 59,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-sunrise"
+		},
+		"start-sunset-hr":{
+			"name": "Start Sunset Hr",
+			"type": "int",
+			"default": 18,
+			"min": 0,
+			"max": 24,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-sunset"
+		},
+		"start-sunset-min":{
+			"name": "Start Sunset Min",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 59,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-sunset"
+		},
+		"end-sunset-hr":{
+			"name": "End Sunset Hr",
+			"type": "int",
+			"default": 19,
+			"min": 0,
+			"max": 24,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-sunset"
+		},
+		"end-sunset-min":{
+			"name": "End Sunset Min",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 59,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-sunset"
+		},
+		"start-night-hr":{
+			"name": "Start Night Hr",
+			"type": "int",
+			"default": 19,
+			"min": 0,
+			"max": 24,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-night"
+		},
+		"start-night-min":{
+			"name": "Start Night Min",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 59,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-night"
+		},
+		"end-night-hr":{
+			"name": "End Night Hr",
+			"type": "int",
+			"default": 21,
+			"min": 0,
+			"max": 24,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-night"
+		},
+		"end-night-min":{
+			"name": "End Night Min",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 59,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-night"
+		},
+		"start-dark-hr":{
+			"name": "Start Dark Hr",
+			"type": "int",
+			"default": 21,
+			"min": 0,
+			"max": 24,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-dark"
+		},
+		"start-dark-min":{
+			"name": "Start Dark Min",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 59,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-dark"
+		},
+		"end-dark-hr":{
+			"name": "End Dark Hr",
+			"type": "int",
+			"default": 7,
+			"min": 0,
+			"max": 24,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-dark"
+		},
+		"end-dark-min":{
+			"name": "End Dark Min",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 59,
+			"description": "Keep in mind this uses military time. Example: 1pm = 13 <cr>Do not override the values with other events! Example: Sunset 7pm-8pm, Night 6pm-8pm</c>",
+			"enable-if": "enable-dark"
+		},
 		"main-settings":{
 			"name": "Events",
 			"type": "title"

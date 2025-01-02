@@ -16,34 +16,36 @@ class $modify(LevelSearchLayer) {
 	const int hr = localTime->tm_hour;
     const int min = localTime->tm_min;
 
-	const int startHr_morning = 7; // start 7am
-	const int startMin_morning = 0;
-	const int endHr_morning = 8; // end 8am
-	const int endMin_morning = 0;
-
-	const int startHr_sunset = 18; // start 6pm
-	const int startMin_sunset = 0;
-	const int endHr_sunset = 19; // end 7pm
-	const int endMin_sunset = 0;
-
-	const int startHr_night = 19; // start 7pm
-	const int startMin_night = 0;
-	const int endHr_night = 21; // end 9pm
-	const int endMin_night = 0;
-
-	const int startHr_fullnight = 21; // start 9pm
-	const int startMin_fullnight = 0;
-	const int endHr_fullnight = 24;
-	const int endMin_fullnight = 0;
-
 	// bugfix (idk why it breaks past midnight)
-	
-	const int startHr_fullnightfix = 0; 
-	const int startMin_fullnightfix = 0;
-	const int endHr_fullnightfix = 7;  // end 7am
-	const int endMin_fullnightfix = 0;
 
-    if ((hr > startHr_morning || (hr == startHr_morning && min >= startMin_morning)) && (hr < endHr_morning || (hr == endHr_morning && min < endMin_morning))){
+	const int endhrdarkbugfix = 24;
+	const int endmindarkbugfix = 0;
+
+	const int starthrdarkbugfix = 0;
+	const int startmindarkbugfix = 0;
+
+
+	auto startsunrisehr = Mod::get()->getSettingValue<int64_t>("start-sunrise-hr");
+	auto startsunrisemin = Mod::get()->getSettingValue<int64_t>("start-sunrise-min");
+	auto endsunrisehr = Mod::get()->getSettingValue<int64_t>("end-sunrise-hr");
+	auto endsunrisemin = Mod::get()->getSettingValue<int64_t>("end-sunrise-min");
+
+	auto startsunsethr = Mod::get()->getSettingValue<int64_t>("start-sunset-hr");
+	auto startsunsetmin = Mod::get()->getSettingValue<int64_t>("start-sunset-min");
+	auto endsunsethr = Mod::get()->getSettingValue<int64_t>("end-sunset-hr");
+	auto endsunsetmin = Mod::get()->getSettingValue<int64_t>("end-sunset-min");
+
+	auto startnighthr = Mod::get()->getSettingValue<int64_t>("start-night-hr");
+	auto startnightmin = Mod::get()->getSettingValue<int64_t>("start-night-min");
+	auto endnighthr = Mod::get()->getSettingValue<int64_t>("end-night-hr");
+	auto endnightmin = Mod::get()->getSettingValue<int64_t>("end-night-min");
+
+	auto startdarkhr = Mod::get()->getSettingValue<int64_t>("start-sunset-hr");
+	auto startdarkmin = Mod::get()->getSettingValue<int64_t>("start-dark-min");
+	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
+	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
+
+    if ((hr > startsunrisehr || (hr == startsunrisehr && min >= startsunrisemin)) && (hr < endsunrisehr || (hr == endsunrisehr && min < endsunrisemin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunrise")){
 
@@ -90,7 +92,7 @@ class $modify(LevelSearchLayer) {
 		}
 		
 	}
-	else if ((hr > startHr_sunset || (hr == startHr_sunset && min >= startMin_sunset)) && (hr < endHr_sunset || (hr == endHr_sunset && min < endMin_sunset))){
+	else if ((hr > startsunsethr || (hr == startsunsethr && min >= startsunsetmin)) && (hr < endsunsethr || (hr == endsunsethr && min < endsunsetmin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunset")){
 
@@ -137,7 +139,7 @@ class $modify(LevelSearchLayer) {
 		}
 		
 	}
-	else if ((hr > startHr_night || (hr == startHr_night && min >= startMin_night)) && (hr < endHr_night || (hr == endHr_night && min < endMin_night))){
+	else if ((hr > startnighthr || (hr == startnighthr && min >= startnightmin)) && (hr < endnighthr || (hr == endnighthr && min < endnightmin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
@@ -190,7 +192,7 @@ class $modify(LevelSearchLayer) {
 
 		}
 	}
-	else if ((hr > startHr_fullnight || (hr == startHr_fullnight && min >= startMin_fullnight)) && (hr < endHr_fullnight || (hr == endHr_fullnight && min < endMin_fullnight))){
+	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrdarkbugfix || (hr == endhrdarkbugfix && min < endmindarkbugfix))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
@@ -239,7 +241,7 @@ class $modify(LevelSearchLayer) {
 
 		}
 	}
-	else if ((hr > startHr_fullnightfix || (hr == startHr_fullnightfix && min >= startMin_fullnightfix)) && (hr < endHr_fullnightfix || (hr == endHr_fullnightfix && min < endMin_fullnightfix))){
+	else if ((hr > starthrdarkbugfix || (hr == starthrdarkbugfix && min >= startmindarkbugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 

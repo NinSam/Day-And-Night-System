@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.0
+
+- Added customization when an event starts and ends
+
 ## v1.0.2
 
 - Added Dark Overlay to LikeItemLayer and RateStarsLayer
