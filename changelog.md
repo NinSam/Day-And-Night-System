@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.1
+
+- Fixed dark overlay appearing in the sunset event
+
 ## v1.1.0
 
 - Added customization when an event starts and ends

@@ -154,6 +154,16 @@ bool DayAndNightSystemOverlay::init(){
 	const int starthrdarkbugfix = 0;
 	const int startmindarkbugfix = 0;
 
+	auto startsunrisehr = Mod::get()->getSettingValue<int64_t>("start-sunrise-hr");
+	auto startsunrisemin = Mod::get()->getSettingValue<int64_t>("start-sunrise-min");
+	auto endsunrisehr = Mod::get()->getSettingValue<int64_t>("end-sunrise-hr");
+	auto endsunrisemin = Mod::get()->getSettingValue<int64_t>("end-sunrise-min");
+
+	auto startsunsethr = Mod::get()->getSettingValue<int64_t>("start-sunset-hr");
+	auto startsunsetmin = Mod::get()->getSettingValue<int64_t>("start-sunset-min");
+	auto endsunsethr = Mod::get()->getSettingValue<int64_t>("end-sunset-hr");
+	auto endsunsetmin = Mod::get()->getSettingValue<int64_t>("end-sunset-min");
+
 	auto startnighthr = Mod::get()->getSettingValue<int64_t>("start-night-hr");
 	auto startnightmin = Mod::get()->getSettingValue<int64_t>("start-night-min");
 	auto endnighthr = Mod::get()->getSettingValue<int64_t>("end-night-hr");
@@ -163,9 +173,15 @@ bool DayAndNightSystemOverlay::init(){
 	auto startdarkmin = Mod::get()->getSettingValue<int64_t>("start-dark-min");
 	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
+	
 
+	if ((hr > startsunrisehr || (hr == startsunrisehr && min >= startsunrisemin)) && (hr < endsunrisehr || (hr == endsunrisehr && min < endsunrisemin))){
 
-	if ((hr > startnighthr || (hr == startnighthr && min >= startnightmin)) && (hr < endnighthr || (hr == endnighthr && min < endnightmin))){
+	}
+	else if ((hr > startsunsethr || (hr == startsunsethr && min >= startsunsetmin)) && (hr < endsunsethr || (hr == endsunsethr && min < endsunsetmin))){
+
+	}
+	else if ((hr > startnighthr || (hr == startnighthr && min >= startnightmin)) && (hr < endnighthr || (hr == endnighthr && min < endnightmin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
