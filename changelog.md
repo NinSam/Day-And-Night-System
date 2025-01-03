@@ -2,7 +2,7 @@
 
 ## v1.1.1
 
-- Fixed dark overlay appearing in the sunset event
+- Fixed Dark Overlay appearing in the sunset event
 
 ## v1.1.0
 
