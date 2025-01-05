@@ -40,6 +40,7 @@ add_library(${PROJECT_NAME} SHARED
     src/MoreVideoOptionsLayer.cpp
     src/LikeItemLayer.cpp
     src/RateStarsLayer.cpp
+    src/MenuGameLayer.cpp
     src/Utils.hpp
     src/Utils.cpp
     # Add any extra C++ source files here
