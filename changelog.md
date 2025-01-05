@@ -3,7 +3,6 @@
 ## v1.1.1
 
 - Fixed Dark Overlay appearing in the sunset event
-- Fixed layering issues with the icon ninja mod
 
 ## v1.1.0
 
