@@ -45,7 +45,6 @@ add_library(${PROJECT_NAME} SHARED
     src/ShareLevelSettingsLayer.cpp
     src/SetTextPopup.cpp
     src/SetIDPopup.cpp
-    src/GJPromoPopup.cpp
     src/Utils.hpp
     src/Utils.cpp
     # Add any extra C++ source files here
