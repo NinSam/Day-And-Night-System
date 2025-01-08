@@ -4,7 +4,7 @@
 
 - Fixed Dark Overlay appearing in the sunset event
 - Changed descriptions from customize time settings
-- Added Dark Overlay to 6 more popups/layers
+- Added Dark Overlay to 7 more popups/layers
 
 ## v1.1.0
 

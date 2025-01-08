@@ -16,8 +16,6 @@ bool DayAndNightSystem::init(){
     const int min = localTime->tm_min;
 
 	// bugfix (idk why it breaks past midnight)
-
-	// add later to changelog - Fixed the tower texture from disappearing with the (insert) mod
 	
 	const int endhrbugfix = 24;
 	const int endminbugfix = 0;
