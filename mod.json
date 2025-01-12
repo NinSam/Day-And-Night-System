@@ -8,7 +8,7 @@
 	},
 	"id": "ninsam.day_and_night_system",
 	"name": "Day & Night System",
-	"version": "v1.1.1",
+	"version": "v1.1.2",
 	"developer": "NinSam",
 	"description": "Adds a day and night system in the GD menus!",
 	"dependencies":[

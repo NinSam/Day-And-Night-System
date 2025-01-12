@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.2
+
+- Fixed a small gradient cutoff on the sunset sprite
+
 ## v1.1.1
 
 - Fixed Dark Overlay appearing in the sunset event
