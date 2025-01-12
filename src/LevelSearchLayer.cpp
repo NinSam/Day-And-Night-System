@@ -45,6 +45,9 @@ class $modify(LevelSearchLayer) {
 	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
 
+	auto opacitydarkoverlaynight = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-night");
+	auto opacitydarkoverlaydark = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-dark");
+
     if ((hr > startsunrisehr || (hr == startsunrisehr && min >= startsunrisemin)) && (hr < endsunrisehr || (hr == endsunrisehr && min < endsunrisemin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunrise")){
@@ -165,8 +168,6 @@ class $modify(LevelSearchLayer) {
 		CCScale9Sprite* sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"));
 		sprite_4->setColor(ccc3(0, 0, 75));
 		
-		
-		if (Mod::get()->getSettingValue<bool>("enable-dark-overlay-night")){
 
 		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
@@ -175,12 +176,11 @@ class $modify(LevelSearchLayer) {
         darkoverlay->setAnchorPoint({0, 0});
         darkoverlay->setScale(1.6 * relativescale);
         darkoverlay->setPosition({0, 0});
+		darkoverlay->setOpacity(opacitydarkoverlaynight);
 		darkoverlay->setID("darkoverlay"_spr);
         this->addChild(darkoverlay);
+	
 
-		}
-
-		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* stars = CCSprite::create("night_stars.png"_spr);
         
         stars->setZOrder(-3);
@@ -214,8 +214,6 @@ class $modify(LevelSearchLayer) {
 		CCScale9Sprite* sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"));
 		sprite_4->setColor(ccc3(0, 0, 0));
 		
-		
-		if (Mod::get()->getSettingValue<bool>("enable-dark-overlay-dark")){
 
 		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
@@ -224,12 +222,11 @@ class $modify(LevelSearchLayer) {
         darkoverlay->setAnchorPoint({0, 0});
         darkoverlay->setScale(1.6 * relativescale);
         darkoverlay->setPosition({0, 0});
+		darkoverlay->setOpacity(opacitydarkoverlaydark);
 		darkoverlay->setID("darkoverlay"_spr);
         this->addChild(darkoverlay);
 
-		}
 
-		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* stars = CCSprite::create("stars.png"_spr);
         
         stars->setZOrder(-3);
@@ -263,8 +260,6 @@ class $modify(LevelSearchLayer) {
 		CCScale9Sprite* sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"));
 		sprite_4->setColor(ccc3(0, 0, 0));
 
-		
-		if (Mod::get()->getSettingValue<bool>("enable-dark-overlay-dark")){
 
 		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
@@ -273,12 +268,11 @@ class $modify(LevelSearchLayer) {
         darkoverlay->setAnchorPoint({0, 0});
         darkoverlay->setScale(1.6 * relativescale);
         darkoverlay->setPosition({0, 0});
+		darkoverlay->setOpacity(opacitydarkoverlaydark);
 		darkoverlay->setID("darkoverlay"_spr);
         this->addChild(darkoverlay);
 
-		}
 
-		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* stars = CCSprite::create("stars.png"_spr);
         
         stars->setZOrder(-3);

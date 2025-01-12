@@ -2,7 +2,8 @@
 
 ## v1.1.2
 
-- Fixed a small gradient cutoff on the sunset sprite
+- Fixed a small gradient cutoff on the sunrise sprite
+- You can now set the opacity for the Dark Overlay
 
 ## v1.1.1
 

@@ -13,7 +13,6 @@ add_library(${PROJECT_NAME} SHARED
     src/LevelSearchLayer.cpp
     src/LevelBrowserLayer.cpp
     src/EditLevelLayer.cpp
-    src/LoadingLayer.cpp
     src/LeaderboardsLayer.cpp
     src/LevelSelectLayer.cpp
     src/LevelAreaLayer.cpp

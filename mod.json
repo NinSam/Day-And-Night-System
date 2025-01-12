@@ -207,17 +207,21 @@
 			"name": "Screen Overlay",
 			"type": "title"
 		},
-		"enable-dark-overlay-night":{
-			"name": "Dark Overlay In Night Event",
-			"description": "Enable/Disable the dark overlay during the night event.",
-			"type": "bool",
-			"default": true
+		"opacity-dark-overlay-night":{
+			"name": "Dark Overlay Opacity In Night Event",
+			"description": "Set the opacity of the dark overlay during the night event.",
+			"type": "int",
+			"default": 105,
+			"min": 0,
+			"max": 255
 		},
-		"enable-dark-overlay-dark":{
-			"name": "Dark Overlay In Dark Event",
-			"description": "Enable/Disable the dark overlay during the dark event.",
-			"type": "bool",
-			"default": true
+		"opacity-dark-overlay-dark":{
+			"name": "Dark Overlay Opacity In Dark Event",
+			"description": "Set the opacity of the dark overlay during the dark event.",
+			"type": "int",
+			"default": 105,
+			"min": 0,
+			"max": 255
 		}
 	}
 }

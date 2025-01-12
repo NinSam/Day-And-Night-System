@@ -171,6 +171,9 @@ bool DayAndNightSystemOverlay::init(){
 	auto startdarkmin = Mod::get()->getSettingValue<int64_t>("start-dark-min");
 	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
+
+	auto opacitydarkoverlaynight = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-night");
+	auto opacitydarkoverlaydark = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-dark");
 	
 
 	if ((hr > startsunrisehr || (hr == startsunrisehr && min >= startsunrisemin)) && (hr < endsunrisehr || (hr == endsunrisehr && min < endsunrisemin))){
@@ -183,55 +186,49 @@ bool DayAndNightSystemOverlay::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
-		if (Mod::get()->getSettingValue<bool>("enable-dark-overlay-night")){
-
 		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
         
         darkoverlay->setAnchorPoint({0, 0});
         darkoverlay->setScale(1.6 * relativescale);
         darkoverlay->setPosition({0, 0});
+		darkoverlay->setOpacity(opacitydarkoverlaynight);
 		darkoverlay->setID("darkoverlay"_spr);
         this->addChild(darkoverlay);
 
-		}
+		
 		}
 		
 	}
 	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrdarkbugfix || (hr == endhrdarkbugfix && min < endmindarkbugfix))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
-		
-		if (Mod::get()->getSettingValue<bool>("enable-dark-overlay-dark")){
-
+			
 		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
         
         darkoverlay->setAnchorPoint({0, 0});
         darkoverlay->setScale(1.6 * relativescale);
+		darkoverlay->setOpacity(opacitydarkoverlaydark);
         darkoverlay->setPosition({0, 0});
 		darkoverlay->setID("darkoverlay"_spr);
         this->addChild(darkoverlay);
-
-		}
+		
 		}
 	}
 	else if ((hr > starthrdarkbugfix || (hr == starthrdarkbugfix && min >= startmindarkbugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
 		
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-		if (Mod::get()->getSettingValue<bool>("enable-dark-overlay-dark")){
-
 		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
         
         darkoverlay->setAnchorPoint({0, 0});
         darkoverlay->setScale(1.6 * relativescale);
         darkoverlay->setPosition({0, 0});
+		darkoverlay->setOpacity(opacitydarkoverlaydark);
 		darkoverlay->setID("darkoverlay"_spr);
         this->addChild(darkoverlay);
-
-		}
 
 		}
 
