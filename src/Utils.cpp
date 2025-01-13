@@ -54,7 +54,7 @@ bool DayAndNightSystem::init(){
         CCSprite* sunrise = CCSprite::create("sunrise.png"_spr);
         
         sunrise->setAnchorPoint({0, 0});
-		sunrise->setScaleX(11 * relativescale);
+		sunrise->setScaleX(15 * relativescale);
 		sunrise->setScaleY(1.6 * relativescale);
         sunrise->setPosition({0, 0});
 		sunrise->setID("sunrise"_spr);
@@ -71,7 +71,7 @@ bool DayAndNightSystem::init(){
         CCSprite* sunset = CCSprite::create("sunset.png"_spr);
         
         sunset->setAnchorPoint({0, 0});
-        sunset->setScaleX(11 * relativescale);
+        sunset->setScaleX(15 * relativescale);
 		sunset->setScaleY(1.6 * relativescale);
         sunset->setPosition({0, 0});
 		sunset->setID("sunset"_spr);
@@ -100,7 +100,6 @@ bool DayAndNightSystem::init(){
 	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrbugfix || (hr == endhrbugfix && min < endminbugfix))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
-		
 
 		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* stars = CCSprite::create("stars.png"_spr);
@@ -116,7 +115,6 @@ bool DayAndNightSystem::init(){
 	else if ((hr > starthrbugfix || (hr == starthrbugfix && min >= startminbugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
-		
 
 		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
         CCSprite* stars = CCSprite::create("stars.png"_spr);
@@ -198,7 +196,6 @@ bool DayAndNightSystemOverlay::init(){
 		darkoverlay->setID("darkoverlay"_spr);
         this->addChild(darkoverlay);
 
-		
 		}
 		
 	}

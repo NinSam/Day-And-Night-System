@@ -72,7 +72,7 @@ class $modify(LevelAreaLayer) {
         
         sunrise->setZOrder(-3);
         sunrise->setAnchorPoint({0, 0});
-        sunrise->setScaleX(11 * relativescale);
+        sunrise->setScaleX(15 * relativescale);
 		sunrise->setScaleY(1.6 * relativescale);
         sunrise->setPosition({0, 0});
 		sunrise->setID("sunrise"_spr);
@@ -105,7 +105,7 @@ class $modify(LevelAreaLayer) {
         
         sunset->setZOrder(-3);
         sunset->setAnchorPoint({0, 0});
-        sunset->setScaleX(11 * relativescale);
+        sunset->setScaleX(15 * relativescale);
 		sunset->setScaleY(1.6 * relativescale);
         sunset->setPosition({0, 0});
 		sunset->setID("sunset"_spr);

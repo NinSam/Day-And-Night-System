@@ -4,6 +4,7 @@
 
 - Fixed a small gradient cutoff on the sunrise sprite
 - You can now set the opacity for the Dark Overlay
+- Added Dark Overlay to ShareCommentLayer
 
 ## v1.1.1
 
