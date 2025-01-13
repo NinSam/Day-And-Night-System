@@ -54,7 +54,8 @@ bool DayAndNightSystem::init(){
         CCSprite* sunrise = CCSprite::create("sunrise.png"_spr);
         
         sunrise->setAnchorPoint({0, 0});
-        sunrise->setScale(1.6 * relativescale);
+		sunrise->setScaleX(11 * relativescale);
+		sunrise->setScaleY(1.6 * relativescale);
         sunrise->setPosition({0, 0});
 		sunrise->setID("sunrise"_spr);
         this->addChild(sunrise);
@@ -70,7 +71,8 @@ bool DayAndNightSystem::init(){
         CCSprite* sunset = CCSprite::create("sunset.png"_spr);
         
         sunset->setAnchorPoint({0, 0});
-        sunset->setScale(1.6 * relativescale);
+        sunset->setScaleX(11 * relativescale);
+		sunset->setScaleY(1.6 * relativescale);
         sunset->setPosition({0, 0});
 		sunset->setID("sunset"_spr);
         this->addChild(sunset);
