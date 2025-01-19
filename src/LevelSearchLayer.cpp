@@ -45,9 +45,7 @@ class $modify(LevelSearchLayer) {
 	auto startdarkmin = Mod::get()->getSettingValue<int64_t>("start-dark-min");
 	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
-
-	auto opacitydarkoverlaynight = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-night");
-	auto opacitydarkoverlaydark = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-dark");
+	
 
 	CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
 	float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;

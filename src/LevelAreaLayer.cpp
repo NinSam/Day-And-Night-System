@@ -46,9 +46,6 @@ class $modify(LevelAreaLayer) {
 	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
 
-	auto opacitydarkoverlaynight = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-night");
-	auto opacitydarkoverlaydark = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-dark");
-
 	
 	auto DayAndNightSystem = DayAndNightSystem::create();
 	DayAndNightSystem->setZOrder(-1);
