@@ -1,5 +1,4 @@
-#pragma once
-// ty alphalaneous. EditLevelLayer, LevelAreaLayer, and LevelSearchLayer are not changed due to some problems.
+#pragma once // ty alphalaneous
 
 using namespace geode::prelude;
 
@@ -9,9 +8,7 @@ protected:
 bool init();
 
 public:
-
    static DayAndNightSystem* create();
-
 };
 
 class DayAndNightSystemOverlay: public CCNode{
@@ -20,7 +17,5 @@ protected:
 bool init();
 
 public:
-
    static DayAndNightSystemOverlay* create();
-
 };

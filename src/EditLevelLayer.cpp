@@ -1,6 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <ctime>
 #include <Geode/modify/EditLevelLayer.hpp>
+#include "Utils.hpp"
 
 using namespace geode::prelude;
 
@@ -48,6 +49,21 @@ class $modify(EditLevelLayer) {
 	auto opacitydarkoverlaynight = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-night");
 	auto opacitydarkoverlaydark = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-dark");
 
+
+	CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
+	float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
+
+	auto DayAndNightSystem = DayAndNightSystem::create();
+	DayAndNightSystem->setZOrder(-3);
+	DayAndNightSystem->setID("Events"_spr);
+	this->addChild(DayAndNightSystem);
+
+	auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
+	DayAndNightSystemOverlay->setZOrder(106);
+	DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+	this->addChild(DayAndNightSystemOverlay);
+
+
 	if ((hr > startsunrisehr || (hr == startsunrisehr && min >= startsunrisemin)) && (hr < endsunrisehr || (hr == endsunrisehr && min < endsunrisemin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunrise")){
@@ -60,27 +76,14 @@ class $modify(EditLevelLayer) {
 
 		auto bg_2 = this->getChildByID("description-background");
 		bg_2->setVisible(false);
-		
-	    CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
-
-	    float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
-        CCSprite* sunrise = CCSprite::create("sunrise.png"_spr);
-        
-        sunrise->setZOrder(-3);
-        sunrise->setAnchorPoint({0, 0});
-		sunrise->setScaleX(15 * relativescale);
-		sunrise->setScaleY(1.6 * relativescale);
-        sunrise->setPosition({0, 0});
-		sunrise->setID("sunrise"_spr);
-        this->addChild(sunrise);
-
 
         CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr); // trying not to use happy textures
         
         cc9fix->setZOrder(-2);
-        cc9fix->setAnchorPoint({0.5, 0.5});
-        cc9fix->setScale(1.185 * relativescale);
+        cc9fix->setAnchorPoint({0.5f, 0.5f});
+        cc9fix->setScale(1.185f * relativescale);
         cc9fix->setPosition(screenSize / 2);
+		cc9fix->setID("cc9fix"_spr);
         this->addChild(cc9fix);
 
 		}
@@ -99,25 +102,13 @@ class $modify(EditLevelLayer) {
 		auto bg_2 = this->getChildByID("description-background");
 		bg_2->setVisible(false);
 
-	    CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
-
-	    float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
-        CCSprite* sunset = CCSprite::create("sunset.png"_spr);
-        
-        sunset->setZOrder(-3);
-        sunset->setAnchorPoint({0, 0});
-        sunset->setScaleX(15 * relativescale);
-		sunset->setScaleY(1.6 * relativescale);
-        sunset->setPosition({0, 0});
-		sunset->setID("sunset"_spr);
-        this->addChild(sunset);
-
         CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr); // trying not to use happy textures
         
         cc9fix->setZOrder(-2);
-        cc9fix->setAnchorPoint({0.5, 0.5});
-        cc9fix->setScale(1.185 * relativescale);
+        cc9fix->setAnchorPoint({0.5f, 0.5f});
+        cc9fix->setScale(1.185f * relativescale);
         cc9fix->setPosition(screenSize / 2);
+		cc9fix->setID("cc9fix"_spr);
         this->addChild(cc9fix);
 
 		}
@@ -136,28 +127,6 @@ class $modify(EditLevelLayer) {
 
 		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"));
 		sprite_1->setColor(ccc3(0, 30, 125));
-		
-
-	    float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
-        CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
-        
-        darkoverlay->setZOrder(106);
-        darkoverlay->setAnchorPoint({0, 0});
-        darkoverlay->setScale(1.6 * relativescale);
-		darkoverlay->setOpacity(opacitydarkoverlaynight);
-        darkoverlay->setPosition({0, 0});
-		darkoverlay->setID("darkoverlay"_spr);
-        this->addChild(darkoverlay);
-		
-
-        CCSprite* stars = CCSprite::create("night_stars.png"_spr);
-        
-        stars->setZOrder(-3);
-        stars->setAnchorPoint({0, 0});
-        stars->setScale(1.6 * relativescale);
-        stars->setPosition({0, 0});
-		stars->setID("stars"_spr);
-        this->addChild(stars);
 
 		}
 	}
@@ -174,27 +143,6 @@ class $modify(EditLevelLayer) {
 
 		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"));
 		sprite_1->setColor(ccc3(0, 0, 50));
-		
-
-		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
-        CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
-        
-        darkoverlay->setZOrder(106);
-        darkoverlay->setAnchorPoint({0, 0});
-        darkoverlay->setScale(1.6 * relativescale);
-		darkoverlay->setOpacity(opacitydarkoverlaydark);
-        darkoverlay->setPosition({0, 0});
-		darkoverlay->setID("darkoverlay"_spr);
-        this->addChild(darkoverlay);
-
-        CCSprite* stars = CCSprite::create("stars.png"_spr);
-        
-        stars->setZOrder(-3);
-        stars->setAnchorPoint({0, 0});
-        stars->setScale(1.6 * relativescale);
-        stars->setPosition({0, 0});
-		stars->setID("stars"_spr);
-        this->addChild(stars);
 
 		}
 	}
@@ -211,28 +159,6 @@ class $modify(EditLevelLayer) {
 
 		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"));
 		sprite_1->setColor(ccc3(0, 0, 50));
-
-
-		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
-        CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
-        
-        darkoverlay->setZOrder(106);
-        darkoverlay->setAnchorPoint({0, 0});
-        darkoverlay->setScale(1.6 * relativescale);
-        darkoverlay->setPosition({0, 0});
-		darkoverlay->setID("darkoverlay"_spr);
-		darkoverlay->setOpacity(opacitydarkoverlaydark);
-        this->addChild(darkoverlay);
-
-
-        CCSprite* stars = CCSprite::create("stars.png"_spr);
-        
-        stars->setZOrder(-3);
-        stars->setAnchorPoint({0, 0});
-        stars->setScale(1.6 * relativescale);
-        stars->setPosition({0, 0});
-		stars->setID("stars"_spr);
-        this->addChild(stars);
 
 		}
 

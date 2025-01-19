@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.3
+
+- You can now set the opacity for the stars
+- Dark Overlay has been removed from SetIDPopup
+
 ## v1.1.2
 
 - Fixed a small gradient cutoff on the sunrise sprite

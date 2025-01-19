@@ -44,7 +44,7 @@ add_library(${PROJECT_NAME} SHARED
     src/ShareLevelSettingsLayer.cpp
     src/SetTextPopup.cpp
     src/GJPromoPopup.cpp
-    src/SetIDPopup.cpp
+    src/SetFolderPopup.cpp
     src/ShareCommentLayer.cpp
     src/Utils.hpp
     src/Utils.cpp

@@ -1,6 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <ctime>
 #include <Geode/modify/LevelAreaLayer.hpp>
+#include "Utils.hpp"
 
 using namespace geode::prelude;
 
@@ -48,6 +49,19 @@ class $modify(LevelAreaLayer) {
 	auto opacitydarkoverlaynight = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-night");
 	auto opacitydarkoverlaydark = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-dark");
 
+	
+	auto DayAndNightSystem = DayAndNightSystem::create();
+	DayAndNightSystem->setZOrder(-1);
+	DayAndNightSystem->setID("Events"_spr);
+	this->addChild(DayAndNightSystem);
+
+	auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
+	DayAndNightSystemOverlay->setZOrder(106);
+	DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+	this->addChild(DayAndNightSystemOverlay);
+
+	
+
 	if ((hr > startsunrisehr || (hr == startsunrisehr && min >= startsunrisemin)) && (hr < endsunrisehr || (hr == endsunrisehr && min < endsunrisemin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunrise")){
@@ -66,17 +80,6 @@ class $modify(LevelAreaLayer) {
 		
         auto layergrad = this->getChildByID("top-glow");
 		layergrad->setVisible(false);
-
-	    float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
-        CCSprite* sunrise = CCSprite::create("sunrise.png"_spr);
-        
-        sunrise->setZOrder(-3);
-        sunrise->setAnchorPoint({0, 0});
-        sunrise->setScaleX(15 * relativescale);
-		sunrise->setScaleY(1.6 * relativescale);
-        sunrise->setPosition({0, 0});
-		sunrise->setID("sunrise"_spr);
-        this->addChild(sunrise);
 
 		}
 		
@@ -99,17 +102,6 @@ class $modify(LevelAreaLayer) {
 		
         auto layergrad = this->getChildByID("top-glow");
 		layergrad->setVisible(false);
-
-	    float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
-        CCSprite* sunset = CCSprite::create("sunset.png"_spr);
-        
-        sunset->setZOrder(-3);
-        sunset->setAnchorPoint({0, 0});
-        sunset->setScaleX(15 * relativescale);
-		sunset->setScaleY(1.6 * relativescale);
-        sunset->setPosition({0, 0});
-		sunset->setID("sunset"_spr);
-        this->addChild(sunset);
 
 		}
 		
@@ -153,28 +145,6 @@ class $modify(LevelAreaLayer) {
 		
         auto particle = this->getChildByID("sparkle");
 		particle->setVisible(false);
-		
-
-		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
-        CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
-        
-        darkoverlay->setZOrder(106);
-        darkoverlay->setAnchorPoint({0, 0});
-        darkoverlay->setScale(1.6 * relativescale);
-        darkoverlay->setPosition({0, 0});
-		darkoverlay->setOpacity(opacitydarkoverlaynight);
-		darkoverlay->setID("darkoverlay"_spr);
-        this->addChild(darkoverlay);
-
-
-        CCSprite* stars = CCSprite::create("night_stars.png"_spr);
-        
-        stars->setZOrder(-3);
-        stars->setAnchorPoint({0, 0});
-        stars->setScale(1.6 * relativescale);
-        stars->setPosition({0, 0});
-		stars->setID("stars"_spr);
-        this->addChild(stars);
 
 		}
 		
@@ -219,28 +189,6 @@ class $modify(LevelAreaLayer) {
         auto particle = this->getChildByID("sparkle");
 		particle->setVisible(false);
 		
-
-		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
-        CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
-        
-        darkoverlay->setZOrder(106);
-        darkoverlay->setAnchorPoint({0, 0});
-        darkoverlay->setScale(1.6 * relativescale);
-		darkoverlay->setOpacity(opacitydarkoverlaydark);
-        darkoverlay->setPosition({0, 0});
-		darkoverlay->setID("darkoverlay"_spr);
-        this->addChild(darkoverlay);
-
-		
-        CCSprite* stars = CCSprite::create("stars.png"_spr);
-        
-        stars->setZOrder(-3);
-        stars->setAnchorPoint({0, 0});
-        stars->setScale(1.6 * relativescale);
-        stars->setPosition({0, 0});
-		stars->setID("stars"_spr);
-        this->addChild(stars);
-
 		}
 	}
 	else if ((hr > starthrbugfix || (hr == starthrbugfix && min >= startminbugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
@@ -283,28 +231,6 @@ class $modify(LevelAreaLayer) {
         auto particle = this->getChildByID("sparkle");
 		particle->setVisible(false);
 		
-
-		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
-        CCSprite* darkoverlay = CCSprite::create("night_overlay.png"_spr);
-        
-        darkoverlay->setZOrder(106);
-        darkoverlay->setAnchorPoint({0, 0});
-        darkoverlay->setScale(1.6 * relativescale);
-        darkoverlay->setPosition({0, 0});
-		darkoverlay->setID("darkoverlay"_spr);
-		darkoverlay->setOpacity(opacitydarkoverlaydark);
-        this->addChild(darkoverlay);
-
-
-        CCSprite* stars = CCSprite::create("stars.png"_spr);
-        
-        stars->setZOrder(-3);
-        stars->setAnchorPoint({0, 0});
-        stars->setScale(1.6 * relativescale);
-        stars->setPosition({0, 0});
-		stars->setID("stars"_spr);
-        this->addChild(stars);
-
 		}
 
 	}
