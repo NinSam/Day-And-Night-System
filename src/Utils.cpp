@@ -14,8 +14,6 @@ bool DayAndNightSystem::init(){
 
     const int hr = localTime->tm_hour;
     const int min = localTime->tm_min;
-
-	// bugfix (idk why it breaks past midnight)
 	
 	const int endhrbugfix = 24;
 	const int endminbugfix = 0;
@@ -39,7 +37,7 @@ bool DayAndNightSystem::init(){
 	auto endnighthr = Mod::get()->getSettingValue<int64_t>("end-night-hr");
 	auto endnightmin = Mod::get()->getSettingValue<int64_t>("end-night-min");
 
-	auto startdarkhr = Mod::get()->getSettingValue<int64_t>("start-sunset-hr");
+	auto startdarkhr = Mod::get()->getSettingValue<int64_t>("start-dark-hr"); // there's no way I set it to sunset this whole time bruh...
 	auto startdarkmin = Mod::get()->getSettingValue<int64_t>("start-dark-min");
 	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
@@ -48,7 +46,6 @@ bool DayAndNightSystem::init(){
 	auto opacitybigstarsnight = Mod::get()->getSettingValue<int64_t>("opacity-big-stars-night");
 	auto opacitysmallstarsdark = Mod::get()->getSettingValue<int64_t>("opacity-small-stars-dark");
 	auto opacitybigstarsdark = Mod::get()->getSettingValue<int64_t>("opacity-big-stars-dark");
-
 
 	float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4; // used this line of code from the Minecraftify mod to make the sprites scale to the screen size. Ty alphalaneous for saving me from even more hours of pain trying to fix this
 
@@ -205,10 +202,6 @@ bool DayAndNightSystemOverlay::init(){
 
     const int hr = localTime->tm_hour;
     const int min = localTime->tm_min;
-
-	// bugfix (idk why it breaks past midnight)
-
-	// add later to changelog - Fixed the tower texture from disappearing with the (insert) mod
 	
 	const int endhrdarkbugfix = 24;
 	const int endmindarkbugfix = 0;
@@ -231,7 +224,7 @@ bool DayAndNightSystemOverlay::init(){
 	auto endnighthr = Mod::get()->getSettingValue<int64_t>("end-night-hr");
 	auto endnightmin = Mod::get()->getSettingValue<int64_t>("end-night-min");
 
-	auto startdarkhr = Mod::get()->getSettingValue<int64_t>("start-sunset-hr");
+	auto startdarkhr = Mod::get()->getSettingValue<int64_t>("start-dark-hr");
 	auto startdarkmin = Mod::get()->getSettingValue<int64_t>("start-dark-min");
 	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");

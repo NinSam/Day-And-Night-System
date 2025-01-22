@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.4
+
+- Fixed Start Dark Hr being on Start Sunset Hr
+
 ## v1.1.3
 
 - You can now set the opacity for the stars
