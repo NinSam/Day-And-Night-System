@@ -10,8 +10,10 @@ class $modify(MenuLayer) {
 		if (!MenuLayer::init())
 		return false;
 
-	auto bg = this->getChildByID("main-menu-bg");
-	bg->setZOrder(-2);
+	if (auto bg = this->getChildByID("main-menu-bg")){
+
+		bg->setZOrder(-2);
+	}
 
 	auto DayAndNightSystem = DayAndNightSystem::create();
 	DayAndNightSystem->setZOrder(-1);

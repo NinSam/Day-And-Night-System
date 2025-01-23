@@ -10,8 +10,10 @@ class $modify(LevelInfoLayer) {
 		if (!LevelInfoLayer::init(p0, p1))
 		return false;
 
-	auto bg = this->getChildByID("background");
-	bg->setZOrder(-2);
+	if (auto bg = this->getChildByID("background")){
+		
+		bg->setZOrder(-2);
+	}
 
 	auto DayAndNightSystem = DayAndNightSystem::create();
 	DayAndNightSystem->setZOrder(-1);

@@ -17,8 +17,6 @@ class $modify(EditLevelLayer) {
 	const int hr = localTime->tm_hour;
     const int min = localTime->tm_min;
 
-	// bugfix (idk why it breaks past midnight)
-
 	const int endhrbugfix = 24;
 	const int endminbugfix = 0;
 
@@ -65,14 +63,18 @@ class $modify(EditLevelLayer) {
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunrise")){
 
-		auto bg = this->getChildByID("background");
-		bg->setVisible(false);
+		if (auto bg = this->getChildByID("background")){
 
-		auto bg_1 = this->getChildByID("level-name-background");
-		bg_1->setVisible(false);
+			bg->setVisible(false);
+		}
+		if (auto bg_1 = this->getChildByID("level-name-background")){
 
-		auto bg_2 = this->getChildByID("description-background");
-		bg_2->setVisible(false);
+			bg_1->setVisible(false);
+		}
+		if (auto bg_2 = this->getChildByID("description-background")){
+
+			bg_2->setVisible(false);
+		}
 
         CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr); // trying not to use happy textures
         
@@ -90,14 +92,18 @@ class $modify(EditLevelLayer) {
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunset")){
 
-		auto bg = this->getChildByID("background");
-		bg->setVisible(false);
+		if (auto bg = this->getChildByID("background")){
 
-		auto bg_1 = this->getChildByID("level-name-background");
-		bg_1->setVisible(false);
+			bg->setVisible(false);
+		}
+		if (auto bg_1 = this->getChildByID("level-name-background")){
 
-		auto bg_2 = this->getChildByID("description-background");
-		bg_2->setVisible(false);
+			bg_1->setVisible(false);
+		}
+		if (auto bg_2 = this->getChildByID("description-background")){
+
+			bg_2->setVisible(false);
+		}
 
         CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr); // trying not to use happy textures
         
@@ -115,15 +121,18 @@ class $modify(EditLevelLayer) {
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
-		auto bg = this->getChildByID("background");
-		bg->setVisible(false);
+		if (auto bg = this->getChildByID("background")){
 
-		CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-name-background"));
-		sprite->setColor(ccc3(0, 30, 125));
-	
+			bg->setVisible(false);
+		}
+		if (CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-name-background"))){
 
-		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"));
-		sprite_1->setColor(ccc3(0, 30, 125));
+			sprite->setColor(ccc3(0, 30, 125));
+		}
+		if (CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"))){
+
+			sprite_1->setColor(ccc3(0, 30, 125));
+		}
 
 		}
 	}
@@ -131,15 +140,18 @@ class $modify(EditLevelLayer) {
 		
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-		auto bg = this->getChildByID("background");
-		bg->setVisible(false);
+		if (auto bg = this->getChildByID("background")){
 
-		CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-name-background"));
-		sprite->setColor(ccc3(0, 0, 50));
-	
+			bg->setVisible(false);
+		}
+		if (CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-name-background"))){
 
-		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"));
-		sprite_1->setColor(ccc3(0, 0, 50));
+			sprite->setColor(ccc3(0, 0, 50));
+		}
+		if (CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"))){
+
+			sprite_1->setColor(ccc3(0, 0, 50));
+		}
 
 		}
 	}
@@ -147,15 +159,18 @@ class $modify(EditLevelLayer) {
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-		auto bg = this->getChildByID("background");
-		bg->setVisible(false);
+		if (auto bg = this->getChildByID("background")){
 
-		CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-name-background"));
-		sprite->setColor(ccc3(0, 0, 50));
-	
+			bg->setVisible(false);
+		}
+		if (CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-name-background"))){
 
-		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"));
-		sprite_1->setColor(ccc3(0, 0, 50));
+			sprite->setColor(ccc3(0, 0, 50));
+		}
+		if (CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"))){
+
+			sprite_1->setColor(ccc3(0, 0, 50));
+		}
 
 		}
 

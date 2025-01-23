@@ -17,8 +17,6 @@ class $modify(LevelSearchLayer) {
 	const int hr = localTime->tm_hour;
     const int min = localTime->tm_min;
 
-	// bugfix (idk why it breaks past midnight)
-
 	const int endhrbugfix = 24;
 	const int endminbugfix = 0;
 
@@ -67,25 +65,34 @@ class $modify(LevelSearchLayer) {
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunrise")){
 
-		auto bg = this->getChildByID("background");
-		bg->setVisible(false);
+		if (auto bg = this->getChildByID("background")){
 
-		auto bg_1 = this->getChildByID("level-search-bg");
-		bg_1->setVisible(false);
+			bg->setVisible(false);
+		}
+		if (auto bg_1 = this->getChildByID("level-search-bg")){
 
-		auto bg_2 = this->getChildByID("difficulty-filters-bg");
-		bg_2->setVisible(false);
+			bg_1->setVisible(false);
+		}
+		if (auto bg_2 = this->getChildByID("difficulty-filters-bg")){
 
-		auto bg_3 = this->getChildByID("length-filters-bg");
-		bg_3->setVisible(false);
+			bg_2->setVisible(false);
+		}
+		if (auto bg_3 = this->getChildByID("length-filters-bg")){
 
-		CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"));
+			bg_3->setVisible(false);
+		}
+		if (CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"))){
+
 		sprite->setColor(ccc3(0, 0, 0));
 		sprite->setOpacity(80);
 
-		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"));
+		}
+		if (CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"))){
+
 		sprite_1->setColor(ccc3(0, 0, 0));
 		sprite_1->setOpacity(80);
+
+		}
 
         CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix.png"_spr); // trying not to use happy textures
         
@@ -103,25 +110,34 @@ class $modify(LevelSearchLayer) {
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunset")){
 
-		auto bg = this->getChildByID("background");
-		bg->setVisible(false);
+		if (auto bg = this->getChildByID("background")){
 
-		auto bg_1 = this->getChildByID("level-search-bg");
-		bg_1->setVisible(false);
+			bg->setVisible(false);
+		}
+		if (auto bg_1 = this->getChildByID("level-search-bg")){
 
-		auto bg_2 = this->getChildByID("difficulty-filters-bg");
-		bg_2->setVisible(false);
+			bg_1->setVisible(false);
+		}
+		if (auto bg_2 = this->getChildByID("difficulty-filters-bg")){
 
-		auto bg_3 = this->getChildByID("length-filters-bg");
-		bg_3->setVisible(false);
+			bg_2->setVisible(false);
+		}
+		if (auto bg_3 = this->getChildByID("length-filters-bg")){
 
-		CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"));
+			bg_3->setVisible(false);
+		}
+		if (CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"))){
+
 		sprite->setColor(ccc3(0, 0, 0));
 		sprite->setOpacity(80);
 
-		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"));
+		}
+		if (CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"))){
+
 		sprite_1->setColor(ccc3(0, 0, 0));
 		sprite_1->setOpacity(80);
+
+		}
 
         CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix.png"_spr); // trying not to use happy textures
         
@@ -139,27 +155,30 @@ class $modify(LevelSearchLayer) {
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
-		auto bg = this->getChildByID("background");
-		bg->setVisible(false);
+		if (auto bg = this->getChildByID("background")){
 
-		CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bg"));
-		sprite->setColor(ccc3(0, 30, 125));
-	
+			bg->setVisible(false);
+		}
+		if (CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bg"))){
 
-		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"));
-		sprite_1->setColor(ccc3(0, 30, 125));
-		
+			sprite->setColor(ccc3(0, 30, 125));
+		}
+		if (CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"))){
 
-		CCScale9Sprite* sprite_2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("difficulty-filters-bg"));
-		sprite_2->setColor(ccc3(0, 30, 125));
-		
+			sprite_1->setColor(ccc3(0, 30, 125));
+		}
+		if (CCScale9Sprite* sprite_2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("difficulty-filters-bg"))){
+			
+			sprite_2->setColor(ccc3(0, 30, 125));
+		}
+		if (CCScale9Sprite* sprite_3 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("length-filters-bg"))){
 
-		CCScale9Sprite* sprite_3 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("length-filters-bg"));
-		sprite_3->setColor(ccc3(0, 30, 125));
-		
+			sprite_3->setColor(ccc3(0, 30, 125));
+		}
+		if (CCScale9Sprite* sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"))){
 
-		CCScale9Sprite* sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"));
-		sprite_4->setColor(ccc3(0, 0, 75));
+			sprite_4->setColor(ccc3(0, 0, 75));
+		}
 
 		}
 	}
@@ -167,23 +186,30 @@ class $modify(LevelSearchLayer) {
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-		auto bg = this->getChildByID("background");
-		bg->setVisible(false);
+		if (auto bg = this->getChildByID("background")){
 
-		CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bg"));
-		sprite->setColor(ccc3(0, 0, 50));
+			bg->setVisible(false);
+		}
+		if (CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bg"))){
 
-		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"));
-		sprite_1->setColor(ccc3(0, 0, 50));
-		
-		CCScale9Sprite* sprite_2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("difficulty-filters-bg"));
-		sprite_2->setColor(ccc3(0, 0, 50));
+			sprite->setColor(ccc3(0, 0, 50));
+		}
+		if (CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"))){
 
-		CCScale9Sprite* sprite_3 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("length-filters-bg"));
-		sprite_3->setColor(ccc3(0, 0, 50));
+			sprite_1->setColor(ccc3(0, 0, 50));
+		}
+		if (CCScale9Sprite* sprite_2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("difficulty-filters-bg"))){
 
-		CCScale9Sprite* sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"));
-		sprite_4->setColor(ccc3(0, 0, 0));
+			sprite_2->setColor(ccc3(0, 0, 50));
+		}
+		if (CCScale9Sprite* sprite_3 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("length-filters-bg"))){
+
+			sprite_3->setColor(ccc3(0, 0, 50));
+		}
+		if (CCScale9Sprite* sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"))){
+
+			sprite_4->setColor(ccc3(0, 0, 0));
+		}
 
 		}
 	}
@@ -191,23 +217,30 @@ class $modify(LevelSearchLayer) {
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-		auto bg = this->getChildByID("background");
-		bg->setVisible(false);
+		if (auto bg = this->getChildByID("background")){
 
-		CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bg"));
-		sprite->setColor(ccc3(0, 0, 50));
+			bg->setVisible(false);
+		}
+		if (CCScale9Sprite* sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bg"))){
 
-		CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"));
-		sprite_1->setColor(ccc3(0, 0, 50));
-		
-		CCScale9Sprite* sprite_2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("difficulty-filters-bg"));
-		sprite_2->setColor(ccc3(0, 0, 50));
+			sprite->setColor(ccc3(0, 0, 50));
+		}
+		if (CCScale9Sprite* sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"))){
 
-		CCScale9Sprite* sprite_3 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("length-filters-bg"));
-		sprite_3->setColor(ccc3(0, 0, 50));
+			sprite_1->setColor(ccc3(0, 0, 50));
+		}
+		if (CCScale9Sprite* sprite_2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("difficulty-filters-bg"))){
 
-		CCScale9Sprite* sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"));
-		sprite_4->setColor(ccc3(0, 0, 0));
+			sprite_2->setColor(ccc3(0, 0, 50));
+		}
+		if (CCScale9Sprite* sprite_3 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("length-filters-bg"))){
+
+			sprite_3->setColor(ccc3(0, 0, 50));
+		}
+		if (CCScale9Sprite* sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"))){
+
+			sprite_4->setColor(ccc3(0, 0, 0));
+		}
 
 		}
 

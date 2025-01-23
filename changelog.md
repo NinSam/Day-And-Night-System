@@ -2,6 +2,7 @@
 
 ## v1.1.4
 
+- Improved the quality of the star sprites
 - Fixed Start Dark Hr being on Start Sunset Hr
 
 ## v1.1.3

@@ -98,7 +98,7 @@ bool DayAndNightSystem::init(){
 		CCSprite* smallstars = CCSprite::create("small_stars.png"_spr);
         
         smallstars->setAnchorPoint({0, 0});
-        smallstars->setScale(1.6f * relativescale);
+        smallstars->setScale(0.8f * relativescale);
         smallstars->setPosition({0, 0});
 		smallstars->setZOrder(-2);
 		smallstars->setOpacity(opacitysmallstarsnight);
@@ -108,7 +108,7 @@ bool DayAndNightSystem::init(){
 		CCSprite* bigstars = CCSprite::create("big_stars.png"_spr);
         
         bigstars->setAnchorPoint({0, 0});
-        bigstars->setScale(1.6f * relativescale);
+        bigstars->setScale(0.8f * relativescale);
         bigstars->setPosition({0, 0});
 		bigstars->setZOrder(-2);
 		bigstars->setOpacity(opacitybigstarsnight);
@@ -134,7 +134,7 @@ bool DayAndNightSystem::init(){
         CCSprite* smallstars = CCSprite::create("small_stars.png"_spr);
         
         smallstars->setAnchorPoint({0, 0});
-        smallstars->setScale(1.6f * relativescale);
+        smallstars->setScale(0.8f * relativescale);
         smallstars->setPosition({0, 0});
 		smallstars->setZOrder(-2);
 		smallstars->setOpacity(opacitysmallstarsdark);
@@ -144,7 +144,7 @@ bool DayAndNightSystem::init(){
 		CCSprite* bigstars = CCSprite::create("big_stars.png"_spr);
         
         bigstars->setAnchorPoint({0, 0});
-        bigstars->setScale(1.6f * relativescale);
+        bigstars->setScale(0.8f * relativescale);
         bigstars->setPosition({0, 0});
 		bigstars->setZOrder(-2);
 		bigstars->setOpacity(opacitybigstarsdark);
@@ -169,7 +169,7 @@ bool DayAndNightSystem::init(){
         CCSprite* smallstars = CCSprite::create("small_stars.png"_spr);
         
         smallstars->setAnchorPoint({0, 0});
-        smallstars->setScale(1.6f * relativescale);
+        smallstars->setScale(0.8f * relativescale);
         smallstars->setPosition({0, 0});
 		smallstars->setZOrder(-2);
 		smallstars->setOpacity(opacitysmallstarsdark);
@@ -179,7 +179,7 @@ bool DayAndNightSystem::init(){
 		CCSprite* bigstars = CCSprite::create("big_stars.png"_spr);
         
         bigstars->setAnchorPoint({0, 0});
-        bigstars->setScale(1.6f * relativescale);
+        bigstars->setScale(0.8f * relativescale);
         bigstars->setPosition({0, 0});
 		bigstars->setZOrder(-2);
 		bigstars->setOpacity(opacitybigstarsdark);

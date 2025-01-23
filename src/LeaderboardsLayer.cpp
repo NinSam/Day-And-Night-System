@@ -10,8 +10,10 @@ class $modify(LeaderboardsLayer) {
 		if (!LeaderboardsLayer::init(p0))
 		return false;
 
-	auto bg = this->getChildByID("background");
-	bg->setZOrder(-3);
+	if (auto bg = this->getChildByID("background")){
+		
+		bg->setZOrder(-3);
+	}
 
 	auto DayAndNightSystem = DayAndNightSystem::create();
 	DayAndNightSystem->setZOrder(-2);

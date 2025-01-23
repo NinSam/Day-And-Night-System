@@ -10,11 +10,14 @@ class $modify(LevelSelectLayer) {
 		if (!LevelSelectLayer::init(p0))
 			return false;
 
-	auto bg = this->getChildByID("background");
-	bg->setZOrder(-3);
+	if (auto bg = this->getChildByID("background")){
 
-	auto ground = this->getChildByID("ground-layer");
-	ground->setZOrder(-2);
+		bg->setZOrder(-3);
+	}
+	if (auto ground = this->getChildByID("ground-layer")){
+
+		ground->setZOrder(-2);
+	}
 
 	auto DayAndNightSystem = DayAndNightSystem::create();
 	DayAndNightSystem->setZOrder(-1);
