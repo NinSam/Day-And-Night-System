@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.5
+
+- Fixed Start Dark Hr being on Start Sunset Hr for EditLevelLayer, LevelSearchLayer, and LevelAreaLayer
+
 ## v1.1.4
 
 - Improved the quality of the star sprites

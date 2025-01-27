@@ -39,7 +39,7 @@ class $modify(EditLevelLayer) {
 	auto endnighthr = Mod::get()->getSettingValue<int64_t>("end-night-hr");
 	auto endnightmin = Mod::get()->getSettingValue<int64_t>("end-night-min");
 
-	auto startdarkhr = Mod::get()->getSettingValue<int64_t>("start-sunset-hr");
+	auto startdarkhr = Mod::get()->getSettingValue<int64_t>("start-dark-hr");
 	auto startdarkmin = Mod::get()->getSettingValue<int64_t>("start-dark-min");
 	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
