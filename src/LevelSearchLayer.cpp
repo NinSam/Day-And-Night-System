@@ -46,6 +46,7 @@ class $modify(LevelSearchLayer) {
 	
 
 	auto screenSize = CCDirector::sharedDirector()->getWinSize();
+	float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
 
 	auto DayAndNightSystem = DayAndNightSystem::create();
 	DayAndNightSystem->setID("Events"_spr);
@@ -92,7 +93,7 @@ class $modify(LevelSearchLayer) {
 
         CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix.png"_spr); // trying not to use happy textures
         
-        cc9fix->setScale(1.185f);
+        cc9fix->setScale(1.185f * relativescale);
 		cc9fix->setOpacity(90);
         cc9fix->setPosition(screenSize / 2 + CCPoint {0,2});
 		cc9fix->setID("cc9fix"_spr);
@@ -136,7 +137,7 @@ class $modify(LevelSearchLayer) {
 
         CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix.png"_spr); // trying not to use happy textures
     
-        cc9fix->setScale(1.185f);
+        cc9fix->setScale(1.185f * relativescale);
 		cc9fix->setOpacity(90);
         cc9fix->setPosition(screenSize / 2 + CCPoint {0,2});
 		cc9fix->setID("cc9fix"_spr);

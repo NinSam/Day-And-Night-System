@@ -46,6 +46,7 @@ class $modify(EditLevelLayer) {
 
 
 	auto screenSize = CCDirector::sharedDirector()->getWinSize();
+	float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
 
 	auto DayAndNightSystem = DayAndNightSystem::create();
 	DayAndNightSystem->setID("Events"_spr);
@@ -76,7 +77,7 @@ class $modify(EditLevelLayer) {
 		CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr);
         
 		cc9fix->setOpacity(90);
-		cc9fix->setScale(1.185f);
+		cc9fix->setScale(1.185f * relativescale);
         cc9fix->setPosition(screenSize / 2 + CCPoint {0,92.4f});
 		cc9fix->setID("cc9fix"_spr);
         this->addChild(cc9fix,-2);
@@ -104,7 +105,7 @@ class $modify(EditLevelLayer) {
 		CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr);
         
 		cc9fix->setOpacity(90);
-		cc9fix->setScale(1.185f);
+		cc9fix->setScale(1.185f * relativescale);
         cc9fix->setPosition(screenSize / 2 + CCPoint {0,92.4f});
 		cc9fix->setID("cc9fix"_spr);
         this->addChild(cc9fix,-2);
