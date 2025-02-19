@@ -241,7 +241,7 @@ bool DayAndNightSystemOverlay::init(){
 		CCScale9Sprite* darkoverlay = CCScale9Sprite::create("night.png"_spr);
         
         darkoverlay->setAnchorPoint({0, 0});
-        darkoverlay->setScale(1.6f * relativescale);
+        darkoverlay->setScaleY(1.6f * relativescale);
 		darkoverlay->setContentWidth(850);
         darkoverlay->setPosition({0, 0});
 		darkoverlay->setOpacity(opacitydarkoverlaynight);
@@ -258,7 +258,7 @@ bool DayAndNightSystemOverlay::init(){
 		CCScale9Sprite* darkoverlay = CCScale9Sprite::create("night.png"_spr);
         
         darkoverlay->setAnchorPoint({0, 0});
-        darkoverlay->setScale(1.6f * relativescale);
+        darkoverlay->setScaleY(1.6f * relativescale);
 		darkoverlay->setContentWidth(850);
 		darkoverlay->setOpacity(opacitydarkoverlaydark);
         darkoverlay->setPosition({0, 0});
@@ -275,7 +275,7 @@ bool DayAndNightSystemOverlay::init(){
         
         darkoverlay->setAnchorPoint({0, 0});
 		darkoverlay->setContentWidth(850);
-        darkoverlay->setScale(1.6f * relativescale);
+		darkoverlay->setScaleY(1.6f * relativescale);
         darkoverlay->setPosition({0, 0});
 		darkoverlay->setOpacity(opacitydarkoverlaydark);
 		darkoverlay->setID("darkoverlay"_spr);
