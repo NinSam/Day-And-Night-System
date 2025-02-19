@@ -5,6 +5,7 @@
 - Improved the colors on the sunset sprite ([#7](https://github.com/NinSam/Day-And-Night-System/issues/7))
 - Dark Overlay max opacity is now 225 instead of 255
 - Dark Overlay has been removed from SetFolderPopup and SetTextPopup
+- Changed mod logo
 
 ## v1.1.5
 
