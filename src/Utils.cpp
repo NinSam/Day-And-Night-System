@@ -53,10 +53,10 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunrise")){
 	    
-        CCSprite* sunrise = CCSprite::create("sunrise.png"_spr);
+        CCScale9Sprite* sunrise = CCScale9Sprite::create("sunrise.png"_spr);
         
         sunrise->setAnchorPoint({0, 0});
-		sunrise->setScaleX(15 * relativescale);
+		sunrise->setContentWidth(850);
 		sunrise->setScaleY(1.6f * relativescale);
         sunrise->setPosition({0, 0});
 		sunrise->setID("sunrise"_spr);
@@ -69,10 +69,10 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunset")){
 
-        CCSprite* sunset = CCSprite::create("sunset.png"_spr);
+        CCScale9Sprite* sunset = CCScale9Sprite::create("sunset.png"_spr);
         
         sunset->setAnchorPoint({0, 0});
-        sunset->setScaleX(15 * relativescale);
+        sunset->setContentWidth(850);
 		sunset->setScaleY(1.6f * relativescale);
         sunset->setPosition({0, 0});
 		sunset->setID("sunset"_spr);
@@ -85,10 +85,10 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
-        CCSprite* nightblue = CCSprite::create("night_blue.png"_spr);
+		CCScale9Sprite* nightblue = CCScale9Sprite::create("night_blue.png"_spr);
         
         nightblue->setAnchorPoint({0, 0});
-        nightblue->setScaleX(15 * relativescale);
+        nightblue->setContentWidth(850);
 		nightblue->setScaleY(1.6f * relativescale);
         nightblue->setPosition({0, 0});
 		nightblue->setID("nightblue"_spr);
