@@ -119,10 +119,11 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-		CCSprite* night = CCSprite::create("night.png"_spr);
+		CCScale9Sprite* night = CCScale9Sprite::create("night.png"_spr);
         
         night->setAnchorPoint({0, 0});
-        night->setScale(1.6f * relativescale);
+        night->setContentWidth(850);
+        night->setScaleY(1.6f * relativescale);
         night->setPosition({0, 0});
 		night->setID("night"_spr);
         this->addChild(night,-3);
@@ -151,10 +152,11 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-        CCSprite* night = CCSprite::create("night.png"_spr);
+        CCScale9Sprite* night = CCScale9Sprite::create("night.png"_spr);
         
         night->setAnchorPoint({0, 0});
-        night->setScale(1.6f * relativescale);
+		night->setContentWidth(850);
+        night->setScaleY(1.6f * relativescale);
         night->setPosition({0, 0});
 		night->setID("night"_spr);
         this->addChild(night);
@@ -236,10 +238,11 @@ bool DayAndNightSystemOverlay::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
-        CCSprite* darkoverlay = CCSprite::create("night.png"_spr);
+		CCScale9Sprite* darkoverlay = CCScale9Sprite::create("night.png"_spr);
         
         darkoverlay->setAnchorPoint({0, 0});
         darkoverlay->setScale(1.6f * relativescale);
+		darkoverlay->setContentWidth(850);
         darkoverlay->setPosition({0, 0});
 		darkoverlay->setOpacity(opacitydarkoverlaynight);
 		darkoverlay->setID("darkoverlay"_spr);
@@ -252,10 +255,11 @@ bool DayAndNightSystemOverlay::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 			
-        CCSprite* darkoverlay = CCSprite::create("night.png"_spr);
+		CCScale9Sprite* darkoverlay = CCScale9Sprite::create("night.png"_spr);
         
         darkoverlay->setAnchorPoint({0, 0});
         darkoverlay->setScale(1.6f * relativescale);
+		darkoverlay->setContentWidth(850);
 		darkoverlay->setOpacity(opacitydarkoverlaydark);
         darkoverlay->setPosition({0, 0});
 		darkoverlay->setID("darkoverlay"_spr);
@@ -267,9 +271,10 @@ bool DayAndNightSystemOverlay::init(){
 		
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-        CCSprite* darkoverlay = CCSprite::create("night.png"_spr);
+		CCScale9Sprite* darkoverlay = CCScale9Sprite::create("night.png"_spr);
         
         darkoverlay->setAnchorPoint({0, 0});
+		darkoverlay->setContentWidth(850);
         darkoverlay->setScale(1.6f * relativescale);
         darkoverlay->setPosition({0, 0});
 		darkoverlay->setOpacity(opacitydarkoverlaydark);
