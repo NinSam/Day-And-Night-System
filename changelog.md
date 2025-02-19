@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.6
+
+- Improved the colors on the sunset sprite ([#7](https://github.com/NinSam/Day-And-Night-System/issues/7))
+- Dark Overlay max opacity is now 225 instead of 255
+
 ## v1.1.5
 
 - Fixed Start Dark Hr being on Start Sunset Hr for EditLevelLayer, LevelSearchLayer, and LevelAreaLayer

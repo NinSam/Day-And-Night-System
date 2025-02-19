@@ -87,33 +87,30 @@ bool DayAndNightSystem::init(){
 
         CCSprite* nightblue = CCSprite::create("night_blue.png"_spr);
         
-        nightblue->setZOrder(-3);
         nightblue->setAnchorPoint({0, 0});
         nightblue->setScaleX(15 * relativescale);
 		nightblue->setScaleY(1.6f * relativescale);
         nightblue->setPosition({0, 0});
 		nightblue->setID("nightblue"_spr);
-        this->addChild(nightblue);
+        this->addChild(nightblue,-3);
 
 		CCSprite* smallstars = CCSprite::create("small_stars.png"_spr);
         
         smallstars->setAnchorPoint({0, 0});
         smallstars->setScale(0.8f * relativescale);
         smallstars->setPosition({0, 0});
-		smallstars->setZOrder(-2);
 		smallstars->setOpacity(opacitysmallstarsnight);
 		smallstars->setID("smallstars"_spr);
-        this->addChild(smallstars);
+        this->addChild(smallstars,-2);
 
 		CCSprite* bigstars = CCSprite::create("big_stars.png"_spr);
         
         bigstars->setAnchorPoint({0, 0});
         bigstars->setScale(0.8f * relativescale);
         bigstars->setPosition({0, 0});
-		bigstars->setZOrder(-2);
 		bigstars->setOpacity(opacitybigstarsnight);
 		bigstars->setID("bigstars"_spr);
-        this->addChild(bigstars);
+        this->addChild(bigstars,-2);
 
 		}
 		
@@ -124,32 +121,29 @@ bool DayAndNightSystem::init(){
 
 		CCSprite* night = CCSprite::create("night.png"_spr);
         
-        night->setZOrder(-3);
         night->setAnchorPoint({0, 0});
         night->setScale(1.6f * relativescale);
         night->setPosition({0, 0});
 		night->setID("night"_spr);
-        this->addChild(night);
+        this->addChild(night,-3);
 
         CCSprite* smallstars = CCSprite::create("small_stars.png"_spr);
         
         smallstars->setAnchorPoint({0, 0});
         smallstars->setScale(0.8f * relativescale);
         smallstars->setPosition({0, 0});
-		smallstars->setZOrder(-2);
 		smallstars->setOpacity(opacitysmallstarsdark);
 		smallstars->setID("smallstars"_spr);
-        this->addChild(smallstars);
+        this->addChild(smallstars,-2);
 
 		CCSprite* bigstars = CCSprite::create("big_stars.png"_spr);
         
         bigstars->setAnchorPoint({0, 0});
         bigstars->setScale(0.8f * relativescale);
         bigstars->setPosition({0, 0});
-		bigstars->setZOrder(-2);
 		bigstars->setOpacity(opacitybigstarsdark);
 		bigstars->setID("bigstars"_spr);
-        this->addChild(bigstars);
+        this->addChild(bigstars,-2);
 
 		}
 	}
@@ -159,7 +153,6 @@ bool DayAndNightSystem::init(){
 
         CCSprite* night = CCSprite::create("night.png"_spr);
         
-        night->setZOrder(-3);
         night->setAnchorPoint({0, 0});
         night->setScale(1.6f * relativescale);
         night->setPosition({0, 0});
@@ -171,7 +164,6 @@ bool DayAndNightSystem::init(){
         smallstars->setAnchorPoint({0, 0});
         smallstars->setScale(0.8f * relativescale);
         smallstars->setPosition({0, 0});
-		smallstars->setZOrder(-2);
 		smallstars->setOpacity(opacitysmallstarsdark);
 		smallstars->setID("smallstars"_spr);
         this->addChild(smallstars);
@@ -181,7 +173,6 @@ bool DayAndNightSystem::init(){
         bigstars->setAnchorPoint({0, 0});
         bigstars->setScale(0.8f * relativescale);
         bigstars->setPosition({0, 0});
-		bigstars->setZOrder(-2);
 		bigstars->setOpacity(opacitybigstarsdark);
 		bigstars->setID("bigstars"_spr);
         this->addChild(bigstars);

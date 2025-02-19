@@ -20,14 +20,12 @@ class $modify(LevelSelectLayer) {
 	}
 
 	auto DayAndNightSystem = DayAndNightSystem::create();
-	DayAndNightSystem->setZOrder(-1);
 	DayAndNightSystem->setID("Events"_spr);
-	this->addChild(DayAndNightSystem);
+	this->addChild(DayAndNightSystem,-1);
 
 	auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-	DayAndNightSystemOverlay->setZOrder(106);
 	DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
-	this->addChild(DayAndNightSystemOverlay);
+	this->addChild(DayAndNightSystemOverlay,106);
 
 		return true;
 	}

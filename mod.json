@@ -8,7 +8,7 @@
 	},
 	"id": "ninsam.day_and_night_system",
 	"name": "Day & Night System",
-	"version": "v1.1.5",
+	"version": "v1.1.6",
 	"developer": "NinSam",
 	"description": "Adds a day and night system in the GD menus!",
 	"dependencies": {
@@ -250,7 +250,7 @@
 			"type": "int",
 			"default": 105,
 			"min": 0,
-			"max": 255
+			"max": 225
 		},
 		"opacity-dark-overlay-dark":{
 			"name": "Dark Overlay Opacity In Dark Event",
@@ -258,7 +258,7 @@
 			"type": "int",
 			"default": 105,
 			"min": 0,
-			"max": 255
+			"max": 225
 		}
 	}
 }

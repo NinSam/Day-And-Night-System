@@ -6,7 +6,7 @@ using namespace geode::prelude;
 
 class $modify(GJPromoPopup) {
 
-	#ifdef GEODE_IS_MACOS_INTEL
+	#ifdef GEODE_IS_INTEL_MAC
 
 	bool init(gd::string p0) {
 		if (!GJPromoPopup::init(p0))
@@ -14,9 +14,8 @@ class $modify(GJPromoPopup) {
 
 
 	auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-	DayAndNightSystemOverlay->setZOrder(106);
 	DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
-	this->addChild(DayAndNightSystemOverlay);
+	this->addChild(DayAndNightSystemOverlay,106);
 
 	
 		return true;
@@ -29,9 +28,8 @@ class $modify(GJPromoPopup) {
 
 
 	auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-	DayAndNightSystemOverlay->setZOrder(106);
 	DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
-	this->addChild(DayAndNightSystemOverlay);
+	this->addChild(DayAndNightSystemOverlay,106);
 
 	
 		return true;
@@ -44,9 +42,8 @@ class $modify(GJPromoPopup) {
 
 
 	auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-	DayAndNightSystemOverlay->setZOrder(106);
 	DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
-	this->addChild(DayAndNightSystemOverlay);
+	this->addChild(DayAndNightSystemOverlay,106);
 
 	
 		return true;

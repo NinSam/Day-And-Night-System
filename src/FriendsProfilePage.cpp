@@ -11,9 +11,8 @@ class $modify(FriendsProfilePage) {
 		return false;
 
 	auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-	DayAndNightSystemOverlay->setZOrder(106);
 	DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
-	this->addChild(DayAndNightSystemOverlay);
+	this->addChild(DayAndNightSystemOverlay,106);
 
 		return true;
 	}

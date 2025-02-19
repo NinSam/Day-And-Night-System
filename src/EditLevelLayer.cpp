@@ -45,18 +45,15 @@ class $modify(EditLevelLayer) {
 	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
 
 
-	CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
-	float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
+	auto screenSize = CCDirector::sharedDirector()->getWinSize();
 
 	auto DayAndNightSystem = DayAndNightSystem::create();
-	DayAndNightSystem->setZOrder(-3);
 	DayAndNightSystem->setID("Events"_spr);
-	this->addChild(DayAndNightSystem);
+	this->addChild(DayAndNightSystem,-3);
 
 	auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-	DayAndNightSystemOverlay->setZOrder(106);
 	DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
-	this->addChild(DayAndNightSystemOverlay);
+	this->addChild(DayAndNightSystemOverlay,106);
 
 
 	if ((hr > startsunrisehr || (hr == startsunrisehr && min >= startsunrisemin)) && (hr < endsunrisehr || (hr == endsunrisehr && min < endsunrisemin))){
@@ -76,14 +73,13 @@ class $modify(EditLevelLayer) {
 			bg_2->setVisible(false);
 		}
 
-        CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr); // trying not to use happy textures
+		CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr);
         
-        cc9fix->setZOrder(-2);
-        cc9fix->setAnchorPoint({0.5f, 0.5f});
-        cc9fix->setScale(1.185f * relativescale);
-        cc9fix->setPosition(screenSize / 2);
+		cc9fix->setOpacity(90);
+		cc9fix->setScale(1.185f);
+        cc9fix->setPosition(screenSize / 2 + CCPoint {0,92.4f});
 		cc9fix->setID("cc9fix"_spr);
-        this->addChild(cc9fix);
+        this->addChild(cc9fix,-2);
 
 		}
 		
@@ -105,14 +101,13 @@ class $modify(EditLevelLayer) {
 			bg_2->setVisible(false);
 		}
 
-        CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr); // trying not to use happy textures
+		CCSprite* cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr);
         
-        cc9fix->setZOrder(-2);
-        cc9fix->setAnchorPoint({0.5f, 0.5f});
-        cc9fix->setScale(1.185f * relativescale);
-        cc9fix->setPosition(screenSize / 2);
+		cc9fix->setOpacity(90);
+		cc9fix->setScale(1.185f);
+        cc9fix->setPosition(screenSize / 2 + CCPoint {0,92.4f});
 		cc9fix->setID("cc9fix"_spr);
-        this->addChild(cc9fix);
+        this->addChild(cc9fix,-2);
 
 		}
 		
