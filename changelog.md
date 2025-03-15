@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.7
+
+- Added LoadingLayer
+
 ## v1.1.6
 
 - Improved the colors on the sunset sprite ([#7](https://github.com/NinSam/Day-And-Night-System/issues/7))

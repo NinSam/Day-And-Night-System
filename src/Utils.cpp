@@ -16,10 +16,7 @@ bool DayAndNightSystem::init(){
     const int min = localTime->tm_min;
 	
 	const int endhrbugfix = 24;
-	const int endminbugfix = 0;
-
-	const int starthrbugfix = 0;
-	const int startminbugfix = 0;
+	const int endtimebugfix = 0;
 
 
 	auto startsunrisehr = Mod::get()->getSettingValue<int64_t>("start-sunrise-hr");
@@ -115,7 +112,7 @@ bool DayAndNightSystem::init(){
 		}
 		
 	}
-	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrbugfix || (hr == endhrbugfix && min < endminbugfix))){
+	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrbugfix || (hr == endhrbugfix && min < endtimebugfix))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
@@ -148,7 +145,7 @@ bool DayAndNightSystem::init(){
 
 		}
 	}
-	else if ((hr > starthrbugfix || (hr == starthrbugfix && min >= startminbugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
+	else if ((hr > endtimebugfix || (hr == endtimebugfix && min >= endtimebugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
@@ -197,10 +194,7 @@ bool DayAndNightSystemOverlay::init(){
     const int min = localTime->tm_min;
 	
 	const int endhrdarkbugfix = 24;
-	const int endmindarkbugfix = 0;
-
-	const int starthrdarkbugfix = 0;
-	const int startmindarkbugfix = 0;
+	const int enddarktimebugfix = 0;
 
 	auto startsunrisehr = Mod::get()->getSettingValue<int64_t>("start-sunrise-hr");
 	auto startsunrisemin = Mod::get()->getSettingValue<int64_t>("start-sunrise-min");
@@ -251,7 +245,7 @@ bool DayAndNightSystemOverlay::init(){
 		}
 		
 	}
-	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrdarkbugfix || (hr == endhrdarkbugfix && min < endmindarkbugfix))){
+	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrdarkbugfix || (hr == endhrdarkbugfix && min < enddarktimebugfix))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 			
@@ -267,7 +261,7 @@ bool DayAndNightSystemOverlay::init(){
 		
 		}
 	}
-	else if ((hr > starthrdarkbugfix || (hr == starthrdarkbugfix && min >= startmindarkbugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
+	else if ((hr > enddarktimebugfix || (hr == enddarktimebugfix && min >= enddarktimebugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
 		
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
