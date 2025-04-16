@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.8
+
+- Added iOS support (experimental)
+
 ## v1.1.7
 
 - Added LoadingLayer
