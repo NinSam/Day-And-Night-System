@@ -10,11 +10,10 @@ bool DayAndNightSystem::init(){
 	return false;
 
 	time_t now = time(0);
-	tm timeinfo;
-	errno_t err = localtime_s(&timeinfo, &now);
+    tm* localTime = std::localtime(&now);
 
-    const int hr = timeinfo.tm_hour;
-    const int min = timeinfo.tm_min;
+    const int hr = localTime->tm_hour;
+    const int min = localTime->tm_min;
 	
 	const int endhrbugfix = 24;
 	const int endtimebugfix = 0;
@@ -189,11 +188,10 @@ bool DayAndNightSystemOverlay::init(){
 	return false;
 
 	time_t now = time(0);
-	tm timeinfo;
-	errno_t err = localtime_s(&timeinfo, &now);
+    tm* localTime = std::localtime(&now);
 
-    const int hr = timeinfo.tm_hour;
-    const int min = timeinfo.tm_min;
+    const int hr = localTime->tm_hour;
+    const int min = localTime->tm_min;
 	
 	const int endhrdarkbugfix = 24;
 	const int enddarktimebugfix = 0;

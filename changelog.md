@@ -3,7 +3,6 @@
 ## v1.1.8
 
 - Added iOS support
-- Used localtime_s instead of localtime
 
 ## v1.1.7
 
