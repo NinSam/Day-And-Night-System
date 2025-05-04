@@ -11,8 +11,8 @@ class $modify(LevelAreaLayer) {
 		if (!LevelAreaLayer::init())
 			return false;
 
-	time_t now = time(0);
-    tm* localTime = std::localtime(&now);
+	std::time_t now = time(nullptr);
+    std::tm* localTime = std::localtime(&now);
 
 	const int hr = localTime->tm_hour;
     const int min = localTime->tm_min;
