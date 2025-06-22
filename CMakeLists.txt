@@ -1,60 +1,18 @@
 cmake_minimum_required(VERSION 3.21)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "iOS" OR IOS)
     set(CMAKE_OSX_ARCHITECTURES "arm64")
 else()
     set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
 endif()
-
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 project(DayAndNightSystem VERSION 1.0.0)
 
-add_library(${PROJECT_NAME} SHARED
-    src/LevelInfoLayer.cpp
-    src/MenuLayer.cpp
-    src/CreatorLayer.cpp
-    src/LevelSearchLayer.cpp
-    src/LevelBrowserLayer.cpp
-    src/EditLevelLayer.cpp
-    src/LeaderboardsLayer.cpp
-    src/LevelSelectLayer.cpp
-    src/LevelAreaLayer.cpp
-    src/DailyLevelPage.cpp
-    src/ProfilePage.cpp
-    src/RewardsPage.cpp
-    src/ChallengesPage.cpp
-    src/MoreSearchLayer.cpp
-    src/InfoLayer.cpp
-    src/LevelLeaderboard.cpp
-    src/MessagesProfilePage.cpp
-    src/FriendsProfilePage.cpp
-    src/FRequestProfilePage.cpp
-    src/GJAccountSettingsLayer.cpp
-    src/RateDemonLayer.cpp
-    src/DemonInfoPopup.cpp
-    src/StarInfoPopup.cpp
-    src/MoreOptionsLayer.cpp
-    src/VideoOptionsLayer.cpp
-    src/TutorialLayer.cpp
-    src/LevelListLayer.cpp
-    src/LevelListLayer.cpp
-    src/GJPathsLayer.cpp
-    src/MoreVideoOptionsLayer.cpp
-    src/LikeItemLayer.cpp
-    src/RateStarsLayer.cpp
-    src/UploadActionPopup.cpp
-    src/ShareLevelLayer.cpp
-    src/ShareLevelSettingsLayer.cpp
-    src/GJPromoPopup.cpp
-    src/ShareCommentLayer.cpp
-    src/LoadingLayer.cpp
-    src/Utils.hpp
-    src/Utils.cpp
-    # Add any extra C++ source files here
-)
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
+
+add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 if (NOT DEFINED ENV{GEODE_SDK})
     message(FATAL_ERROR "Unable to find Geode SDK! Please define GEODE_SDK environment variable to point to Geode")

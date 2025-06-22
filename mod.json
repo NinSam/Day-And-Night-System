@@ -1,5 +1,5 @@
 {
-	"geode": "4.4.0",
+	"geode": "4.6.1",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -8,14 +8,14 @@
 	},
 	"id": "ninsam.day_and_night_system",
 	"name": "Day & Night System",
-	"version": "v1.1.8",
+	"version": "v1.1.9",
 	"developer": "NinSam",
 	"description": "Adds a day and night system in the GD menus!",
 	"early-load": true,
 	"dependencies": {
 
 		"geode.node-ids": {
-			"version": "1.20.1",
+			"version": "1.21.1",
             "importance": "required"
 		}
 

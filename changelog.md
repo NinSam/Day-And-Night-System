@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.9
+
+- Added iOS Jitless support
+
 ## v1.1.8
 
 - Added iOS support
