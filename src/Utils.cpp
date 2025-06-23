@@ -284,22 +284,22 @@ bool DayAndNightSystemOverlay::init(){
 
     DayAndNightSystem* DayAndNightSystem::create(){
 	auto ret = new DayAndNightSystem;
-	if (ret && ret->init()){
+	    if (ret->init()){
 		
-		ret->autorelease();
-		return ret;
-	}
-	delete ret;
-	return nullptr;
+		    ret->autorelease();
+		    return ret;
+	    }
+	    CC_SAFE_DELETE(ret);
+	    return nullptr;
 	}
 
     DayAndNightSystemOverlay* DayAndNightSystemOverlay::create(){
-	auto ret = new DayAndNightSystemOverlay;
-	if (ret && ret->init()){
+	    auto ret = new DayAndNightSystemOverlay;
+	    if (ret->init()){
 		
-		ret->autorelease();
-		return ret;
-	}
-	delete ret;
-	return nullptr;
+		    ret->autorelease();
+		    return ret;
+	    }
+	    CC_SAFE_DELETE(ret);
+	    return nullptr;
 	}
