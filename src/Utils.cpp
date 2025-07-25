@@ -9,13 +9,10 @@ bool DayAndNightSystem::init(){
 	return false;
 
 	auto now = std::chrono::system_clock::now();
-	const auto* currentzone = std::chrono::current_zone();
-	std::chrono::zoned_time zt{ currentzone, now };
-	auto localtimezone = zt.get_local_time();
-	auto timeofday = std::chrono::hh_mm_ss(localtimezone - std::chrono::floor<std::chrono::days>(localtimezone));
-
-	int hr = static_cast<int>(timeofday.hours().count());
-	int min = static_cast<int>(timeofday.minutes().count());
+    auto time = std::chrono::system_clock::to_time_t(now);
+    auto localtime = fmt::localtime(time);
+    int hr = static_cast<int>(localtime.tm_hour);
+	int min = static_cast<int>(localtime.tm_min);
 	
 	const int endhrbugfix = 24;
 	const int endtimebugfix = 0;
@@ -180,6 +177,7 @@ bool DayAndNightSystem::init(){
 
 		}
 	}
+
 	return true;
 }
 
@@ -190,13 +188,10 @@ bool DayAndNightSystemOverlay::init(){
 	return false;
 
 	auto now = std::chrono::system_clock::now();
-	const auto* currentzone = std::chrono::current_zone();
-	std::chrono::zoned_time zt{ currentzone, now };
-	auto localtimezone = zt.get_local_time();
-	auto timeofday = std::chrono::hh_mm_ss(localtimezone - std::chrono::floor<std::chrono::days>(localtimezone));
-
-	int hr = static_cast<int>(timeofday.hours().count());
-	int min = static_cast<int>(timeofday.minutes().count());
+    auto time = std::chrono::system_clock::to_time_t(now);
+    auto localtime = fmt::localtime(time);
+    int hr = static_cast<int>(localtime.tm_hour);
+	int min = static_cast<int>(localtime.tm_min);
 	
 	const int endhrdarkbugfix = 24;
 	const int enddarktimebugfix = 0;
@@ -283,7 +278,6 @@ bool DayAndNightSystemOverlay::init(){
 		}
 
 	}
-
 	return true;
 }
 
