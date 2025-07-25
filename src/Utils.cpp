@@ -1,5 +1,4 @@
 #include "Utils.hpp"
-#include <ctime>
 
 using namespace geode::prelude;
 
@@ -9,11 +8,14 @@ bool DayAndNightSystem::init(){
 
 	return false;
 
-	std::time_t now = time(nullptr);
-    std::tm* localTime = std::localtime(&now);
+	auto now = std::chrono::system_clock::now();
+	const auto* currentzone = std::chrono::current_zone();
+	std::chrono::zoned_time zt{ currentzone, now };
+	auto localtimezone = zt.get_local_time();
+	auto timeofday = std::chrono::hh_mm_ss(localtimezone - std::chrono::floor<std::chrono::days>(localtimezone));
 
-    const int hr = localTime->tm_hour;
-    const int min = localTime->tm_min;
+	int hr = static_cast<int>(timeofday.hours().count());
+	int min = static_cast<int>(timeofday.minutes().count());
 	
 	const int endhrbugfix = 24;
 	const int endtimebugfix = 0;
@@ -187,11 +189,14 @@ bool DayAndNightSystemOverlay::init(){
 
 	return false;
 
-	std::time_t now = time(nullptr);
-	std:: tm* localTime = std::localtime(&now);
+	auto now = std::chrono::system_clock::now();
+	const auto* currentzone = std::chrono::current_zone();
+	std::chrono::zoned_time zt{ currentzone, now };
+	auto localtimezone = zt.get_local_time();
+	auto timeofday = std::chrono::hh_mm_ss(localtimezone - std::chrono::floor<std::chrono::days>(localtimezone));
 
-    const int hr = localTime->tm_hour;
-    const int min = localTime->tm_min;
+	int hr = static_cast<int>(timeofday.hours().count());
+	int min = static_cast<int>(timeofday.minutes().count());
 	
 	const int endhrdarkbugfix = 24;
 	const int enddarktimebugfix = 0;

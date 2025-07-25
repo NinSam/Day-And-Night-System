@@ -1,5 +1,4 @@
 #include <Geode/Geode.hpp>
-#include <ctime>
 #include <Geode/modify/LevelAreaLayer.hpp>
 #include "Utils.hpp"
 
@@ -11,17 +10,17 @@ class $modify(LevelAreaLayer) {
 		if (!LevelAreaLayer::init())
 			return false;
 
-	std::time_t now = time(nullptr);
-    std::tm* localTime = std::localtime(&now);
+	auto now = std::chrono::system_clock::now();
+	const auto* currentzone = std::chrono::current_zone();
+	std::chrono::zoned_time zt{ currentzone, now };
+	auto localtimezone = zt.get_local_time();
+	auto timeofday = std::chrono::hh_mm_ss(localtimezone - std::chrono::floor<std::chrono::days>(localtimezone));
 
-	const int hr = localTime->tm_hour;
-    const int min = localTime->tm_min;
+	int hr = static_cast<int>(timeofday.hours().count());
+	int min = static_cast<int>(timeofday.minutes().count());
 
 	const int endhrbugfix = 24;
-	const int endminbugfix = 0;
-
-	const int starthrbugfix = 0;
-	const int startminbugfix = 0;
+	const int endtimebugfix = 0;
 
 
 	auto startsunrisehr = Mod::get()->getSettingValue<int64_t>("start-sunrise-hr");
@@ -167,7 +166,7 @@ class $modify(LevelAreaLayer) {
 		}
 		
 	}
-	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrbugfix || (hr == endhrbugfix && min < endminbugfix))){
+	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrbugfix || (hr == endhrbugfix && min < endtimebugfix))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
@@ -222,7 +221,7 @@ class $modify(LevelAreaLayer) {
 		
 		}
 	}
-	else if ((hr > starthrbugfix || (hr == starthrbugfix && min >= startminbugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
+	else if ((hr > endtimebugfix || (hr == endtimebugfix && min >= endtimebugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
 		
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 

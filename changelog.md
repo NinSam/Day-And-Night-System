@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.10
+
+- Replaced std::localtime with std::chrono functions to get current time
+
 ## v1.1.9
 
 - Added iOS Jitless support
