@@ -8,7 +8,7 @@
 	},
 	"id": "ninsam.day_and_night_system",
 	"name": "Day & Night System",
-	"version": "v1.1.10",
+	"version": "v1.2.0",
 	"developer": "NinSam",
 	"description": "Adds a day and night system in the GD menus!",
 	"early-load": true,
@@ -17,6 +17,10 @@
 		"geode.node-ids": {
 			"version": "1.21.1",
             "importance": "required"
+		},
+		"alphalaneous.alphas_geode_utils":{
+			"version": "1.1.6",
+			"importance": "required"
 		}
 
 	},

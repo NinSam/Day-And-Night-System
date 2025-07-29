@@ -12,3 +12,7 @@ Events:
 - Dark
 
 You can customize when events start and end in the settings.
+
+## Dependencies
+
+- Alpha's Geode Utils

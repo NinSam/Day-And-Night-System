@@ -5,14 +5,13 @@ using namespace geode::prelude;
 bool DayAndNightSystem::init(){
 
 	if (!CCNode::init())
-
 	return false;
 
 	auto now = std::chrono::system_clock::now();
     auto time = std::chrono::system_clock::to_time_t(now);
     auto localtime = fmt::localtime(time);
-    int hr = static_cast<int>(localtime.tm_hour);
-	int min = static_cast<int>(localtime.tm_min);
+    const int hr = static_cast<int>(localtime.tm_hour);
+	const int min = static_cast<int>(localtime.tm_min);
 	
 	const int endhrbugfix = 24;
 	const int endtimebugfix = 0;
@@ -33,7 +32,7 @@ bool DayAndNightSystem::init(){
 	auto endnighthr = Mod::get()->getSettingValue<int64_t>("end-night-hr");
 	auto endnightmin = Mod::get()->getSettingValue<int64_t>("end-night-min");
 
-	auto startdarkhr = Mod::get()->getSettingValue<int64_t>("start-dark-hr"); // there's no way I set it to sunset this whole time bruh...
+	auto startdarkhr = Mod::get()->getSettingValue<int64_t>("start-dark-hr");
 	auto startdarkmin = Mod::get()->getSettingValue<int64_t>("start-dark-min");
 	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
@@ -43,20 +42,29 @@ bool DayAndNightSystem::init(){
 	auto opacitysmallstarsdark = Mod::get()->getSettingValue<int64_t>("opacity-small-stars-dark");
 	auto opacitybigstarsdark = Mod::get()->getSettingValue<int64_t>("opacity-big-stars-dark");
 
-	float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4; // used this line of code from the Minecraftify mod to make the sprites scale to the screen size. Ty alphalaneous for saving me from even more hours of pain trying to fix this
+	float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4; // used this line of code from the Minecraftify mod to make the sprites scale to the screen size
+
+	/*
+	auto debug = CCScale9Sprite::create("sunrise.png"_spr);
+    debug->setAnchorPoint({0, 0});
+	debug->setContentWidth(850);
+	debug->setScaleY(1.6f * relativescale);
+    debug->setPosition({0, 0});
+	debug->setID("debug"_spr);
+    this->addChild(debug);
+	*/
 
 	if ((hr > startsunrisehr || (hr == startsunrisehr && min >= startsunrisemin)) && (hr < endsunrisehr || (hr == endsunrisehr && min < endsunrisemin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunrise")){
 	    
-        CCScale9Sprite* sunrise = CCScale9Sprite::create("sunrise.png"_spr);
-        
-        sunrise->setAnchorPoint({0, 0});
-		sunrise->setContentWidth(850);
-		sunrise->setScaleY(1.6f * relativescale);
-        sunrise->setPosition({0, 0});
-		sunrise->setID("sunrise"_spr);
-        this->addChild(sunrise);
+        	auto sunrise = CCScale9Sprite::create("sunrise.png"_spr);
+       	 	sunrise->setAnchorPoint({0, 0});
+			sunrise->setContentWidth(850);
+			sunrise->setScaleY(1.6f * relativescale);
+        	sunrise->setPosition({0, 0});
+			sunrise->setID("sunrise"_spr);
+        	this->addChild(sunrise);
 
 		}
 
@@ -65,14 +73,13 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunset")){
 
-        CCScale9Sprite* sunset = CCScale9Sprite::create("sunset.png"_spr);
-        
-        sunset->setAnchorPoint({0, 0});
-        sunset->setContentWidth(850);
-		sunset->setScaleY(1.6f * relativescale);
-        sunset->setPosition({0, 0});
-		sunset->setID("sunset"_spr);
-        this->addChild(sunset);
+        	auto sunset = CCScale9Sprite::create("sunset.png"_spr);
+        	sunset->setAnchorPoint({0, 0});
+       	 	sunset->setContentWidth(850);
+			sunset->setScaleY(1.6f * relativescale);
+        	sunset->setPosition({0, 0});
+			sunset->setID("sunset"_spr);
+        	this->addChild(sunset);
 
 		}
 		
@@ -81,32 +88,29 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
-		CCScale9Sprite* nightblue = CCScale9Sprite::create("night_blue.png"_spr);
-        
-        nightblue->setAnchorPoint({0, 0});
-        nightblue->setContentWidth(850);
-		nightblue->setScaleY(1.6f * relativescale);
-        nightblue->setPosition({0, 0});
-		nightblue->setID("nightblue"_spr);
-        this->addChild(nightblue,-3);
+			auto nightblue = CCScale9Sprite::create("night_blue.png"_spr);
+			nightblue->setAnchorPoint({0, 0});
+			nightblue->setContentWidth(850);
+			nightblue->setScaleY(1.6f * relativescale);
+        	nightblue->setPosition({0, 0});
+			nightblue->setID("nightblue"_spr);
+        	this->addChild(nightblue,-3);
 
-		CCSprite* smallstars = CCSprite::create("small_stars.png"_spr);
-        
-        smallstars->setAnchorPoint({0, 0});
-        smallstars->setScale(0.8f * relativescale);
-        smallstars->setPosition({0, 0});
-		smallstars->setOpacity(opacitysmallstarsnight);
-		smallstars->setID("smallstars"_spr);
-        this->addChild(smallstars,-2);
+			auto smallstars = CCSprite::create("small_stars.png"_spr);
+        	smallstars->setAnchorPoint({0, 0});
+       	 	smallstars->setScale(0.8f * relativescale);
+       	 	smallstars->setPosition({0, 0});
+			smallstars->setOpacity(opacitysmallstarsnight);
+			smallstars->setID("smallstars"_spr);
+        	this->addChild(smallstars,-2);
 
-		CCSprite* bigstars = CCSprite::create("big_stars.png"_spr);
-        
-        bigstars->setAnchorPoint({0, 0});
-        bigstars->setScale(0.8f * relativescale);
-        bigstars->setPosition({0, 0});
-		bigstars->setOpacity(opacitybigstarsnight);
-		bigstars->setID("bigstars"_spr);
-        this->addChild(bigstars,-2);
+			auto bigstars = CCSprite::create("big_stars.png"_spr);
+        	bigstars->setAnchorPoint({0, 0});
+        	bigstars->setScale(0.8f * relativescale);
+       	 	bigstars->setPosition({0, 0});
+			bigstars->setOpacity(opacitybigstarsnight);
+			bigstars->setID("bigstars"_spr);
+        	this->addChild(bigstars,-2);
 
 		}
 		
@@ -115,32 +119,29 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-		CCScale9Sprite* night = CCScale9Sprite::create("night.png"_spr);
-        
-        night->setAnchorPoint({0, 0});
-        night->setContentWidth(850);
-        night->setScaleY(1.6f * relativescale);
-        night->setPosition({0, 0});
-		night->setID("night"_spr);
-        this->addChild(night,-3);
+			auto night = CCScale9Sprite::create("night.png"_spr);
+        	night->setAnchorPoint({0, 0});
+       	 	night->setContentWidth(850);
+        	night->setScaleY(1.6f * relativescale);
+        	night->setPosition({0, 0});
+			night->setID("night"_spr);
+        	this->addChild(night,-3);
 
-        CCSprite* smallstars = CCSprite::create("small_stars.png"_spr);
-        
-        smallstars->setAnchorPoint({0, 0});
-        smallstars->setScale(0.8f * relativescale);
-        smallstars->setPosition({0, 0});
-		smallstars->setOpacity(opacitysmallstarsdark);
-		smallstars->setID("smallstars"_spr);
-        this->addChild(smallstars,-2);
+        	auto smallstars = CCSprite::create("small_stars.png"_spr);
+        	smallstars->setAnchorPoint({0, 0});
+        	smallstars->setScale(0.8f * relativescale);
+        	smallstars->setPosition({0, 0});
+			smallstars->setOpacity(opacitysmallstarsdark);
+			smallstars->setID("smallstars"_spr);
+       		this->addChild(smallstars,-2);
 
-		CCSprite* bigstars = CCSprite::create("big_stars.png"_spr);
-        
-        bigstars->setAnchorPoint({0, 0});
-        bigstars->setScale(0.8f * relativescale);
-        bigstars->setPosition({0, 0});
-		bigstars->setOpacity(opacitybigstarsdark);
-		bigstars->setID("bigstars"_spr);
-        this->addChild(bigstars,-2);
+			auto bigstars = CCSprite::create("big_stars.png"_spr);
+        	bigstars->setAnchorPoint({0, 0});
+        	bigstars->setScale(0.8f * relativescale);
+        	bigstars->setPosition({0, 0});
+			bigstars->setOpacity(opacitybigstarsdark);
+			bigstars->setID("bigstars"_spr);
+        	this->addChild(bigstars,-2);
 
 		}
 	}
@@ -148,50 +149,45 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-        CCScale9Sprite* night = CCScale9Sprite::create("night.png"_spr);
-        
-        night->setAnchorPoint({0, 0});
-		night->setContentWidth(850);
-        night->setScaleY(1.6f * relativescale);
-        night->setPosition({0, 0});
-		night->setID("night"_spr);
-        this->addChild(night);
+        	auto night = CCScale9Sprite::create("night.png"_spr);
+        	night->setAnchorPoint({0, 0});
+			night->setContentWidth(850);
+        	night->setScaleY(1.6f * relativescale);
+        	night->setPosition({0, 0});
+			night->setID("night"_spr);
+        	this->addChild(night);
 
-        CCSprite* smallstars = CCSprite::create("small_stars.png"_spr);
-        
-        smallstars->setAnchorPoint({0, 0});
-        smallstars->setScale(0.8f * relativescale);
-        smallstars->setPosition({0, 0});
-		smallstars->setOpacity(opacitysmallstarsdark);
-		smallstars->setID("smallstars"_spr);
-        this->addChild(smallstars);
+        	auto smallstars = CCSprite::create("small_stars.png"_spr);
+       		smallstars->setAnchorPoint({0, 0});
+        	smallstars->setScale(0.8f * relativescale);
+        	smallstars->setPosition({0, 0});
+			smallstars->setOpacity(opacitysmallstarsdark);
+			smallstars->setID("smallstars"_spr);
+        	this->addChild(smallstars);
 
-		CCSprite* bigstars = CCSprite::create("big_stars.png"_spr);
-        
-        bigstars->setAnchorPoint({0, 0});
-        bigstars->setScale(0.8f * relativescale);
-        bigstars->setPosition({0, 0});
-		bigstars->setOpacity(opacitybigstarsdark);
-		bigstars->setID("bigstars"_spr);
-        this->addChild(bigstars);
+			auto bigstars = CCSprite::create("big_stars.png"_spr);
+        	bigstars->setAnchorPoint({0, 0});
+        	bigstars->setScale(0.8f * relativescale);
+        	bigstars->setPosition({0, 0});
+			bigstars->setOpacity(opacitybigstarsdark);
+			bigstars->setID("bigstars"_spr);
+        	this->addChild(bigstars);
 
 		}
 	}
-
 	return true;
 }
 
 bool DayAndNightSystemOverlay::init(){
 
 	if (!CCNode::init())
-
 	return false;
 
 	auto now = std::chrono::system_clock::now();
     auto time = std::chrono::system_clock::to_time_t(now);
     auto localtime = fmt::localtime(time);
-    int hr = static_cast<int>(localtime.tm_hour);
-	int min = static_cast<int>(localtime.tm_min);
+    const int hr = static_cast<int>(localtime.tm_hour);
+	const int min = static_cast<int>(localtime.tm_min);
 	
 	const int endhrdarkbugfix = 24;
 	const int enddarktimebugfix = 0;
@@ -232,15 +228,14 @@ bool DayAndNightSystemOverlay::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
-		CCScale9Sprite* darkoverlay = CCScale9Sprite::create("night.png"_spr);
-        
-        darkoverlay->setAnchorPoint({0, 0});
-        darkoverlay->setScaleY(1.6f * relativescale);
-		darkoverlay->setContentWidth(850);
-        darkoverlay->setPosition({0, 0});
-		darkoverlay->setOpacity(opacitydarkoverlaynight);
-		darkoverlay->setID("darkoverlay"_spr);
-        this->addChild(darkoverlay);
+			auto darkoverlay = CCScale9Sprite::create("night.png"_spr);
+        	darkoverlay->setAnchorPoint({0, 0});
+        	darkoverlay->setScaleY(1.6f * relativescale);
+			darkoverlay->setContentWidth(850);
+        	darkoverlay->setPosition({0, 0});
+			darkoverlay->setOpacity(opacitydarkoverlaynight);
+			darkoverlay->setID("darkoverlay"_spr);
+        	this->addChild(darkoverlay);
 
 		}
 		
@@ -249,15 +244,14 @@ bool DayAndNightSystemOverlay::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 			
-		CCScale9Sprite* darkoverlay = CCScale9Sprite::create("night.png"_spr);
-        
-        darkoverlay->setAnchorPoint({0, 0});
-        darkoverlay->setScaleY(1.6f * relativescale);
-		darkoverlay->setContentWidth(850);
-		darkoverlay->setOpacity(opacitydarkoverlaydark);
-        darkoverlay->setPosition({0, 0});
-		darkoverlay->setID("darkoverlay"_spr);
-        this->addChild(darkoverlay);
+			auto darkoverlay = CCScale9Sprite::create("night.png"_spr);
+        	darkoverlay->setAnchorPoint({0, 0});
+        	darkoverlay->setScaleY(1.6f * relativescale);
+			darkoverlay->setContentWidth(850);
+			darkoverlay->setOpacity(opacitydarkoverlaydark);
+        	darkoverlay->setPosition({0, 0});
+			darkoverlay->setID("darkoverlay"_spr);
+        	this->addChild(darkoverlay);
 		
 		}
 	}
@@ -265,15 +259,14 @@ bool DayAndNightSystemOverlay::init(){
 		
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-		CCScale9Sprite* darkoverlay = CCScale9Sprite::create("night.png"_spr);
-        
-        darkoverlay->setAnchorPoint({0, 0});
-		darkoverlay->setContentWidth(850);
-		darkoverlay->setScaleY(1.6f * relativescale);
-        darkoverlay->setPosition({0, 0});
-		darkoverlay->setOpacity(opacitydarkoverlaydark);
-		darkoverlay->setID("darkoverlay"_spr);
-        this->addChild(darkoverlay);
+			auto darkoverlay = CCScale9Sprite::create("night.png"_spr);
+       	 	darkoverlay->setAnchorPoint({0, 0});
+			darkoverlay->setContentWidth(850);
+			darkoverlay->setScaleY(1.6f * relativescale);
+        	darkoverlay->setPosition({0, 0});
+			darkoverlay->setOpacity(opacitydarkoverlaydark);
+			darkoverlay->setID("darkoverlay"_spr);
+        	this->addChild(darkoverlay);
 
 		}
 
@@ -281,24 +274,24 @@ bool DayAndNightSystemOverlay::init(){
 	return true;
 }
 
-    DayAndNightSystem* DayAndNightSystem::create(){
+DayAndNightSystem* DayAndNightSystem::create(){
 	auto ret = new DayAndNightSystem;
-	    if (ret->init()){
+	if (ret->init()){
 		
-		    ret->autorelease();
-		    return ret;
-	    }
-	    CC_SAFE_DELETE(ret);
-	    return nullptr;
+		ret->autorelease();
+		return ret;
 	}
+	CC_SAFE_DELETE(ret);
+	return nullptr;
+}
 
-    DayAndNightSystemOverlay* DayAndNightSystemOverlay::create(){
-	    auto ret = new DayAndNightSystemOverlay;
-	    if (ret->init()){
+DayAndNightSystemOverlay* DayAndNightSystemOverlay::create(){
+	auto ret = new DayAndNightSystemOverlay;
+	if (ret->init()){
 		
-		    ret->autorelease();
-		    return ret;
-	    }
-	    CC_SAFE_DELETE(ret);
-	    return nullptr;
+		ret->autorelease();
+		return ret;
 	}
+	CC_SAFE_DELETE(ret);
+	return nullptr;
+}

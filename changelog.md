@@ -1,8 +1,10 @@
 # Changelog
 
-## v1.1.10
+## v1.2.0
 
-- Replaced std::localtime with std::chrono functions to get current time
+- Added Modded Layers
+- Added Dependency: Alpha's Geode Utils (for modded layers)
+- Internal changes of getting current time
 
 ## v1.1.9
 
