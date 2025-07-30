@@ -19,7 +19,6 @@ class $modify(LevelAreaLayer) {
 		const int endhrbugfix = 24;
 		const int endtimebugfix = 0;
 
-
 		auto startsunrisehr = Mod::get()->getSettingValue<int64_t>("start-sunrise-hr");
 		auto startsunrisemin = Mod::get()->getSettingValue<int64_t>("start-sunrise-min");
 		auto endsunrisehr = Mod::get()->getSettingValue<int64_t>("end-sunrise-hr");

@@ -4,6 +4,8 @@
 
 - Added Modded Layers
 - Added Dependency: Alpha's Geode Utils (for modded layers)
+- Added GauntletLayer & GauntletSelectLayer
+- Removed Dark Overlay to popups
 - Internal changes of getting current time
 
 ## v1.1.9
