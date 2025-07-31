@@ -36,10 +36,8 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
 		auto startdarkmin = Mod::get()->getSettingValue<int64_t>("start-dark-min");
 		auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 		auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
-	
 
 		auto screenSize = CCDirector::sharedDirector()->getWinSize();
-		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
 
 		auto DayAndNightSystem = DayAndNightSystem::create();
 		DayAndNightSystem->setID("Events"_spr);
@@ -57,15 +55,7 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
                 for (int i = 0; i < 4; ++i){
                     if (auto sprite = getChildByType<CCScale9Sprite>(i)){
 
-                        sprite->setColor(ccc3(0, 0, 0));
-                        sprite->setOpacity(80);
-						
-						auto cc9fix = CCSprite::create("CCScale9Sprite_fix_2.png"_spr); // trying not to use happy textures
-						cc9fix->setScale(1.185f * relativescale);
-						cc9fix->setOpacity(90);
-						cc9fix->setPosition(screenSize / 2 + CCPoint {0,2});
-						cc9fix->setID("cc9fix"_spr);
-						this->addChild(cc9fix,-2);
+                        sprite->setVisible(false);	
                     }
                     else{
                         // no sprite found
@@ -83,21 +73,19 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
                 for (int i = 0; i < 4; ++i){
                     if (auto sprite = getChildByType<CCScale9Sprite>(i)){
 
-                        sprite->setColor(ccc3(0, 0, 0));
-                        sprite->setOpacity(80);
-						
-						auto cc9fix = CCSprite::create("CCScale9Sprite_fix_2.png"_spr); // trying not to use happy textures
-						cc9fix->setScale(1.185f * relativescale);
-						cc9fix->setOpacity(90);
-						cc9fix->setPosition(screenSize / 2 + CCPoint {0,2});
-						cc9fix->setID("cc9fix"_spr);
-						this->addChild(cc9fix,-2);
+                        sprite->setVisible(false);
                     }
                     else{
                         // no sprite found
                     }
 
                 }
+				auto cc9fix = CCSprite::create("CCScale9Sprite_fix_random_tab.png"_spr); // texture overlapping (rated levels)
+				cc9fix->setScale(1.185f);
+				cc9fix->setOpacity(90);
+				cc9fix->setPosition(screenSize / 2 + CCPoint {0,-30});
+				cc9fix->setID("cc9fix_randomtab"_spr);
+				this->addChild(cc9fix,-2);
 
 			}
 		
@@ -116,6 +104,12 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
                     }
 
                 }
+				auto cc9fix = CCSprite::create("CCScale9Sprite_fix_random_tab.png"_spr); // texture overlapping (rated levels)
+				cc9fix->setScale(1.185f);
+				cc9fix->setOpacity(90);
+				cc9fix->setPosition(screenSize / 2 + CCPoint {0,-30});
+				cc9fix->setID("cc9fix_randomtab"_spr);
+				this->addChild(cc9fix,-2);
 
 			}
 		}

@@ -39,9 +39,7 @@ class $modify(EditLevelLayer) {
 		auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
 		auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
 
-
 		auto screenSize = CCDirector::sharedDirector()->getWinSize();
-		float relativescale = CCDirector::sharedDirector()->getContentScaleFactor()/4;
 
 		auto DayAndNightSystem = DayAndNightSystem::create();
 		DayAndNightSystem->setID("Events"_spr);
@@ -69,12 +67,19 @@ class $modify(EditLevelLayer) {
 					bg_2->setVisible(false);
 				}
 
-				auto cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr);
+				auto cc9fix = CCScale9Sprite::create("square02b_small_fix.png"_spr);
+				cc9fix->setPosition(screenSize / 2 + CCPoint {0,129.8f});
 				cc9fix->setOpacity(90);
-				cc9fix->setScale(1.185f * relativescale);
-        		cc9fix->setPosition(screenSize / 2 + CCPoint {0,92.4f});
-				cc9fix->setID("cc9fix"_spr);
-        		this->addChild(cc9fix,-2);
+				cc9fix->setContentSize({365,40});
+				cc9fix->setID("CC9Fix"_spr);
+				this->addChild(cc9fix,-2);
+
+				auto cc9fix2 = CCScale9Sprite::create("square02b_small_fix.png"_spr);
+				cc9fix2->setPosition(screenSize / 2 + CCPoint {0,64.9f});
+				cc9fix2->setOpacity(90);
+				cc9fix2->setContentSize({365,60});
+				cc9fix2->setID("CC9Fix2"_spr);
+				this->addChild(cc9fix2,-2);
 
 			}
 		
@@ -96,12 +101,19 @@ class $modify(EditLevelLayer) {
 					bg_2->setVisible(false);
 				}
 
-				auto cc9fix = CCSprite::create("CCScale9Sprite_fix_1.png"_spr);
+				auto cc9fix = CCScale9Sprite::create("square02b_small_fix.png"_spr);
+				cc9fix->setPosition(screenSize / 2 + CCPoint {0,129.8f});
 				cc9fix->setOpacity(90);
-				cc9fix->setScale(1.185f * relativescale);
-       	 		cc9fix->setPosition(screenSize / 2 + CCPoint {0,92.4f});
-				cc9fix->setID("cc9fix"_spr);
-        		this->addChild(cc9fix,-2);
+				cc9fix->setContentSize({365,40});
+				cc9fix->setID("CC9Fix"_spr);
+				this->addChild(cc9fix,-2);
+
+				auto cc9fix2 = CCScale9Sprite::create("square02b_small_fix.png"_spr);
+				cc9fix2->setPosition(screenSize / 2 + CCPoint {0,64.9f});
+				cc9fix2->setOpacity(90);
+				cc9fix2->setContentSize({365,60});
+				cc9fix2->setID("CC9Fix2"_spr);
+				this->addChild(cc9fix2,-2);
 
 			}
 		

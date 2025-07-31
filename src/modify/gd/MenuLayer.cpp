@@ -20,7 +20,7 @@ class $modify(MenuLayer) {
 
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
 		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
-		this->addChild(DayAndNightSystemOverlay,106);
+		this->addChild(DayAndNightSystemOverlay,99);
 
 		return true;
 	}

@@ -26,7 +26,8 @@
 	},
 	"tags":["offline","interface"],
 	"resources": {
-		"files":["resources/*.png"]
+		"sprites":["resources/*.png"],
+		"files": ["resources/other/night.png"]
     },
 	"links": {
 		"source": "https://github.com/NinSam/Day-And-Night-System"
