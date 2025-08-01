@@ -62,6 +62,12 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
                     }
 
                 }
+				auto cc9fix = CCSprite::create("CCScale9Sprite_fix_random_tab.png"_spr); // texture overlapping (rated levels)
+				cc9fix->setScale(0.895f);
+				cc9fix->setOpacity(90);
+				cc9fix->setPosition(screenSize / 2 + CCPoint {0,-30});
+				cc9fix->setID("cc9fix_randomtab"_spr);
+				this->addChild(cc9fix,-2);
 
 			}
 		
@@ -104,12 +110,6 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
                     }
 
                 }
-				auto cc9fix = CCSprite::create("CCScale9Sprite_fix_random_tab.png"_spr); // texture overlapping (rated levels)
-				cc9fix->setScale(0.895f);
-				cc9fix->setOpacity(90);
-				cc9fix->setPosition(screenSize / 2 + CCPoint {0,-30});
-				cc9fix->setID("cc9fix_randomtab"_spr);
-				this->addChild(cc9fix,-2);
 
 			}
 		}

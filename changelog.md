@@ -6,8 +6,9 @@
 - Added Dependency: Alpha's Geode Utils (for modded layers)
 - Added GauntletLayer & GauntletSelectLayer
 - Sprites now have low, medium, and high graphics
+- Changed default settings for customize time
 - Removed Dark Overlay to popups
-- Internal changes of getting current time
+- Internal changes for getting current time
 
 ## v1.1.9
 
