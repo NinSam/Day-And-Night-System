@@ -53,7 +53,6 @@ bool DayAndNightSystem::init(){
        	 	sunrise->setAnchorPoint({0, 0});
 			sunrise->setContentWidth(850);
 			sunrise->setScaleY(1.6f);
-        	sunrise->setPosition({0, 0});
 			sunrise->setID("sunrise"_spr);
         	this->addChild(sunrise);
 			events = 1;
@@ -72,7 +71,6 @@ bool DayAndNightSystem::init(){
         	sunset->setAnchorPoint({0, 0});
        	 	sunset->setContentWidth(850);
 			sunset->setScaleY(1.6f);
-        	sunset->setPosition({0, 0});
 			sunset->setID("sunset"_spr);
         	this->addChild(sunset);
 			events = 2;
@@ -93,16 +91,12 @@ bool DayAndNightSystem::init(){
 
 			auto smallstars = CCSprite::create("small_stars.png"_spr);
         	smallstars->setAnchorPoint({0, 0});
-       	 	smallstars->setScale(0.8f);
-       	 	smallstars->setPosition({0, 0});
 			smallstars->setOpacity(opacitysmallstarsnight);
 			smallstars->setID("smallstars"_spr);
         	this->addChild(smallstars);
 
 			auto bigstars = CCSprite::create("big_stars.png"_spr);
         	bigstars->setAnchorPoint({0, 0});
-        	bigstars->setScale(0.8f);
-       	 	bigstars->setPosition({0, 0});
 			bigstars->setOpacity(opacitybigstarsnight);
 			bigstars->setID("bigstars"_spr);
         	this->addChild(bigstars);
@@ -118,22 +112,18 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-			auto night = CCLayerColor::create(ccc4(0,0,0,255), screenSize.width, screenSize.height);
+			auto night = CCLayerColor::create(ccc4(0, 0, 0, 255), screenSize.width, screenSize.height);
 		    night->setID("night"_spr);
 		    this->addChild(night);
 
         	auto smallstars = CCSprite::create("small_stars.png"_spr);
         	smallstars->setAnchorPoint({0, 0});
-        	smallstars->setScale(0.8f);
-        	smallstars->setPosition({0, 0});
 			smallstars->setOpacity(opacitysmallstarsdark);
 			smallstars->setID("smallstars"_spr);
        		this->addChild(smallstars);
 
 			auto bigstars = CCSprite::create("big_stars.png"_spr);
         	bigstars->setAnchorPoint({0, 0});
-        	bigstars->setScale(0.8f);
-        	bigstars->setPosition({0, 0});
 			bigstars->setOpacity(opacitybigstarsdark);
 			bigstars->setID("bigstars"_spr);
         	this->addChild(bigstars);
@@ -149,22 +139,18 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
-			auto night = CCLayerColor::create(ccc4(0,0,0,255), screenSize.width, screenSize.height);
+			auto night = CCLayerColor::create(ccc4(0, 0, 0, 255), screenSize.width, screenSize.height);
 		    night->setID("night"_spr);
 		    this->addChild(night);
 
         	auto smallstars = CCSprite::create("small_stars.png"_spr);
        		smallstars->setAnchorPoint({0, 0});
-        	smallstars->setScale(0.8f);
-        	smallstars->setPosition({0, 0});
 			smallstars->setOpacity(opacitysmallstarsdark);
 			smallstars->setID("smallstars"_spr);
         	this->addChild(smallstars);
 
 			auto bigstars = CCSprite::create("big_stars.png"_spr);
         	bigstars->setAnchorPoint({0, 0});
-        	bigstars->setScale(0.8f);
-        	bigstars->setPosition({0, 0});
 			bigstars->setOpacity(opacitybigstarsdark);
 			bigstars->setID("bigstars"_spr);
         	this->addChild(bigstars);
@@ -202,7 +188,7 @@ bool DayAndNightSystemOverlay::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
-			auto darkoverlay = CCLayerColor::create(ccc4(0,0,0,opacitydarkoverlaynight), screenSize.width, screenSize.height);
+			auto darkoverlay = CCLayerColor::create(ccc4(0, 0, 0, opacitydarkoverlaynight), screenSize.width, screenSize.height);
 			darkoverlay->setID("darkoverlay"_spr);
 			this->addChild(darkoverlay);
 
@@ -213,7 +199,7 @@ bool DayAndNightSystemOverlay::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 			
-		    auto darkoverlay = CCLayerColor::create(ccc4(0,0,0,opacitydarkoverlaydark), screenSize.width, screenSize.height);
+		    auto darkoverlay = CCLayerColor::create(ccc4(0, 0, 0, opacitydarkoverlaydark), screenSize.width, screenSize.height);
 			darkoverlay->setID("darkoverlay"_spr);
 			this->addChild(darkoverlay);
 		
@@ -225,7 +211,7 @@ bool DayAndNightSystemOverlay::init(){
 
 DayAndNightSystem* DayAndNightSystem::create(){
 	auto ret = new DayAndNightSystem;
-	if (ret->init()){
+	if (ret && ret->init()){
 		
 		ret->autorelease();
 		return ret;
@@ -236,7 +222,7 @@ DayAndNightSystem* DayAndNightSystem::create(){
 
 DayAndNightSystemOverlay* DayAndNightSystemOverlay::create(){
 	auto ret = new DayAndNightSystemOverlay;
-	if (ret->init()){
+	if (ret && ret->init()){
 		
 		ret->autorelease();
 		return ret;
