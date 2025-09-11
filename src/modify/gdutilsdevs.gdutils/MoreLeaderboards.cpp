@@ -16,6 +16,12 @@ class $nodeModify(MyMoreLeaderboards, MoreLeaderboards){
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay,106);
 
+        if (auto sprite = getChildByType<CCSprite>(-4)){
+            if (DayAndNightSystem::events > 1){
+                sprite->setVisible(false);	
+			}
+		}
+
     }
 
 };

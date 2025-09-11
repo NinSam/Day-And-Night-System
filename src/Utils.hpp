@@ -1,4 +1,4 @@
-#pragma once // ty alphalaneous
+#pragma once
 
 using namespace geode::prelude;
 
@@ -9,6 +9,7 @@ bool init();
 
 public:
    static DayAndNightSystem* create();
+   static int events;
 };
 
 class DayAndNightSystemOverlay: public CCNode{

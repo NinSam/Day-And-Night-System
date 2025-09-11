@@ -7,10 +7,6 @@ using namespace geode::prelude;
 class $nodeModify(MyBetterAchievementLayer, BetterAchievementLayer){
 
     void modify(){
-
-        if (auto bg = this->getChildByID("content-background")){
-			bg->setZOrder(-3);
-		}
         
         auto DayAndNightSystem = DayAndNightSystem::create();
         DayAndNightSystem->setID("Events"_spr);
@@ -19,6 +15,13 @@ class $nodeModify(MyBetterAchievementLayer, BetterAchievementLayer){
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay,106);
+
+        if (auto bg = this->getChildByID("content-background")){
+			bg->setZOrder(-3);
+            if (DayAndNightSystem::events > 1){
+				bg->setVisible(false);
+			}
+		}
 
     }
 

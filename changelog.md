@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.2.1
+
+- Optimization: Disabled unnecessary backgrounds when one of the events have started
+- Replaced some sprites with CCLayerColor & CCLayerGradient
+- Added GYSettingSelectLayer
+- Reworked some code
+
 ## v1.2.0
 
 - Added Modded Layers

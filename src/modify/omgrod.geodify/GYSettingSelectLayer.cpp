@@ -4,10 +4,10 @@
 
 using namespace geode::prelude;
 
-class $nodeModify(MyModsLayer, ModsLayer){
+class $nodeModify(MyGYSettingSelectLayer, GYSettingSelectLayer){
 
     void modify(){
-        
+
         auto DayAndNightSystem = DayAndNightSystem::create();
         DayAndNightSystem->setID("Events"_spr);
         this->addChild(DayAndNightSystem,-2);
@@ -15,17 +15,11 @@ class $nodeModify(MyModsLayer, ModsLayer){
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay,106);
-
-        if (auto bg = this->getChildByID("SwelvyBG")){
-			bg->setZOrder(-3);
+        
+        if (auto bg = this->getChildByID("background")){
+			bg->setZOrder(-2);
             if (DayAndNightSystem::events > 1){
 				bg->setVisible(false);
-			}
-		}
-        if (auto bg2 = this->getChildByID("bg")){
-			bg2->setZOrder(-3);
-			if (DayAndNightSystem::events > 1){
-				bg2->setVisible(false);
 			}
 		}
 

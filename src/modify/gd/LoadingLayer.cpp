@@ -13,10 +13,6 @@ class $modify(LoadingLayer) {
 		auto path = dirs::getModRuntimeDir() / Mod::get()->getID() / "resources"; // ty alphalaneous
     	CCFileUtils::get()->addSearchPath(path.string().c_str());
 
-		if (auto bg = this->getChildByID("bg-texture")){
-			bg->setZOrder(-2);
-		}
-
 		auto DayAndNightSystem = DayAndNightSystem::create();
 		DayAndNightSystem->setID("Events"_spr);
 		this->addChild(DayAndNightSystem,-1);
@@ -24,6 +20,13 @@ class $modify(LoadingLayer) {
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
 		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
 		this->addChild(DayAndNightSystemOverlay,106);
+
+		if (auto bg = this->getChildByID("bg-texture")){
+			bg->setZOrder(-2);
+			if (DayAndNightSystem::events > 1){
+				bg->setVisible(false);
+			}
+		}
 
 		return true;
 	}

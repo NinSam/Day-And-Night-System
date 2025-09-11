@@ -10,10 +10,6 @@ class $modify(LeaderboardsLayer) {
 		if (!LeaderboardsLayer::init(p0))
 		return false;
 
-		if (auto bg = this->getChildByID("background")){
-			bg->setZOrder(-3);
-		}
-
 		auto DayAndNightSystem = DayAndNightSystem::create();
 		DayAndNightSystem->setID("Events"_spr);
 		this->addChild(DayAndNightSystem,-2);
@@ -21,6 +17,13 @@ class $modify(LeaderboardsLayer) {
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
 		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
 		this->addChild(DayAndNightSystemOverlay,106);
+
+		if (auto bg = this->getChildByID("background")){
+			bg->setZOrder(-3);
+			if (DayAndNightSystem::events > 1){
+				bg->setVisible(false);
+			}
+		}
 
 	
 		return true;

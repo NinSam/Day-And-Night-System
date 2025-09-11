@@ -1,5 +1,5 @@
 {
-	"geode": "4.7.0",
+	"geode": "4.8.0",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -8,7 +8,7 @@
 	},
 	"id": "ninsam.day_and_night_system",
 	"name": "Day & Night System",
-	"version": "v1.2.0",
+	"version": "v1.2.1",
 	"developer": "NinSam",
 	"description": "Adds a day and night system in the GD menus!",
 	"early-load": true,
@@ -26,8 +26,7 @@
 	},
 	"tags":["offline","interface"],
 	"resources": {
-		"sprites":["resources/*.png"],
-		"files": ["resources/other/night.png"]
+		"sprites":["resources/*.png"]
     },
 	"links": {
 		"source": "https://github.com/NinSam/Day-And-Night-System"

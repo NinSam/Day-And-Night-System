@@ -16,6 +16,12 @@ class $nodeModify(MyDPSearchLayer, DPSearchLayer){
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay,106);
 
+        if (auto bg = this->getChildByID("bg")){
+            if (DayAndNightSystem::events > 1){
+				bg->setVisible(false);
+			}
+		}
+
     }
 
 };

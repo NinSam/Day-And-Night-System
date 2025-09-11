@@ -17,6 +17,12 @@ class $modify(GauntletSelectLayer) {
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay,106);
+
+        if (auto bg = this->getChildByID("background")){
+			if (DayAndNightSystem::events > 1){
+				bg->setVisible(false);
+			}
+		}
         
         return true;
     }
