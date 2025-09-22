@@ -152,19 +152,19 @@ class $modify(LevelSearchLayer) {
 					bg->setVisible(false);
 				}
 				if (auto sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bg"))){
-					sprite->setColor(ccc3(0, 0, 50));
+					sprite->setColor(ccc3(0, 0, 75));
 				}
 				if (auto sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"))){
-					sprite_1->setColor(ccc3(0, 0, 50));
+					sprite_1->setColor(ccc3(0, 0, 75));
 				}
 				if (auto sprite_2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("difficulty-filters-bg"))){
-					sprite_2->setColor(ccc3(0, 0, 50));
+					sprite_2->setColor(ccc3(0, 0, 75));
 				}
 				if (auto sprite_3 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("length-filters-bg"))){
-					sprite_3->setColor(ccc3(0, 0, 50));
+					sprite_3->setColor(ccc3(0, 0, 75));
 				}
 				if (auto sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"))){
-					sprite_4->setColor(ccc3(0, 0, 0));
+					sprite_4->setColor(ccc3(0, 0, 25));
 				}
 
 			}

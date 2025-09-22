@@ -102,7 +102,7 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
                 for (int i = 0; i < 4; ++i){
                     if (auto sprite = getChildByType<CCScale9Sprite>(i)){
                             
-                        sprite->setColor(ccc3(0, 0, 50));
+                        sprite->setColor(ccc3(0, 0, 75));
                     }
                     else{
                         // no sprite found

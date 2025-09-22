@@ -108,7 +108,7 @@ bool DayAndNightSystem::init(){
 		}
 		
 	}
-	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrbugfix || (hr == endhrbugfix && min < endtimebugfix))){
+	else if ((hr > startdarkhr || (hr == startdarkhr && min >= startdarkmin)) && (hr < endhrbugfix || (hr == endhrbugfix && min < endtimebugfix)) 	|| 	(hr > endtimebugfix || (hr == endtimebugfix && min >= endtimebugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
@@ -135,33 +135,6 @@ bool DayAndNightSystem::init(){
 		}
 		
 	}
-	else if ((hr > endtimebugfix || (hr == endtimebugfix && min >= endtimebugfix)) && (hr < enddarkhr || (hr == enddarkhr && min < enddarkmin))){
-
-		if (Mod::get()->getSettingValue<bool>("enable-dark")){
-
-			auto night = CCLayerColor::create(ccc4(0, 0, 0, 255), screenSize.width, screenSize.height);
-		    night->setID("night"_spr);
-		    this->addChild(night);
-
-        	auto smallstars = CCSprite::create("small_stars.png"_spr);
-       		smallstars->setAnchorPoint({0, 0});
-			smallstars->setOpacity(opacitysmallstarsdark);
-			smallstars->setID("smallstars"_spr);
-        	this->addChild(smallstars);
-
-			auto bigstars = CCSprite::create("big_stars.png"_spr);
-        	bigstars->setAnchorPoint({0, 0});
-			bigstars->setOpacity(opacitybigstarsdark);
-			bigstars->setID("bigstars"_spr);
-        	this->addChild(bigstars);
-			events = 4;
-
-		}
-		else{
-		    events = 0;
-		}
-
-	}
 	else{
 		events = 0;
 	}
@@ -178,13 +151,7 @@ bool DayAndNightSystemOverlay::init(){
 
 	CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
 
-	if (DayAndNightSystem::events == 1){
-
-	}
-	else if (DayAndNightSystem::events == 2){
-
-	}
-	else if (DayAndNightSystem::events == 3){
+	if (DayAndNightSystem::events == 3){
 
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 

@@ -30,8 +30,9 @@ class $modify(EditLevelLayer) {
 				if (auto bg_1 = this->getChildByID("level-name-background")){
 					bg_1->setVisible(false);
 				}
-				if (auto bg_2 = this->getChildByID("description-background")){
-					bg_2->setVisible(false);
+				if (auto bg_2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"))){
+					bg_2->setColor(ccc3(0, 0, 0));
+					bg_2->setOpacity(90);
 				}
 
 				auto cc9fix = CCScale9Sprite::create("square02b_small_fix.png"_spr);
@@ -40,13 +41,6 @@ class $modify(EditLevelLayer) {
 				cc9fix->setContentSize({365,40});
 				cc9fix->setID("CC9Fix"_spr);
 				this->addChild(cc9fix,-2);
-
-				auto cc9fix2 = CCScale9Sprite::create("square02b_small_fix.png"_spr);
-				cc9fix2->setPosition(screenSize / 2 + CCPoint {0,64.9f});
-				cc9fix2->setOpacity(90);
-				cc9fix2->setContentSize({365,60});
-				cc9fix2->setID("CC9Fix2"_spr);
-				this->addChild(cc9fix2,-2);
 
 			}
 		
@@ -61,8 +55,9 @@ class $modify(EditLevelLayer) {
 				if (auto bg_1 = this->getChildByID("level-name-background")){
 					bg_1->setVisible(false);
 				}
-				if (auto bg_2 = this->getChildByID("description-background")){
-					bg_2->setVisible(false);
+				if (auto bg_2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"))){
+					bg_2->setColor(ccc3(0, 0, 0));
+					bg_2->setOpacity(90);
 				}
 
 				auto cc9fix = CCScale9Sprite::create("square02b_small_fix.png"_spr);
@@ -71,13 +66,6 @@ class $modify(EditLevelLayer) {
 				cc9fix->setContentSize({365,40});
 				cc9fix->setID("CC9Fix"_spr);
 				this->addChild(cc9fix,-2);
-
-				auto cc9fix2 = CCScale9Sprite::create("square02b_small_fix.png"_spr);
-				cc9fix2->setPosition(screenSize / 2 + CCPoint {0,64.9f});
-				cc9fix2->setOpacity(90);
-				cc9fix2->setContentSize({365,60});
-				cc9fix2->setID("CC9Fix2"_spr);
-				this->addChild(cc9fix2,-2);
 
 			}
 		
@@ -107,10 +95,10 @@ class $modify(EditLevelLayer) {
 					bg->setVisible(false);
 				}
 				if (auto sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-name-background"))){
-					sprite->setColor(ccc3(0, 0, 50));
+					sprite->setColor(ccc3(0, 0, 75));
 				}
 				if (auto sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"))){
-					sprite_1->setColor(ccc3(0, 0, 50));
+					sprite_1->setColor(ccc3(0, 0, 75));
 				}
 
 			}

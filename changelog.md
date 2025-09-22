@@ -3,6 +3,7 @@
 ## v1.2.1
 
 - Optimization: Disabled unnecessary backgrounds when one of the events have started
+- CCScale9Sprites in EditLevelLayer, LevelSearchLayer, & RandomLayer are a bit more visible in the dark event
 - Replaced some sprites with CCLayerColor & CCLayerGradient
 - Added GYSettingSelectLayer
 - Reworked some code
