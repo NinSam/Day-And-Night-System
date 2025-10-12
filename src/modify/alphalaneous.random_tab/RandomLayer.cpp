@@ -30,9 +30,6 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
 
                         sprite->setVisible(false);	
                     }
-                    else{
-                        // no sprite found
-                    }
 
                 }
 				auto cc9fix = CCSprite::create("CCScale9Sprite_fix_random_tab.png"_spr); // texture overlapping (rated levels)
@@ -56,9 +53,6 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
                     if (auto sprite = getChildByType<CCScale9Sprite>(i)){
 
                         sprite->setVisible(false);
-                    }
-                    else{
-                        // no sprite found
                     }
 
                 }
@@ -84,9 +78,6 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
 
                         sprite->setColor(ccc3(0, 30, 125));
                     }
-                    else{
-                        // no sprite found
-                    }
 
                 }
 
@@ -103,9 +94,6 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
                     if (auto sprite = getChildByType<CCScale9Sprite>(i)){
                             
                         sprite->setColor(ccc3(0, 0, 75));
-                    }
-                    else{
-                        // no sprite found
                     }
 
                 }

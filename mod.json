@@ -1,5 +1,5 @@
 {
-	"geode": "4.8.0",
+	"geode": "4.9.0",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -43,7 +43,7 @@
 			"default": 6,
 			"min": 0,
 			"max": 24,
-			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24).",
+			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24)",
 			"enable-if": "enable-sunrise"
 		},
 		"start-sunrise-min":{
@@ -61,7 +61,7 @@
 			"default": 7,
 			"min": 0,
 			"max": 24,
-			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24).",
+			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24)",
 			"enable-if": "enable-sunrise"
 		},
 		"end-sunrise-min":{
@@ -79,7 +79,7 @@
 			"default": 19,
 			"min": 0,
 			"max": 24,
-			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24).",
+			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24)",
 			"enable-if": "enable-sunset"
 		},
 		"start-sunset-min":{
@@ -97,7 +97,7 @@
 			"default": 19,
 			"min": 0,
 			"max": 24,
-			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24).",
+			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24)",
 			"enable-if": "enable-sunset"
 		},
 		"end-sunset-min":{
@@ -115,7 +115,7 @@
 			"default": 19,
 			"min": 0,
 			"max": 24,
-			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24).",
+			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24)",
 			"enable-if": "enable-night"
 		},
 		"start-night-min":{
@@ -133,7 +133,7 @@
 			"default": 20,
 			"min": 0,
 			"max": 24,
-			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24).",
+			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24)",
 			"enable-if": "enable-night"
 		},
 		"end-night-min":{
@@ -151,7 +151,7 @@
 			"default": 20,
 			"min": 0,
 			"max": 24,
-			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24).",
+			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24)",
 			"enable-if": "enable-dark"
 		},
 		"start-dark-min":{
@@ -169,7 +169,7 @@
 			"default": 6,
 			"min": 0,
 			"max": 24,
-			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24).",
+			"description": "12am-12pm or 0:00-12:00 (0-12). 1pm-12am or 13:00-24:00 (13-24)",
 			"enable-if": "enable-dark"
 		},
 		"end-dark-min":{
@@ -187,25 +187,25 @@
 		},
 		"enable-sunrise":{
 			"name": "Sunrise Event",
-			"description": "Enable/Disable the sunrise event.",
+			"description": "Enable/Disable the sunrise event",
 			"type": "bool",
 			"default": true
 		},
 		"enable-sunset":{
 			"name": "Sunset Event",
-			"description": "Enable/Disable the sunset event.",
+			"description": "Enable/Disable the sunset event",
 			"type": "bool",
 			"default": true
 		},
 		"enable-night":{
 			"name": "Night Event",
-			"description": "Enable/Disable the night event.",
+			"description": "Enable/Disable the night event",
 			"type": "bool",
 			"default": true
 		},
 		"enable-dark":{
 			"name": "Dark Event",
-			"description": "Enable/Disable the dark event.",
+			"description": "Enable/Disable the dark event",
 			"type": "bool",
 			"default": true
 		},
@@ -215,7 +215,7 @@
 		},
 		"opacity-small-stars-night":{
 			"name": "Small Star Opacity In Night Event",
-			"description": "Set the opacity of the small stars during the night event.",
+			"description": "Set the opacity of the small stars during the night event",
 			"type": "int",
 			"default": 220,
 			"min": 0,
@@ -223,7 +223,7 @@
 		},
 		"opacity-big-stars-night":{
 			"name": "Big Star Opacity In Night Event",
-			"description": "Set the opacity of the big stars during the night event.",
+			"description": "Set the opacity of the big stars during the night event",
 			"type": "int",
 			"default": 255,
 			"min": 0,
@@ -231,7 +231,7 @@
 		},
 		"opacity-small-stars-dark":{
 			"name": "Small Star Opacity In Dark Event",
-			"description": "Set the opacity of the small stars during the dark event.",
+			"description": "Set the opacity of the small stars during the dark event",
 			"type": "int",
 			"default": 220,
 			"min": 0,
@@ -239,7 +239,7 @@
 		},
 		"opacity-big-stars-dark":{
 			"name": "Big Star Opacity In Dark Event",
-			"description": "Set the opacity of the big stars during the dark event.",
+			"description": "Set the opacity of the big stars during the dark event",
 			"type": "int",
 			"default": 255,
 			"min": 0,
@@ -251,7 +251,7 @@
 		},
 		"opacity-dark-overlay-night":{
 			"name": "Dark Overlay Opacity In Night Event",
-			"description": "Set the opacity of the dark overlay during the night event.",
+			"description": "Set the opacity of the dark overlay during the night event",
 			"type": "int",
 			"default": 105,
 			"min": 0,
@@ -259,7 +259,7 @@
 		},
 		"opacity-dark-overlay-dark":{
 			"name": "Dark Overlay Opacity In Dark Event",
-			"description": "Set the opacity of the dark overlay during the dark event.",
+			"description": "Set the opacity of the dark overlay during the dark event",
 			"type": "int",
 			"default": 105,
 			"min": 0,
