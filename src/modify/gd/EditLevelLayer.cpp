@@ -10,8 +10,6 @@ class $modify(EditLevelLayer) {
 		if (!EditLevelLayer::init(p0))
 		return false;
 
-		auto screenSize = CCDirector::sharedDirector()->getWinSize();
-
 		auto DayAndNightSystem = DayAndNightSystem::create();
 		DayAndNightSystem->setID("Events"_spr);
 		this->addChild(DayAndNightSystem,-2);
@@ -34,13 +32,15 @@ class $modify(EditLevelLayer) {
 					bg_2->setColor(ccc3(0, 0, 0));
 					bg_2->setOpacity(90);
 				}
+				if (auto nameInput = this->getChildByID("level-name-input")){
 
-				auto cc9fix = CCScale9Sprite::create("square02b_small_fix.png"_spr);
-				cc9fix->setPosition(screenSize / 2 + CCPoint {0,129.8f});
-				cc9fix->setOpacity(90);
-				cc9fix->setContentSize({365,40});
-				cc9fix->setID("CC9Fix"_spr);
-				this->addChild(cc9fix,-2);
+					auto cc9fix = CCScale9Sprite::create("square02b_small_fix.png"_spr);
+					cc9fix->setOpacity(90);
+					cc9fix->setContentSize({365,40});
+					cc9fix->setID("CC9Fix"_spr);
+					nameInput->addChild(cc9fix,-2);
+
+				}
 
 			}
 		
@@ -59,13 +59,15 @@ class $modify(EditLevelLayer) {
 					bg_2->setColor(ccc3(0, 0, 0));
 					bg_2->setOpacity(90);
 				}
+				if (auto nameInput = this->getChildByID("level-name-input")){
 
-				auto cc9fix = CCScale9Sprite::create("square02b_small_fix.png"_spr);
-				cc9fix->setPosition(screenSize / 2 + CCPoint {0,129.8f});
-				cc9fix->setOpacity(90);
-				cc9fix->setContentSize({365,40});
-				cc9fix->setID("CC9Fix"_spr);
-				this->addChild(cc9fix,-2);
+					auto cc9fix = CCScale9Sprite::create("square02b_small_fix.png"_spr);
+					cc9fix->setOpacity(90);
+					cc9fix->setContentSize({365,40});
+					cc9fix->setID("CC9Fix"_spr);
+					nameInput->addChild(cc9fix,-2);
+					
+				}
 
 			}
 		

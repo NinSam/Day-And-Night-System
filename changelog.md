@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.2
+
+- Fixed title-background in LevelListLayer not appearing/changing colors when one of the events have started
+- Fixed CCScale9Sprite positioning on different resolutions in EditLevelLayer during the sunrise & sunset event
+
 ## v1.2.1
 
 - Optimization: Disabled unnecessary backgrounds when one of the events have started
