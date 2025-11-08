@@ -177,23 +177,23 @@ bool DayAndNightSystemOverlay::init(){
 }
 
 DayAndNightSystem* DayAndNightSystem::create(){
-	auto ret = new DayAndNightSystem;
+	auto ret = new DayAndNightSystem();
 	if (ret && ret->init()){
 		
 		ret->autorelease();
 		return ret;
 	}
-	CC_SAFE_DELETE(ret);
+	delete ret;
 	return nullptr;
 }
 
 DayAndNightSystemOverlay* DayAndNightSystemOverlay::create(){
-	auto ret = new DayAndNightSystemOverlay;
+	auto ret = new DayAndNightSystemOverlay();
 	if (ret && ret->init()){
 		
 		ret->autorelease();
 		return ret;
 	}
-	CC_SAFE_DELETE(ret);
+	delete ret;
 	return nullptr;
 }

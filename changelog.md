@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.3
+
+- Fixed crash when entering an online list during the sunrise & sunset event
+
 ## v1.2.2
 
 - Fixed title-background in LevelListLayer not appearing/changing colors when one of the events have started

@@ -28,7 +28,7 @@ class $modify(LevelListLayer) {
 				if (auto bg_2 = this->getChildByID("title-background")){
 					bg_2->setVisible(false);
 				}
-				if (auto titleLabel = this->getChildByID("title-label")){
+				if (auto titleLabel = typeinfo_cast<CCTextInputNode*>(this->getChildByID("title-label"))){
 
 					auto cc9fix = CCScale9Sprite::create("square02b_small_fix.png"_spr);
 					cc9fix->setOpacity(90);
@@ -51,7 +51,7 @@ class $modify(LevelListLayer) {
 				if (auto bg_2 = this->getChildByID("title-background")){
 					bg_2->setVisible(false);
 				}
-				if (auto titleLabel = this->getChildByID("title-label")){
+				if (auto titleLabel = typeinfo_cast<CCTextInputNode*>(this->getChildByID("title-label"))){
 
 					auto cc9fix = CCScale9Sprite::create("square02b_small_fix.png"_spr);
 					cc9fix->setOpacity(90);
