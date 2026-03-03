@@ -1,5 +1,5 @@
 #include <Geode/Geode.hpp>
-#include <alphalaneous.alphas_geode_utils/include/NodeModding.h>
+#include <alphalaneous.alphas_geode_utils/include/ObjectModify.hpp>
 #include "../../Utils.hpp"
 
 using namespace geode::prelude;
@@ -10,15 +10,15 @@ class $nodeModify(MyGlobedFeaturedListLayer, GlobedFeaturedListLayer){
         
         auto DayAndNightSystem = DayAndNightSystem::create();
         DayAndNightSystem->setID("Events"_spr);
-        this->addChild(DayAndNightSystem,-1);
+        this->addChild(DayAndNightSystem, -1);
         
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
-        this->addChild(DayAndNightSystemOverlay,106);
+        this->addChild(DayAndNightSystemOverlay, 106);
 
         if (auto bg = this->getChildByID("background")){
 			bg->setZOrder(-2);
-            if (DayAndNightSystem::events > 1){
+            if (DayAndNightSystem::events > 0.99f){
 				bg->setVisible(false);
 			}
 		}

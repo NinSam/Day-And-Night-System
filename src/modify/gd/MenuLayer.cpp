@@ -12,7 +12,7 @@ class $modify(MenuLayer) {
 
 		auto DayAndNightSystem = DayAndNightSystem::create();
 		DayAndNightSystem->setID("Events"_spr);
-		this->addChild(DayAndNightSystem,-1);
+		this->addChild(DayAndNightSystem, -1);
 
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
 		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
@@ -20,7 +20,7 @@ class $modify(MenuLayer) {
 
 		if (auto bg = this->getChildByID("main-menu-bg")){
 			bg->setZOrder(-2);
-			if (DayAndNightSystem::events > 1){
+			if (DayAndNightSystem::events > 0.99f){
 				bg->setVisible(false);
 			}
 		}

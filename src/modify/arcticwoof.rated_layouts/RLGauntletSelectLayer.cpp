@@ -4,25 +4,24 @@
 
 using namespace geode::prelude;
 
-class $nodeModify(MyGDCPListLayer, GDCPListLayer){
+class $nodeModify(MyRLGauntletSelectLayer, RLGauntletSelectLayer){
 
     void modify(){
 
         auto DayAndNightSystem = DayAndNightSystem::create();
         DayAndNightSystem->setID("Events"_spr);
-        this->addChild(DayAndNightSystem, -2);
+        this->addChild(DayAndNightSystem, -1);
         
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
-        if (auto bg = this->getChildByID("background")){
-			bg->setZOrder(-3);
+        if (auto bg = this->getChildByID("bg")){
             if (DayAndNightSystem::events > 0.99f){
 				bg->setVisible(false);
 			}
 		}
-
+        
     }
 
 };

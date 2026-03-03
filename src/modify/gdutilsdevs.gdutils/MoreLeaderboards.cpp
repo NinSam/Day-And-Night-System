@@ -1,5 +1,5 @@
 #include <Geode/Geode.hpp>
-#include <alphalaneous.alphas_geode_utils/include/NodeModding.h>
+#include <alphalaneous.alphas_geode_utils/include/ObjectModify.hpp>
 #include "../../Utils.hpp"
 
 using namespace geode::prelude;
@@ -10,14 +10,14 @@ class $nodeModify(MyMoreLeaderboards, MoreLeaderboards){
 
         auto DayAndNightSystem = DayAndNightSystem::create();
         DayAndNightSystem->setID("Events"_spr);
-        this->addChild(DayAndNightSystem,-1);
+        this->addChild(DayAndNightSystem, -1);
         
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
-        this->addChild(DayAndNightSystemOverlay,106);
+        this->addChild(DayAndNightSystemOverlay, 106);
 
         if (auto sprite = getChildByType<CCSprite>(-4)){
-            if (DayAndNightSystem::events > 1){
+            if (DayAndNightSystem::events > 0.99f){
                 sprite->setVisible(false);	
 			}
 		}

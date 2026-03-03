@@ -1,4 +1,5 @@
 #include "Utils.hpp"
+#include <Geode/utils/general.hpp>
 
 using namespace geode::prelude;
 
@@ -11,7 +12,7 @@ bool DayAndNightSystem::init(){
 
 	auto now = std::chrono::system_clock::now();
     auto time = std::chrono::system_clock::to_time_t(now);
-    auto localtime = fmt::localtime(time);
+    auto localtime = geode::localtime(time);
     const int hr = static_cast<int>(localtime.tm_hour);
 	const int min = static_cast<int>(localtime.tm_min);
 	
@@ -43,13 +44,13 @@ bool DayAndNightSystem::init(){
 	auto opacitysmallstarsdark = Mod::get()->getSettingValue<int64_t>("opacity-small-stars-dark");
 	auto opacitybigstarsdark = Mod::get()->getSettingValue<int64_t>("opacity-big-stars-dark");
 
-	CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
+	auto screenSize = CCDirector::sharedDirector()->getWinSize();
 	
 	if ((hr > startsunrisehr || (hr == startsunrisehr && min >= startsunrisemin)) && (hr < endsunrisehr || (hr == endsunrisehr && min < endsunrisemin))){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunrise")){
 	    
-        	auto sunrise = CCScale9Sprite::create("sunrise.png"_spr);
+        	auto sunrise = NineSlice::create("sunrise.png"_spr);
        	 	sunrise->setAnchorPoint({0, 0});
 			sunrise->setContentWidth(850);
 			sunrise->setScaleY(1.6f);
@@ -67,7 +68,7 @@ bool DayAndNightSystem::init(){
 
 		if (Mod::get()->getSettingValue<bool>("enable-sunset")){
 
-        	auto sunset = CCScale9Sprite::create("sunset.png"_spr);
+        	auto sunset = NineSlice::create("sunset.png"_spr);
         	sunset->setAnchorPoint({0, 0});
        	 	sunset->setContentWidth(850);
 			sunset->setScaleY(1.6f);
@@ -149,30 +150,23 @@ bool DayAndNightSystemOverlay::init(){
 	auto opacitydarkoverlaynight = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-night");
 	auto opacitydarkoverlaydark = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-dark");
 
-	CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
+	auto screenSize = CCDirector::sharedDirector()->getWinSize();
 
 	if (DayAndNightSystem::events == 3){
 
-		if (Mod::get()->getSettingValue<bool>("enable-night")){
-
-			auto darkoverlay = CCLayerColor::create(ccc4(0, 0, 0, opacitydarkoverlaynight), screenSize.width, screenSize.height);
-			darkoverlay->setID("darkoverlay"_spr);
-			this->addChild(darkoverlay);
-
-		}
+		auto darkoverlay = CCLayerColor::create(ccc4(0, 0, 0, opacitydarkoverlaynight), screenSize.width, screenSize.height);
+		darkoverlay->setID("darkoverlay"_spr);
+		this->addChild(darkoverlay);
 		
 	}
 	else if (DayAndNightSystem::events == 4){
-
-		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 			
-		    auto darkoverlay = CCLayerColor::create(ccc4(0, 0, 0, opacitydarkoverlaydark), screenSize.width, screenSize.height);
-			darkoverlay->setID("darkoverlay"_spr);
-			this->addChild(darkoverlay);
-		
-		}
+		auto darkoverlay = CCLayerColor::create(ccc4(0, 0, 0, opacitydarkoverlaydark), screenSize.width, screenSize.height);
+		darkoverlay->setID("darkoverlay"_spr);
+		this->addChild(darkoverlay);
 		
 	}
+
 	return true;
 }
 
