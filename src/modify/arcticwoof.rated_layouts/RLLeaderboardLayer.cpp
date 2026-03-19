@@ -17,11 +17,17 @@ class $nodeModify(MyRLLeaderboardLayer, RLLeaderboardLayer){
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
-        if (auto rBG = getChildByType<cue::RepeatingBackground>(0)){
-            if (DayAndNightSystem::events > 0.99f){
+        if (DayAndNightSystem::events > 0.99f){
+
+            if (auto rBG = getChildByType<cue::RepeatingBackground>(0)){
                 rBG->setVisible(false);
             }
+            else if (auto bg = this->getChildByID("bg")){
+			    bg->setVisible(false);
+		    }
+
         }
+        
     }
 
 };

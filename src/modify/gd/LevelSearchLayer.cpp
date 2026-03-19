@@ -18,8 +18,8 @@ class $modify(LevelSearchLayer) {
 		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 106);
 
-		if (auto bg = this->getChildByID("background")){
-            if (DayAndNightSystem::events > 0.99f){
+		if (DayAndNightSystem::events > 0.99f){
+			if (auto bg = this->getChildByID("background")){
 				bg->setVisible(false);
 			}
 		}
@@ -36,13 +36,13 @@ class $modify(LevelSearchLayer) {
 				cc9fix->setID("CC9Fix"_spr);
 				this->addChild(cc9fix,-2);
 			}
-			if (auto bg_2 = this->getChildByID("difficulty-filters-bg")){
-				bg_2->setVisible(false);
+			if (auto bg2 = this->getChildByID("difficulty-filters-bg")){
+				bg2->setVisible(false);
 
 				auto cc9fix2 = NineSlice::create("square02_001.png");
-				cc9fix2->setPosition(bg_2->getPosition());
+				cc9fix2->setPosition(bg2->getPosition());
 				cc9fix2->setOpacity(90);
-				cc9fix2->setContentSize(bg_2->getContentSize());
+				cc9fix2->setContentSize(bg2->getContentSize());
 				cc9fix2->setID("CC9Fix2"_spr);
 				this->addChild(cc9fix2,-2);
 			}
@@ -69,19 +69,19 @@ class $modify(LevelSearchLayer) {
 		else if (DayAndNightSystem::events == 3){
 
 			if (auto sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bg"))){
-				sprite->setColor(ccc3(0, 30, 125));
+				sprite->setColor(ccc3(0, 0, 140));
 			}
 			if (auto sprite_1 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("quick-search-bg"))){
-				sprite_1->setColor(ccc3(0, 30, 125));
+				sprite_1->setColor(ccc3(0, 0, 140));
 			}
 			if (auto sprite_2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("difficulty-filters-bg"))){
-				sprite_2->setColor(ccc3(0, 30, 125));
+				sprite_2->setColor(ccc3(0, 0, 140));
 			}
 			if (auto sprite_3 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("length-filters-bg"))){
-				sprite_3->setColor(ccc3(0, 30, 125));
+				sprite_3->setColor(ccc3(0, 0, 140));
 			}
 			if (auto sprite_4 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"))){
-				sprite_4->setColor(ccc3(0, 0, 75));
+				sprite_4->setColor(ccc3(0, 0, 80));
 			}
 
 		}

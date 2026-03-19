@@ -17,38 +17,32 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
-        if (auto bg = this->getChildByID("bg")){
-            if (DayAndNightSystem::events > 0.99f){
+		if (DayAndNightSystem::events > 0.99f){
+
+			if (auto rBG = getChildByType<cue::RepeatingBackground>(0)){
+            	rBG->setVisible(false);
+        	}
+        	else if (auto bg = this->getChildByID("bg")){
 				bg->setVisible(false);
 			}
-		}
-        if (auto rBG = getChildByType<cue::RepeatingBackground>(0)){
-            if (DayAndNightSystem::events > 0.99f){
-                rBG->setVisible(false);
-            }
-        }
 
-        if (auto versionsPanel = this->getChildByID("versions-panel")){
-            if (DayAndNightSystem::events > 2.99f){
+		}
+		if (DayAndNightSystem::events > 2.99f){
+
+			if (auto versionsPanel = this->getChildByID("versions-panel")){
 				versionsPanel->setVisible(false);
 			}
-		}
-        if (auto optionsPanel = this->getChildByID("options-panel-first")){
-            if (DayAndNightSystem::events > 2.99f){
+        	if (auto optionsPanel = this->getChildByID("options-panel-first")){
 				optionsPanel->setVisible(false);
 			}
-		}
-        if (auto optionsPanel2 = this->getChildByID("options-panel-second")){
-            if (DayAndNightSystem::events > 2.99f){
+        	if (auto optionsPanel2 = this->getChildByID("options-panel-second")){
 				optionsPanel2->setVisible(false);
 			}
-		}
-        if (auto demonsPanel = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("demons-panel"))){
-            if (DayAndNightSystem::events > 2.99f){
+        	if (auto demonsPanel = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("demons-panel"))){
 				demonsPanel->setOpacity(0);
 			}
-		}
 
+		}
         if (DayAndNightSystem::events == 3){
 
             if (auto optionsPanel_ = this->getChildByID("options-panel-first")){
@@ -56,7 +50,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
                 auto nineSliceFix2 = NineSlice::create("square02b_small.png");
 				nineSliceFix2->setPosition(optionsPanel_->getPosition());
 				nineSliceFix2->setContentSize(optionsPanel_->getContentSize());
-                nineSliceFix2->setColor(ccc3(0, 30, 125));
+                nineSliceFix2->setColor(ccc3(0, 0, 140));
 				nineSliceFix2->setID("nineSliceFix2"_spr);
 				this->addChild(nineSliceFix2, -1);
                 
@@ -66,7 +60,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
                 auto nineSliceFix = NineSlice::create("square02b_small.png");
 				nineSliceFix->setPosition(optionsPanel2_->getPosition());
 				nineSliceFix->setContentSize(optionsPanel2_->getContentSize());
-                nineSliceFix->setColor(ccc3(0, 30, 125));
+                nineSliceFix->setColor(ccc3(0, 0, 140));
 				nineSliceFix->setID("nineSliceFix"_spr);
 				this->addChild(nineSliceFix, -1);
                 
@@ -76,7 +70,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
                 auto nineSliceFix3 = NineSlice::create("square02b_small.png");
 				nineSliceFix3->setPosition(versionsPanel_->getPosition());
 				nineSliceFix3->setContentSize(versionsPanel_->getContentSize());
-                nineSliceFix3->setColor(ccc3(0, 30, 125));
+                nineSliceFix3->setColor(ccc3(0, 0, 140));
 				nineSliceFix3->setID("nineSliceFix3"_spr);
 				this->addChild(nineSliceFix3, -1);
                 
@@ -86,7 +80,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
                 auto nineSliceFix4 = NineSlice::create("square02b_small.png");
 				nineSliceFix4->setPosition(15, 69.5f);
 				nineSliceFix4->setContentSize(demonsPanel_->getContentSize());
-                nineSliceFix4->setColor(ccc3(0, 30, 125));
+                nineSliceFix4->setColor(ccc3(0, 0, 140));
 				nineSliceFix4->setID("nineSliceFix4"_spr);
 				demonsPanel_->addChild(nineSliceFix4, -1);
                 

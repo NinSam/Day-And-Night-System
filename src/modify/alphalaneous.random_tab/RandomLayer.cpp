@@ -15,12 +15,12 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
 		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 106);
-
-		if (auto sprite = getChildByType<CCSprite>(-1)){
-            if (DayAndNightSystem::events > 0.99f){
-				sprite->setVisible(false);
-			}
-		}
+        
+        if (DayAndNightSystem::events > 0.99f){
+            if (auto sprite = getChildByType<CCSprite>(-1)){
+			    sprite->setVisible(false);
+		    }
+        }
 		
     	if ((DayAndNightSystem::events == 1) || (DayAndNightSystem::events == 2)){
 			
@@ -39,7 +39,7 @@ class $nodeModify(MyRandomLayer, RandomLayer) {
             for (int i = 0; i < 4; ++i){
                 if (auto sprite = getChildByType<NineSlice>(i)){
 
-                    sprite->setColor(ccc3(0, 30, 125));
+                    sprite->setColor(ccc3(0, 0, 140));
                 }
 
             }

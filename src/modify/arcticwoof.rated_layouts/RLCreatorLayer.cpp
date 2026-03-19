@@ -18,10 +18,15 @@ class $nodeModify(MyRLCreatorLayer, RLCreatorLayer){
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
-        if (auto rBG = getChildByType<cue::RepeatingBackground>(0)){
-            if (DayAndNightSystem::events > 0.99f){
-                rBG->setVisible(false);
+        if (DayAndNightSystem::events > 0.99f){
+
+            if (auto rBG = getChildByType<cue::RepeatingBackground>(0)){
+                rBG->setVisible(false); 
             }
+            else if (auto bg = this->getChildByID("bg")){
+			    bg->setVisible(false);
+		    }
+
         }
 
         if (DayAndNightSystem::events == 3){
@@ -34,7 +39,7 @@ class $nodeModify(MyRLCreatorLayer, RLCreatorLayer){
                 auto nineSliceFix = NineSlice::create("square02b_small.png");
 				nineSliceFix->setPosition(sprite->getPosition());
 				nineSliceFix->setContentSize(sprite->getContentSize());
-                nineSliceFix->setColor(ccc3(0, 30, 125));
+                nineSliceFix->setColor(ccc3(0, 0, 140));
 				nineSliceFix->setID("nineSliceFix"_spr);
 				this->addChild(nineSliceFix, 9);
             }

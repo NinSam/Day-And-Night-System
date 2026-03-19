@@ -16,7 +16,7 @@ class $modify(MenuLayer) {
 
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
 		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
-		this->addChild(DayAndNightSystemOverlay,99);
+		this->addChild(DayAndNightSystemOverlay, 99);
 
 		if (auto bg = this->getChildByID("main-menu-bg")){
 			bg->setZOrder(-2);

@@ -18,21 +18,19 @@ class $nodeModify(MyLeaderboardLayer, LeaderboardLayer){
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
-        if (auto shaderBg = this->getChildByID("trending-background")){
-            if (DayAndNightSystem::events > 0.99f){
-				shaderBg->setPositionY(99999);
-			}
-		}
-        if (auto shaderBg2 = this->getChildByID("background-shader")){
-            if (DayAndNightSystem::events > 0.99f){
-				shaderBg2->setPositionY(99999);
-			}
-		}
-        if (auto bg = this->getChildByID("background")){
-            if (DayAndNightSystem::events > 0.99f){
-				bg->setVisible(false);
-			}
-		}
+        if (DayAndNightSystem::events > 0.99f){
+
+            if (auto shaderBg = this->getChildByID("trending-background")){
+			    shaderBg->setPositionY(99999);
+		    }
+            if (auto shaderBg2 = this->getChildByID("background-shader")){
+		    	shaderBg2->setPositionY(99999);
+		    }
+            if (auto bg = this->getChildByID("background")){
+		    	bg->setVisible(false);
+		    }
+
+        }
         
         if (auto listBg = this->getChildByID("level-list")){
 

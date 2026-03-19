@@ -16,17 +16,29 @@ class $nodeModify(MyGlobalListLayer, GlobalListLayer){
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
-        if (auto bg = this->getChildByID("gdl-backgrownd")){
-            if (DayAndNightSystem::events > 0.99f){
-				bg->setVisible(false);
-			}
-		}
-        if (auto listLayer = typeinfo_cast<GJListLayer*>(this->getChildByID("GJListLayer"))){
-            if (DayAndNightSystem::events > 2.99f){
-				listLayer->setOpacity(255);
+        if (DayAndNightSystem::events > 0.99f){
+            if (auto bg = this->getChildByID("gdl-backgrownd")){
+			    bg->setVisible(false);	
+		    }
+        }
+
+        if ((DayAndNightSystem::events == 1) || (DayAndNightSystem::events == 2)){
+
+            if (auto listLayer = typeinfo_cast<GJListLayer*>(this->getChildByID("GJListLayer"))){
                 listLayer->setColor(ccc3(0, 0, 0));
-			}
-		}
+            }
+
+        }
+        else if (DayAndNightSystem::events > 2.99f){
+
+            if (auto listLayer = typeinfo_cast<GJListLayer*>(this->getChildByID("GJListLayer"))){
+
+                listLayer->setOpacity(255);
+                listLayer->setColor(ccc3(0, 0, 0));
+                
+            }
+
+        }
 
     }
 

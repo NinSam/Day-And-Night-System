@@ -16,11 +16,11 @@ class $nodeModify(MyRLGauntletSelectLayer, RLGauntletSelectLayer){
         DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
-        if (auto bg = this->getChildByID("bg")){
-            if (DayAndNightSystem::events > 0.99f){
-				bg->setVisible(false);
-			}
-		}
+        if (DayAndNightSystem::events > 0.99f){
+            if (auto bg = this->getChildByID("bg")){
+			    bg->setVisible(false);
+		    }
+        }
         
     }
 

@@ -15,11 +15,11 @@
 	"dependencies": {
 
 		"geode.node-ids": {
-			"version": "1.23.1",
+			"version": "1.23.3",
             "required": true
 		},
 		"alphalaneous.alphas_geode_utils":{
-			"version": "1.2.1",
+			"version": "1.2.4",
 			"required": true
 		}
 
@@ -214,7 +214,7 @@
 			"type": "title"
 		},
 		"opacity-small-stars-night":{
-			"name": "Small Star Opacity In Night Event",
+			"name": "Night Event: Small Star Opacity",
 			"description": "Set the opacity of the small stars during the night event",
 			"type": "int",
 			"default": 220,
@@ -222,7 +222,7 @@
 			"max": 255
 		},
 		"opacity-big-stars-night":{
-			"name": "Big Star Opacity In Night Event",
+			"name": "Night Event: Big Star Opacity",
 			"description": "Set the opacity of the big stars during the night event",
 			"type": "int",
 			"default": 255,
@@ -230,7 +230,7 @@
 			"max": 255
 		},
 		"opacity-small-stars-dark":{
-			"name": "Small Star Opacity In Dark Event",
+			"name": "Dark Event: Small Star Opacity",
 			"description": "Set the opacity of the small stars during the dark event",
 			"type": "int",
 			"default": 220,
@@ -238,7 +238,7 @@
 			"max": 255
 		},
 		"opacity-big-stars-dark":{
-			"name": "Big Star Opacity In Dark Event",
+			"name": "Dark Event: Big Star Opacity",
 			"description": "Set the opacity of the big stars during the dark event",
 			"type": "int",
 			"default": 255,
@@ -250,7 +250,7 @@
 			"type": "title"
 		},
 		"opacity-dark-overlay-night":{
-			"name": "Dark Overlay Opacity In Night Event",
+			"name": "Night Event: Dark Overlay Opacity",
 			"description": "Set the opacity of the dark overlay during the night event",
 			"type": "int",
 			"default": 105,
@@ -258,7 +258,7 @@
 			"max": 225
 		},
 		"opacity-dark-overlay-dark":{
-			"name": "Dark Overlay Opacity In Dark Event",
+			"name": "Dark Event: Dark Overlay Opacity",
 			"description": "Set the opacity of the dark overlay during the dark event",
 			"type": "int",
 			"default": 105,

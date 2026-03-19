@@ -18,33 +18,30 @@ class $modify(LevelListLayer) {
 		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 106);
 
-		if (auto bg = this->getChildByID("background")){
-            if (DayAndNightSystem::events > 0.99f){
+		if (DayAndNightSystem::events > 0.99f){
+			if (auto bg = this->getChildByID("background")){
 				bg->setVisible(false);
 			}
 		}
 
 		if ((DayAndNightSystem::events == 1) || (DayAndNightSystem::events == 2)) {
 
-			if (auto bg_2 = this->getChildByID("title-background")){
-				bg_2->setVisible(false);
+			if (auto bg2 = this->getChildByID("title-background")){
+				bg2->setVisible(false);
 
-				if (auto titleLabel = typeinfo_cast<CCTextInputNode*>(this->getChildByID("title-label"))){
-
-					auto cc9fix = NineSlice::create("square02_001.png");
-					cc9fix->setOpacity(90);
-					cc9fix->setContentSize(bg_2->getContentSize());
-					cc9fix->setID("CC9Fix"_spr);
-					titleLabel->addChild(cc9fix,-2);
-					
-				}
+				auto cc9fix = NineSlice::create("square02_001.png");
+				cc9fix->setOpacity(90);
+				cc9fix->setPosition(bg2->getPosition());
+				cc9fix->setContentSize(bg2->getContentSize());
+				cc9fix->setID("CC9Fix"_spr);
+				this->addChild(cc9fix, -2);
 			}
 		
 		}
 		else if (DayAndNightSystem::events == 3){
 
 			if (auto sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("title-background"))){
-				sprite->setColor(ccc3(0, 30, 125));
+				sprite->setColor(ccc3(0, 0, 140));
 			}
 
 		}

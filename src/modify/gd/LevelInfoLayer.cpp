@@ -18,15 +18,36 @@ class $modify(LevelInfoLayer) {
 		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 106);
 
-		if (auto bg = this->getChildByID("background")){
-			if (DayAndNightSystem::events > 0.99f){
+		if (DayAndNightSystem::events > 0.99f){
+			if (auto bg = this->getChildByID("background")){
 				bg->setVisible(false);
 			}
 		}
-		if (auto bg_2 = this->getChildByID("level-bg")){
-			if (DayAndNightSystem::events > 0.99f){
-				bg_2->setVisible(false);
+		
+
+		if (DayAndNightSystem::events > 2.99f){
+
+			if (auto normalBar = typeinfo_cast<CCSprite*>(this->getChildByID("normal-mode-bar"))){
+
+                auto cc9fix = NineSlice::create("GJ_progressBar_001.png");
+                cc9fix->setPosition(170, 10);
+				cc9fix->setContentSize({343, 23});
+				cc9fix->setID("CC9Fix"_spr);
+				normalBar->addChild(cc9fix, -1);
+				
+                normalBar->setOpacity(255);
 			}
+            if (auto practiceBar = typeinfo_cast<CCSprite*>(this->getChildByID("practice-mode-bar"))){
+
+                auto cc9fix2 = NineSlice::create("GJ_progressBar_001.png");
+                cc9fix2->setPosition(170, 10);
+				cc9fix2->setContentSize({343, 23});
+				cc9fix2->setID("CC9Fix2"_spr);
+				practiceBar->addChild(cc9fix2, -1);
+
+                practiceBar->setOpacity(255);
+			}
+
 		}
 
 		return true;

@@ -22,12 +22,16 @@ class $nodeModify(MyIDPackLayer, IDPackLayer){
 				bg->setVisible(false);
 			}
 		}
-        if (auto listLayer = typeinfo_cast<GJListLayer*>(this->getChildByID("GJListLayer"))){
-            if (DayAndNightSystem::events > 2.99f){
-				listLayer->setOpacity(255);
+        if (DayAndNightSystem::events > 2.99f){
+
+            if (auto listLayer = typeinfo_cast<GJListLayer*>(this->getChildByID("GJListLayer"))){
+           
+			    listLayer->setOpacity(255);
                 listLayer->setColor(ccc3(0, 0, 0));
-			}
-		}
+			
+		    }
+
+        }
 
     }
 

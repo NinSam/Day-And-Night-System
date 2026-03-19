@@ -22,7 +22,7 @@ class $nodeModify(MyModsLayer, ModsLayer){
 				bg->setVisible(false);
 			}
 		}
-        if (auto bg2 = this->getChildByID("bg")){
+        else if (auto bg2 = this->getChildByID("bg")){
 			bg2->setZOrder(-3);
 			if (DayAndNightSystem::events > 0.99f){
 				bg2->setVisible(false);

@@ -19,30 +19,30 @@ bool DayAndNightSystem::init(){
 	const int endhrbugfix = 24;
 	const int endtimebugfix = 0;
 
-	auto startsunrisehr = Mod::get()->getSettingValue<int64_t>("start-sunrise-hr");
-	auto startsunrisemin = Mod::get()->getSettingValue<int64_t>("start-sunrise-min");
-	auto endsunrisehr = Mod::get()->getSettingValue<int64_t>("end-sunrise-hr");
-	auto endsunrisemin = Mod::get()->getSettingValue<int64_t>("end-sunrise-min");
+	auto startsunrisehr = Mod::get()->getSettingValue<int>("start-sunrise-hr");
+	auto startsunrisemin = Mod::get()->getSettingValue<int>("start-sunrise-min");
+	auto endsunrisehr = Mod::get()->getSettingValue<int>("end-sunrise-hr");
+	auto endsunrisemin = Mod::get()->getSettingValue<int>("end-sunrise-min");
 
-	auto startsunsethr = Mod::get()->getSettingValue<int64_t>("start-sunset-hr");
-	auto startsunsetmin = Mod::get()->getSettingValue<int64_t>("start-sunset-min");
-	auto endsunsethr = Mod::get()->getSettingValue<int64_t>("end-sunset-hr");
-	auto endsunsetmin = Mod::get()->getSettingValue<int64_t>("end-sunset-min");
+	auto startsunsethr = Mod::get()->getSettingValue<int>("start-sunset-hr");
+	auto startsunsetmin = Mod::get()->getSettingValue<int>("start-sunset-min");
+	auto endsunsethr = Mod::get()->getSettingValue<int>("end-sunset-hr");
+	auto endsunsetmin = Mod::get()->getSettingValue<int>("end-sunset-min");
 
-	auto startnighthr = Mod::get()->getSettingValue<int64_t>("start-night-hr");
-	auto startnightmin = Mod::get()->getSettingValue<int64_t>("start-night-min");
-	auto endnighthr = Mod::get()->getSettingValue<int64_t>("end-night-hr");
-	auto endnightmin = Mod::get()->getSettingValue<int64_t>("end-night-min");
+	auto startnighthr = Mod::get()->getSettingValue<int>("start-night-hr");
+	auto startnightmin = Mod::get()->getSettingValue<int>("start-night-min");
+	auto endnighthr = Mod::get()->getSettingValue<int>("end-night-hr");
+	auto endnightmin = Mod::get()->getSettingValue<int>("end-night-min");
 
-	auto startdarkhr = Mod::get()->getSettingValue<int64_t>("start-dark-hr");
-	auto startdarkmin = Mod::get()->getSettingValue<int64_t>("start-dark-min");
-	auto enddarkhr = Mod::get()->getSettingValue<int64_t>("end-dark-hr");
-	auto enddarkmin = Mod::get()->getSettingValue<int64_t>("end-dark-min");
+	auto startdarkhr = Mod::get()->getSettingValue<int>("start-dark-hr");
+	auto startdarkmin = Mod::get()->getSettingValue<int>("start-dark-min");
+	auto enddarkhr = Mod::get()->getSettingValue<int>("end-dark-hr");
+	auto enddarkmin = Mod::get()->getSettingValue<int>("end-dark-min");
 
-	auto opacitysmallstarsnight = Mod::get()->getSettingValue<int64_t>("opacity-small-stars-night");
-	auto opacitybigstarsnight = Mod::get()->getSettingValue<int64_t>("opacity-big-stars-night");
-	auto opacitysmallstarsdark = Mod::get()->getSettingValue<int64_t>("opacity-small-stars-dark");
-	auto opacitybigstarsdark = Mod::get()->getSettingValue<int64_t>("opacity-big-stars-dark");
+	auto opacitysmallstarsnight = Mod::get()->getSettingValue<int>("opacity-small-stars-night");
+	auto opacitybigstarsnight = Mod::get()->getSettingValue<int>("opacity-big-stars-night");
+	auto opacitysmallstarsdark = Mod::get()->getSettingValue<int>("opacity-small-stars-dark");
+	auto opacitybigstarsdark = Mod::get()->getSettingValue<int>("opacity-big-stars-dark");
 
 	auto screenSize = CCDirector::sharedDirector()->getWinSize();
 	
@@ -147,8 +147,8 @@ bool DayAndNightSystemOverlay::init(){
 	if (!CCNode::init())
 	return false;
 
-	auto opacitydarkoverlaynight = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-night");
-	auto opacitydarkoverlaydark = Mod::get()->getSettingValue<int64_t>("opacity-dark-overlay-dark");
+	auto opacitydarkoverlaynight = Mod::get()->getSettingValue<int>("opacity-dark-overlay-night");
+	auto opacitydarkoverlaydark = Mod::get()->getSettingValue<int>("opacity-dark-overlay-dark");
 
 	auto screenSize = CCDirector::sharedDirector()->getWinSize();
 
