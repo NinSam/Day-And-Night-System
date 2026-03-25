@@ -10,11 +10,11 @@ class $nodeModify(MyRLSearchLayer, RLSearchLayer){
     void modify(){
 
 		auto DayAndNightSystem = DayAndNightSystem::create();
-		DayAndNightSystem->setID("Events"_spr);
+		DayAndNightSystem->setID("events"_spr);
 		this->addChild(DayAndNightSystem, -1);
 
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+		DayAndNightSystemOverlay->setID("screen-overlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 106);
 
 		if (DayAndNightSystem::events > 0.99f){
@@ -46,7 +46,7 @@ class $nodeModify(MyRLSearchLayer, RLSearchLayer){
         	}
 			else if (auto bg = this->getChildByID("bg")){
 			
-				bg->removeFromParentAndCleanup(true); // there's a duplicate bg as of v0.4.3-beta-5
+				bg->removeFromParentAndCleanup(true); // there's a duplicate bg as of v0.4.3-beta-6
 
 				if (auto bg2 = this->getChildByID("bg")){
 					bg2->setVisible(false);
@@ -75,7 +75,7 @@ class $nodeModify(MyRLSearchLayer, RLSearchLayer){
 				nineSliceFix->setPosition(sprite->getPosition());
 				nineSliceFix->setContentSize(sprite->getContentSize());
                 nineSliceFix->setColor(ccc3(0, 0, 140));
-				nineSliceFix->setID("nineSliceFix"_spr);
+				nineSliceFix->setID("nine-slice-fix"_spr);
 				this->addChild(nineSliceFix, 1);
             }
 			if (auto sprite2 = getChildByType<NineSlice>(1)){
@@ -86,16 +86,20 @@ class $nodeModify(MyRLSearchLayer, RLSearchLayer){
 				nineSliceFix2->setPosition(sprite2->getPosition());
 				nineSliceFix2->setContentSize(sprite2->getContentSize());
                 nineSliceFix2->setColor(ccc3(0, 0, 140));
-				nineSliceFix2->setID("nineSliceFix2"_spr);
+				nineSliceFix2->setID("nine-slice-fix-2"_spr);
 				this->addChild(nineSliceFix2, 1);
             }
             if (auto searchInputMenu = this->getChildByID("search-input-menu")){
 
+				if (auto searchInputMenuBG = typeinfo_cast<NineSlice*>(searchInputMenu->getChildByIndex(0))){
+					searchInputMenuBG->setVisible(false);
+				}
+
                 auto nineSliceInput = NineSlice::create("square02b_small.png");
 				nineSliceInput->setPosition(searchInputMenu->getPosition());
 				nineSliceInput->setContentSize(searchInputMenu->getContentSize());
-                nineSliceInput->setColor(ccc3(0, 0, 230));
-				nineSliceInput->setID("nineSliceInput"_spr);
+                nineSliceInput->setColor(ccc3(0, 0, 140));
+				nineSliceInput->setID("nine-slice-input-fix"_spr);
 				this->addChild(nineSliceInput, -1);
                     
 		    }
@@ -110,7 +114,7 @@ class $nodeModify(MyRLSearchLayer, RLSearchLayer){
 				nineSliceFix->setPosition(sprite->getPosition());
 				nineSliceFix->setContentSize(sprite->getContentSize());
                 nineSliceFix->setColor(ccc3(0, 0, 75));
-				nineSliceFix->setID("nineSliceFix"_spr);
+				nineSliceFix->setID("nine-slice-fix"_spr);
 				this->addChild(nineSliceFix, 1);
             }
 			if (auto sprite2 = getChildByType<NineSlice>(1)){
@@ -121,16 +125,20 @@ class $nodeModify(MyRLSearchLayer, RLSearchLayer){
 				nineSliceFix2->setPosition(sprite2->getPosition());
 				nineSliceFix2->setContentSize(sprite2->getContentSize());
                 nineSliceFix2->setColor(ccc3(0, 0, 75));
-				nineSliceFix2->setID("nineSliceFix2"_spr);
+				nineSliceFix2->setID("nine-slice-fix-2"_spr);
 				this->addChild(nineSliceFix2, 1);
             }
             if (auto searchInputMenu = this->getChildByID("search-input-menu")){
 
+				if (auto searchInputMenuBG = typeinfo_cast<NineSlice*>(searchInputMenu->getChildByIndex(0))){
+					searchInputMenuBG->setVisible(false);
+				}
+
                 auto nineSliceInput = NineSlice::create("square02b_small.png");
 				nineSliceInput->setPosition(searchInputMenu->getPosition());
 				nineSliceInput->setContentSize(searchInputMenu->getContentSize());
-                nineSliceInput->setColor(ccc3(0, 0, 120));
-				nineSliceInput->setID("nineSliceInput"_spr);
+                nineSliceInput->setColor(ccc3(0, 0, 75));
+				nineSliceInput->setID("nine-slice-input-fix"_spr);
 				this->addChild(nineSliceInput, -1);
                     
 		    }

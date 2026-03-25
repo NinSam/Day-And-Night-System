@@ -54,7 +54,7 @@ bool DayAndNightSystem::init(){
        	 	sunrise->setAnchorPoint({0, 0});
 			sunrise->setContentWidth(850);
 			sunrise->setScaleY(1.6f);
-			sunrise->setID("sunrise"_spr);
+			sunrise->setID("sunrise");
         	this->addChild(sunrise);
 			events = 1;
 
@@ -72,7 +72,7 @@ bool DayAndNightSystem::init(){
         	sunset->setAnchorPoint({0, 0});
        	 	sunset->setContentWidth(850);
 			sunset->setScaleY(1.6f);
-			sunset->setID("sunset"_spr);
+			sunset->setID("sunset");
         	this->addChild(sunset);
 			events = 2;
 
@@ -87,19 +87,19 @@ bool DayAndNightSystem::init(){
 		if (Mod::get()->getSettingValue<bool>("enable-night")){
 
 			auto nightblue = CCLayerGradient::create(ccc4(0, 0, 85, 255),ccc4(0, 0, 0, 255));
-			nightblue->setID("nightblue"_spr);
+			nightblue->setID("night-blue");
 			this->addChild(nightblue);
 
 			auto smallstars = CCSprite::create("small_stars.png"_spr);
         	smallstars->setAnchorPoint({0, 0});
 			smallstars->setOpacity(opacitysmallstarsnight);
-			smallstars->setID("smallstars"_spr);
+			smallstars->setID("small-stars");
         	this->addChild(smallstars);
 
 			auto bigstars = CCSprite::create("big_stars.png"_spr);
         	bigstars->setAnchorPoint({0, 0});
 			bigstars->setOpacity(opacitybigstarsnight);
-			bigstars->setID("bigstars"_spr);
+			bigstars->setID("big-stars");
         	this->addChild(bigstars);
 			events = 3;
 
@@ -114,19 +114,19 @@ bool DayAndNightSystem::init(){
 		if (Mod::get()->getSettingValue<bool>("enable-dark")){
 
 			auto night = CCLayerColor::create(ccc4(0, 0, 0, 255), screenSize.width, screenSize.height);
-		    night->setID("night"_spr);
+		    night->setID("night");
 		    this->addChild(night);
 
         	auto smallstars = CCSprite::create("small_stars.png"_spr);
         	smallstars->setAnchorPoint({0, 0});
 			smallstars->setOpacity(opacitysmallstarsdark);
-			smallstars->setID("smallstars"_spr);
+			smallstars->setID("small-stars");
        		this->addChild(smallstars);
 
 			auto bigstars = CCSprite::create("big_stars.png"_spr);
         	bigstars->setAnchorPoint({0, 0});
 			bigstars->setOpacity(opacitybigstarsdark);
-			bigstars->setID("bigstars"_spr);
+			bigstars->setID("big-stars");
         	this->addChild(bigstars);
 			events = 4;
 
@@ -155,14 +155,12 @@ bool DayAndNightSystemOverlay::init(){
 	if (DayAndNightSystem::events == 3){
 
 		auto darkoverlay = CCLayerColor::create(ccc4(0, 0, 0, opacitydarkoverlaynight), screenSize.width, screenSize.height);
-		darkoverlay->setID("darkoverlay"_spr);
 		this->addChild(darkoverlay);
 		
 	}
 	else if (DayAndNightSystem::events == 4){
 			
 		auto darkoverlay = CCLayerColor::create(ccc4(0, 0, 0, opacitydarkoverlaydark), screenSize.width, screenSize.height);
-		darkoverlay->setID("darkoverlay"_spr);
 		this->addChild(darkoverlay);
 		
 	}

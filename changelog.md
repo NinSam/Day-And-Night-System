@@ -1,8 +1,19 @@
 # Changelog
 
-## v1.2.4
+## v1.3.0
 
-
+- Ported to GD 2.2081 & Geode v5.4.1
+- Added 11 Modded Layers
+- Added LevelPage in LevelSelectLayer
+- Added a white outline around the progress bars in LevelInfoLayer & LevelPage in the night & dark event
+- Tweaked CCScale9Sprites/NineSlice colors in the night event
+- GJListLayer's bg is set to a solid black color in the night & dark event in some Modded Layers
+- Renamed some Mod Settings
+- Fixed a crash in EditLevelLayer if the level is uploaded in the sunrise & sunset event
+- Fixed a bug in LevelListLayer where the title background wouldn't show if the list is uploaded in the sunrise & sunset event
+- Fixed Dark Overlay layering above BetterInfo's ProfileSearchOptions Popup
+- Fixed unnecessary backgrounds not disabling in the sunrise event
+- Reworked code
 
 ## v1.2.3
 

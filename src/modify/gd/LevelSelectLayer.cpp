@@ -11,24 +11,22 @@ class $modify(LevelSelectLayer) {
 		return false;
 
 		auto DayAndNightSystem = DayAndNightSystem::create();
-		DayAndNightSystem->setID("Events"_spr);
+		DayAndNightSystem->setID("events"_spr);
 		this->addChild(DayAndNightSystem, -1);
 
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+		DayAndNightSystemOverlay->setID("screen-overlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 106);
 
-		if (auto bg = this->getChildByID("background")){
-			bg->setZOrder(-3);
-			if (DayAndNightSystem::events > 0.99f){
+		if (DayAndNightSystem::events > 0.99f){
+
+			if (auto bg = this->getChildByID("background")){
 				bg->setVisible(false);
 			}
-		}
-		if (auto ground = this->getChildByID("ground-layer")){
-			ground->setZOrder(-2);
-			if (DayAndNightSystem::events > 0.99f){
+			if (auto ground = this->getChildByID("ground-layer")){
 				ground->setVisible(false);
 			}
+
 		}
 
 		return true;

@@ -14,18 +14,18 @@ class $modify(LoadingLayer) {
     	CCFileUtils::get()->addSearchPath(path.string().c_str());
 
 		auto DayAndNightSystem = DayAndNightSystem::create();
-		DayAndNightSystem->setID("Events"_spr);
+		DayAndNightSystem->setID("events"_spr);
 		this->addChild(DayAndNightSystem, -1);
 
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+		DayAndNightSystemOverlay->setID("screen-overlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 106);
 
-		if (auto bg = this->getChildByID("bg-texture")){
-			bg->setZOrder(-2);
-			if (DayAndNightSystem::events > 0.99f){
+		if (DayAndNightSystem::events > 0.99f){
+			if (auto bg = this->getChildByID("bg-texture")){
 				bg->setVisible(false);
 			}
+			
 		}
 
 		return true;

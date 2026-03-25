@@ -11,11 +11,11 @@ class $modify(LevelListLayer) {
 		return false;
 
 		auto DayAndNightSystem = DayAndNightSystem::create();
-		DayAndNightSystem->setID("Events"_spr);
+		DayAndNightSystem->setID("events"_spr);
 		this->addChild(DayAndNightSystem, -2);
 
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+		DayAndNightSystemOverlay->setID("screen-overlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 106);
 
 		if (DayAndNightSystem::events > 0.99f){
@@ -29,12 +29,12 @@ class $modify(LevelListLayer) {
 			if (auto bg2 = this->getChildByID("title-background")){
 				bg2->setVisible(false);
 
-				auto cc9fix = NineSlice::create("square02_001.png");
-				cc9fix->setOpacity(90);
-				cc9fix->setPosition(bg2->getPosition());
-				cc9fix->setContentSize(bg2->getContentSize());
-				cc9fix->setID("CC9Fix"_spr);
-				this->addChild(cc9fix, -2);
+				auto cc9Fix = NineSlice::create("square02_001.png");
+				cc9Fix->setOpacity(90);
+				cc9Fix->setPosition(bg2->getPosition());
+				cc9Fix->setContentSize(bg2->getContentSize());
+				cc9Fix->setID("cc-9-fix"_spr);
+				this->addChild(cc9Fix, -2);
 			}
 		
 		}

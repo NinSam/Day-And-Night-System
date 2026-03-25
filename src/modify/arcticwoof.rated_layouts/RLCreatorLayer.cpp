@@ -11,11 +11,11 @@ class $nodeModify(MyRLCreatorLayer, RLCreatorLayer){
         
 
         auto DayAndNightSystem = DayAndNightSystem::create();
-        DayAndNightSystem->setID("Events"_spr);
+        DayAndNightSystem->setID("events"_spr);
         this->addChild(DayAndNightSystem, -1);
         
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-        DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+        DayAndNightSystemOverlay->setID("screen-overlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
         if (DayAndNightSystem::events > 0.99f){
@@ -40,7 +40,7 @@ class $nodeModify(MyRLCreatorLayer, RLCreatorLayer){
 				nineSliceFix->setPosition(sprite->getPosition());
 				nineSliceFix->setContentSize(sprite->getContentSize());
                 nineSliceFix->setColor(ccc3(0, 0, 140));
-				nineSliceFix->setID("nineSliceFix"_spr);
+				nineSliceFix->setID("nine-slice-fix"_spr);
 				this->addChild(nineSliceFix, 9);
             }
             
@@ -57,7 +57,7 @@ class $nodeModify(MyRLCreatorLayer, RLCreatorLayer){
 				nineSliceFix->setPosition(sprite->getPosition());
 				nineSliceFix->setContentSize(sprite->getContentSize());
                 nineSliceFix->setColor(ccc3(0, 0, 75));
-				nineSliceFix->setID("nineSliceFix"_spr);
+				nineSliceFix->setID("nine-slice-fix"_spr);
 				this->addChild(nineSliceFix, 9);
             }
             

@@ -11,11 +11,11 @@ class $modify(EditLevelLayer) {
 		return false;
 
 		auto DayAndNightSystem = DayAndNightSystem::create();
-		DayAndNightSystem->setID("Events"_spr);
+		DayAndNightSystem->setID("events"_spr);
 		this->addChild(DayAndNightSystem, -2);
 
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+		DayAndNightSystemOverlay->setID("screen-overlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 106);
 
 		if (DayAndNightSystem::events > 0.99f){
@@ -26,15 +26,15 @@ class $modify(EditLevelLayer) {
 
 		if ((DayAndNightSystem::events == 1) || (DayAndNightSystem::events == 2)){
 
-			if (auto bg_1 = this->getChildByID("level-name-background")){
-				bg_1->setVisible(false);
+			if (auto bg1 = this->getChildByID("level-name-background")){
+				bg1->setVisible(false);
 
-				auto cc9fix = NineSlice::create("square02_001.png");
-				cc9fix->setPosition(bg_1->getPosition());
-				cc9fix->setOpacity(90);
-				cc9fix->setContentSize(bg_1->getContentSize());
-				cc9fix->setID("CC9Fix"_spr);
-				this->addChild(cc9fix, -2);
+				auto cc9Fix = NineSlice::create("square02_001.png");
+				cc9Fix->setPosition(bg1->getPosition());
+				cc9Fix->setOpacity(90);
+				cc9Fix->setContentSize(bg1->getContentSize());
+				cc9Fix->setID("cc-9-fix"_spr);
+				this->addChild(cc9Fix, -2);
 			}
 			if (auto bg2 = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("description-background"))){
 				bg2->setColor(ccc3(0, 0, 0));

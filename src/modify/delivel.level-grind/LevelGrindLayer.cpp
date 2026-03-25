@@ -10,11 +10,11 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
     void modify(){
 
         auto DayAndNightSystem = DayAndNightSystem::create();
-        DayAndNightSystem->setID("Events"_spr);
+        DayAndNightSystem->setID("events"_spr);
         this->addChild(DayAndNightSystem, -2);
         
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-        DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+        DayAndNightSystemOverlay->setID("screen-overlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
 		if (DayAndNightSystem::events > 0.99f){
@@ -51,7 +51,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
 				nineSliceFix2->setPosition(optionsPanel_->getPosition());
 				nineSliceFix2->setContentSize(optionsPanel_->getContentSize());
                 nineSliceFix2->setColor(ccc3(0, 0, 140));
-				nineSliceFix2->setID("nineSliceFix2"_spr);
+				nineSliceFix2->setID("nine-slice-fix-2"_spr);
 				this->addChild(nineSliceFix2, -1);
                 
 		    }
@@ -61,7 +61,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
 				nineSliceFix->setPosition(optionsPanel2_->getPosition());
 				nineSliceFix->setContentSize(optionsPanel2_->getContentSize());
                 nineSliceFix->setColor(ccc3(0, 0, 140));
-				nineSliceFix->setID("nineSliceFix"_spr);
+				nineSliceFix->setID("nine-slice-fix"_spr);
 				this->addChild(nineSliceFix, -1);
                 
 		    }
@@ -71,7 +71,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
 				nineSliceFix3->setPosition(versionsPanel_->getPosition());
 				nineSliceFix3->setContentSize(versionsPanel_->getContentSize());
                 nineSliceFix3->setColor(ccc3(0, 0, 140));
-				nineSliceFix3->setID("nineSliceFix3"_spr);
+				nineSliceFix3->setID("nine-slice-fix-3"_spr);
 				this->addChild(nineSliceFix3, -1);
                 
 		    }
@@ -81,7 +81,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
 				nineSliceFix4->setPosition(15, 69.5f);
 				nineSliceFix4->setContentSize(demonsPanel_->getContentSize());
                 nineSliceFix4->setColor(ccc3(0, 0, 140));
-				nineSliceFix4->setID("nineSliceFix4"_spr);
+				nineSliceFix4->setID("nine-slice-fix-4"_spr);
 				demonsPanel_->addChild(nineSliceFix4, -1);
                 
 		    }
@@ -95,7 +95,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
 				nineSliceFix2->setPosition(optionsPanel_->getPosition());
 				nineSliceFix2->setContentSize(optionsPanel_->getContentSize());
                 nineSliceFix2->setColor(ccc3(0, 0, 75));
-				nineSliceFix2->setID("nineSliceFix2"_spr);
+				nineSliceFix2->setID("nine-slice-fix-2"_spr);
 				this->addChild(nineSliceFix2, -1);
                 
 		    }
@@ -105,7 +105,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
 				nineSliceFix->setPosition(optionsPanel2_->getPosition());
 				nineSliceFix->setContentSize(optionsPanel2_->getContentSize());
                 nineSliceFix->setColor(ccc3(0, 0, 75));
-				nineSliceFix->setID("nineSliceFix"_spr);
+				nineSliceFix->setID("nine-slice-fix"_spr);
 				this->addChild(nineSliceFix, -1);
                 
 		    }
@@ -115,7 +115,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
 				nineSliceFix3->setPosition(versionsPanel_->getPosition());
 				nineSliceFix3->setContentSize(versionsPanel_->getContentSize());
                 nineSliceFix3->setColor(ccc3(0, 0, 75));
-				nineSliceFix3->setID("nineSliceFix3"_spr);
+				nineSliceFix3->setID("nine-slice-fix-3"_spr);
 				this->addChild(nineSliceFix3, -1);
                 
 		    }
@@ -125,7 +125,7 @@ class $nodeModify(MyLevelGrindLayer, LevelGrindLayer){
 				nineSliceFix4->setPosition(15, 69.5f);
 				nineSliceFix4->setContentSize(demonsPanel_->getContentSize());
                 nineSliceFix4->setColor(ccc3(0, 0, 75));
-				nineSliceFix4->setID("nineSliceFix4"_spr);
+				nineSliceFix4->setID("nine-slice-fix-4"_spr);
 				demonsPanel_->addChild(nineSliceFix4, -1);
                 
 		    }

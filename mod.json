@@ -1,5 +1,5 @@
 {
-	"geode": "5.3.0",
+	"geode": "5.4.1",
 	"gd": {
 		"win": "2.2081",
 		"android": "2.2081",
@@ -8,7 +8,7 @@
 	},
 	"id": "ninsam.day_and_night_system",
 	"name": "Day & Night System",
-	"version": "v1.2.4",
+	"version": "v1.3.0",
 	"developer": "NinSam",
 	"description": "Adds a day and night system in the GD menus!",
 	"early-load": true,
@@ -182,7 +182,7 @@
 			"enable-if": "enable-dark"
 		},
 		"main-settings":{
-			"name": "Events",
+			"name": "events",
 			"type": "title"
 		},
 		"enable-sunrise":{

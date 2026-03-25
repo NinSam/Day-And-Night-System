@@ -11,11 +11,11 @@ class $nodeModify(MyLeaderboardLayer, LeaderboardLayer){
         auto screenSize = CCDirector::sharedDirector()->getWinSize();
 
         auto DayAndNightSystem = DayAndNightSystem::create();
-        DayAndNightSystem->setID("Events"_spr);
+        DayAndNightSystem->setID("events"_spr);
         this->addChild(DayAndNightSystem, -1);
         
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-        DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+        DayAndNightSystemOverlay->setID("screen-overlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
         if (DayAndNightSystem::events > 0.99f){
@@ -40,7 +40,7 @@ class $nodeModify(MyLeaderboardLayer, LeaderboardLayer){
 
                     auto ccColorFix = CCLayerColor::create(ccc4(0, 0, 0, 100), screenSize.width, screenSize.height);
 				    ccColorFix->setContentSize(listBg->getContentSize());
-				    ccColorFix->setID("CCLayerColorFix"_spr);
+				    ccColorFix->setID("cc-layer-color-fix"_spr);
 				    listBg->addChild(ccColorFix, -2);
                     
 		        }
@@ -52,7 +52,7 @@ class $nodeModify(MyLeaderboardLayer, LeaderboardLayer){
 
                     auto ccColorFix = CCLayerColor::create(ccc4(0, 30, 255, 150), screenSize.width, screenSize.height);
 				    ccColorFix->setContentSize(listBg->getContentSize());
-				    ccColorFix->setID("CCLayerColorFix"_spr);
+				    ccColorFix->setID("cc-layer-color-fix"_spr);
 				    listBg->addChild(ccColorFix, -2);
                     
 		        }
@@ -64,7 +64,7 @@ class $nodeModify(MyLeaderboardLayer, LeaderboardLayer){
 
                     auto ccColorFix = CCLayerColor::create(ccc4(0, 0, 255, 150), screenSize.width, screenSize.height);
 				    ccColorFix->setContentSize(listBg->getContentSize());
-				    ccColorFix->setID("CCLayerColorFix"_spr);
+				    ccColorFix->setID("cc-layer-color-fix"_spr);
 				    listBg->addChild(ccColorFix, -2);
                     
 		        }

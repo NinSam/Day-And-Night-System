@@ -9,19 +9,18 @@ class $nodeModify(MyRewardViewLayer, RewardViewLayer){
     void modify(){
 
         auto DayAndNightSystem = DayAndNightSystem::create();
-        DayAndNightSystem->setID("Events"_spr);
+        DayAndNightSystem->setID("events"_spr);
         this->addChild(DayAndNightSystem, -2);
         
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-        DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+        DayAndNightSystemOverlay->setID("screen-overlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 104);
 
-        if (auto bg = this->getChildByID("cvolton.betterinfo/background")){
-			bg->setZOrder(-3);
-            if (DayAndNightSystem::events > 0.99f){
-				bg->setVisible(false);
-			}
-		}
+        if (DayAndNightSystem::events > 0.99f){
+            if (auto bg = this->getChildByID("cvolton.betterinfo/background")){
+			    bg->setVisible(false);
+		    }
+        }
 
     }
 

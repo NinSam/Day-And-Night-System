@@ -11,11 +11,11 @@ class $modify(LevelSearchLayer) {
 		return false;
 
 		auto DayAndNightSystem = DayAndNightSystem::create();
-		DayAndNightSystem->setID("Events"_spr);
+		DayAndNightSystem->setID("events"_spr);
 		this->addChild(DayAndNightSystem, -3);
 
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+		DayAndNightSystemOverlay->setID("screen-overlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 106);
 
 		if (DayAndNightSystem::events > 0.99f){
@@ -26,35 +26,35 @@ class $modify(LevelSearchLayer) {
 
     	if ((DayAndNightSystem::events == 1) || (DayAndNightSystem::events == 2)){
 			
-			if (auto bg_1 = this->getChildByID("level-search-bg")){
-				bg_1->setVisible(false);
+			if (auto bg1 = this->getChildByID("level-search-bg")){
+				bg1->setVisible(false);
 
-				auto cc9fix = NineSlice::create("square02_001.png");
-				cc9fix->setPosition(bg_1->getPosition());
-				cc9fix->setOpacity(90);
-				cc9fix->setContentSize(bg_1->getContentSize());
-				cc9fix->setID("CC9Fix"_spr);
-				this->addChild(cc9fix,-2);
+				auto cc9Fix = NineSlice::create("square02_001.png");
+				cc9Fix->setPosition(bg1->getPosition());
+				cc9Fix->setOpacity(90);
+				cc9Fix->setContentSize(bg1->getContentSize());
+				cc9Fix->setID("cc-9-fix"_spr);
+				this->addChild(cc9Fix, -2);
 			}
 			if (auto bg2 = this->getChildByID("difficulty-filters-bg")){
 				bg2->setVisible(false);
 
-				auto cc9fix2 = NineSlice::create("square02_001.png");
-				cc9fix2->setPosition(bg2->getPosition());
-				cc9fix2->setOpacity(90);
-				cc9fix2->setContentSize(bg2->getContentSize());
-				cc9fix2->setID("CC9Fix2"_spr);
-				this->addChild(cc9fix2,-2);
+				auto cc9Fix2 = NineSlice::create("square02_001.png");
+				cc9Fix2->setPosition(bg2->getPosition());
+				cc9Fix2->setOpacity(90);
+				cc9Fix2->setContentSize(bg2->getContentSize());
+				cc9Fix2->setID("cc-9-fix-2"_spr);
+				this->addChild(cc9Fix2, -2);
 			}
-			if (auto bg_3 = this->getChildByID("length-filters-bg")){
-				bg_3->setVisible(false);
+			if (auto bg3 = this->getChildByID("length-filters-bg")){
+				bg3->setVisible(false);
 
-				auto cc9fix3 = NineSlice::create("square02_001.png");
-				cc9fix3->setPosition(bg_3->getPosition());
-				cc9fix3->setOpacity(90);
-				cc9fix3->setContentSize(bg_3->getContentSize());
-				cc9fix3->setID("CC9Fix3"_spr);
-				this->addChild(cc9fix3,-2);
+				auto cc9Fix3 = NineSlice::create("square02_001.png");
+				cc9Fix3->setPosition(bg3->getPosition());
+				cc9Fix3->setOpacity(90);
+				cc9Fix3->setContentSize(bg3->getContentSize());
+				cc9Fix3->setID("cc-9-fix-3"_spr);
+				this->addChild(cc9Fix3, -2);
 			}
 			if (auto sprite = typeinfo_cast<CCScale9Sprite*>(this->getChildByID("level-search-bar-bg"))){
 				sprite->setColor(ccc3(0, 0, 0));

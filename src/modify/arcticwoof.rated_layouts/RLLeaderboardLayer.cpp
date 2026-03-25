@@ -10,11 +10,11 @@ class $nodeModify(MyRLLeaderboardLayer, RLLeaderboardLayer){
     void modify(){
 
         auto DayAndNightSystem = DayAndNightSystem::create();
-        DayAndNightSystem->setID("Events"_spr);
+        DayAndNightSystem->setID("events"_spr);
         this->addChild(DayAndNightSystem, -1);
         
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-        DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+        DayAndNightSystemOverlay->setID("screen-overlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
         if (DayAndNightSystem::events > 0.99f){
@@ -25,6 +25,43 @@ class $nodeModify(MyRLLeaderboardLayer, RLLeaderboardLayer){
             else if (auto bg = this->getChildByID("bg")){
 			    bg->setVisible(false);
 		    }
+
+        }
+
+        if (DayAndNightSystem::events == 3){
+
+            if (auto gjListLayer = this->getChildByID("GJListLayer")){
+
+                if (auto getScrollBar = gjListLayer->getChildByType<Scrollbar>(0)){
+
+                    if (auto getScrollBarColor = getScrollBar->getChildByType<NineSlice>(0)){
+
+                        getScrollBarColor->setColor(ccc3(0, 0, 140));
+                        getScrollBarColor->setOpacity(255);
+
+                    }
+
+                }
+
+            }
+
+        }
+        else if (DayAndNightSystem::events == 4){
+
+            if (auto gjListLayer = this->getChildByID("GJListLayer")){
+
+                if (auto getScrollBar = gjListLayer->getChildByType<Scrollbar>(0)){
+
+                    if (auto getScrollBarColor = getScrollBar->getChildByType<NineSlice>(0)){
+
+                        getScrollBarColor->setColor(ccc3(0, 0, 75));
+                        getScrollBarColor->setOpacity(255);
+
+                    }
+
+                }
+
+            }
 
         }
         

@@ -11,17 +11,19 @@ class $modify(MenuLayer) {
 		return false;
 
 		auto DayAndNightSystem = DayAndNightSystem::create();
-		DayAndNightSystem->setID("Events"_spr);
+		DayAndNightSystem->setID("events"_spr);
 		this->addChild(DayAndNightSystem, -1);
 
 		auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
-		DayAndNightSystemOverlay->setID("ScreenOverlay"_spr);
+		DayAndNightSystemOverlay->setID("screen-overlay"_spr);
 		this->addChild(DayAndNightSystemOverlay, 99);
 
-		if (auto bg = this->getChildByID("main-menu-bg")){
-			bg->setZOrder(-2);
-			if (DayAndNightSystem::events > 0.99f){
+		if (DayAndNightSystem::events > 0.99f){
+			if (auto bg = this->getChildByID("main-menu-bg")){
 				bg->setVisible(false);
+			}
+			if (auto bg2 = this->getChildByID("shader-background")){
+				bg2->setVisible(false);
 			}
 		}
 
