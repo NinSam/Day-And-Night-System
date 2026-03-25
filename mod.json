@@ -182,7 +182,7 @@
 			"enable-if": "enable-dark"
 		},
 		"main-settings":{
-			"name": "events",
+			"name": "Events",
 			"type": "title"
 		},
 		"enable-sunrise":{
