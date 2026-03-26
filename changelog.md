@@ -10,7 +10,7 @@
 - GJListLayer's bg is set to a solid black color in the night & dark event in some Modded Layers
 - Renamed some Mod Settings
 - Fixed a crash in EditLevelLayer if the level is uploaded in the sunrise & sunset event
-- Fixed a bug in LevelListLayer where the title background wouldn't show if the list is uploaded in the sunrise & sunset event
+- Fixed a bug in LevelListLayer where the title-background wouldn't show if the list is uploaded in the sunrise & sunset event
 - Fixed Dark Overlay layering above BetterInfo's ProfileSearchOptions Popup
 - Fixed unnecessary backgrounds not disabling in the sunrise event
 - Reworked code
