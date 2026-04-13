@@ -5,11 +5,10 @@
 
 using namespace geode::prelude;
 
-class $nodeModify(MyRLCreatorLayer, RLCreatorLayer){
+class $nodeModify(MyRLMenuLayer, RLMenuLayer){
 
     void modify(){
         
-
         auto DayAndNightSystem = DayAndNightSystem::create();
         DayAndNightSystem->setID("events"_spr);
         this->addChild(DayAndNightSystem, -1);

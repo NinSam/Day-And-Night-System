@@ -1,35 +1,28 @@
 #include <Geode/Geode.hpp>
 #include <alphalaneous.alphas_geode_utils/include/ObjectModify.hpp>
+#include <cue/RepeatingBackground.hpp>
 #include "../../Utils.hpp"
 
 using namespace geode::prelude;
 
-class $nodeModify(MyModsLayer, ModsLayer){
+class $nodeModify(MyRLSpireLayer, RLSpireLayer){
 
     void modify(){
-        
+
         auto DayAndNightSystem = DayAndNightSystem::create();
         DayAndNightSystem->setID("events"_spr);
-        this->addChild(DayAndNightSystem, -2);
+        this->addChild(DayAndNightSystem, -1);
         
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
         DayAndNightSystemOverlay->setID("screen-overlay"_spr);
         this->addChild(DayAndNightSystemOverlay, 106);
 
         if (DayAndNightSystem::events > 0.99f){
-
-            if (auto bg = this->getChildByID("SwelvyBG")){
-			    bg->setVisible(false);
-		    }
-            else if (auto sapphireBG = getChildByType<CCSprite>(0)){
-                sapphireBG->setVisible(false);
+            if (auto rBG = getChildByType<cue::RepeatingBackground>(0)){
+                rBG->setVisible(false);
             }
-            else if (auto bg2 = this->getChildByID("bg")){
-			    bg2->setVisible(false);
-		    }
-
         }
-
+        
     }
 
 };

@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.3.1
+
+- Added 3 Modded Layers
+- Added Globed v2 support
+- Updated Modded Layers in the Rated Layouts mod
+- Updated ModsLayer for the Sapphire SDK background
+- Removed BetterAchievements mod from Modded Layers
+
 ## v1.3.0
 
 - Ported to GD 2.2081 & Geode v5.4.1

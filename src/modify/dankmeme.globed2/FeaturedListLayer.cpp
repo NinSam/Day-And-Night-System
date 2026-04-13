@@ -4,7 +4,7 @@
 
 using namespace geode::prelude;
 
-class $nodeModify(MyGlobedFeaturedListLayer, GlobedFeaturedListLayer){
+class $nodeModify(MyGlobedFeaturedListLayer, globed::FeaturedListLayer){
 
     void modify(){
         

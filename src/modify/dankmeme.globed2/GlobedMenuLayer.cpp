@@ -4,7 +4,7 @@
 
 using namespace geode::prelude;
 
-class $nodeModify(MyGlobedMenuLayer, GlobedMenuLayer){
+class $nodeModify(MyGlobedMenuLayer, globed::GlobedMenuLayer){
 
     void modify(){
         

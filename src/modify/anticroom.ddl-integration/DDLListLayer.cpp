@@ -4,13 +4,13 @@
 
 using namespace geode::prelude;
 
-class $nodeModify(MyGlobedServersLayer, GlobedServersLayer){
+class $nodeModify(MyDDLListLayer, DDLListLayer){
 
     void modify(){
-        
+
         auto DayAndNightSystem = DayAndNightSystem::create();
         DayAndNightSystem->setID("events"_spr);
-        this->addChild(DayAndNightSystem, -1);
+        this->addChild(DayAndNightSystem, -2);
         
         auto DayAndNightSystemOverlay = DayAndNightSystemOverlay::create();
         DayAndNightSystemOverlay->setID("screen-overlay"_spr);
@@ -21,6 +21,17 @@ class $nodeModify(MyGlobedServersLayer, GlobedServersLayer){
 			    bg->setVisible(false);
 		    }
         }
+        if (DayAndNightSystem::events > 2.99f){
+
+            if (auto listLayer = typeinfo_cast<GJListLayer*>(this->getChildByID("GJListLayer"))){
+          
+			    listLayer->setOpacity(255);
+                listLayer->setColor(ccc3(0, 0, 0));
+			
+		    }
+
+        }
+		
 
     }
 

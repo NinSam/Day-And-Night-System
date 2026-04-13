@@ -4,7 +4,7 @@
 
 using namespace geode::prelude;
 
-class $nodeModify(MyGlobedSettingsLayer, GlobedSettingsLayer){
+class $nodeModify(MyGlobedLevelListLayer, globed::LevelListLayer){
 
     void modify(){
         

@@ -1,6 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <alphalaneous.alphas_geode_utils/include/ObjectModify.hpp>
 #include <cue/RepeatingBackground.hpp>
+#include <cue/ListNode.hpp>
 #include "../../Utils.hpp"
 
 using namespace geode::prelude;
@@ -30,7 +31,7 @@ class $nodeModify(MyRLLeaderboardLayer, RLLeaderboardLayer){
 
         if (DayAndNightSystem::events == 3){
 
-            if (auto gjListLayer = this->getChildByID("GJListLayer")){
+            if (auto gjListLayer = this->getChildByType<cue::ListNode>(0)){
 
                 if (auto getScrollBar = gjListLayer->getChildByType<Scrollbar>(0)){
 
@@ -48,7 +49,7 @@ class $nodeModify(MyRLLeaderboardLayer, RLLeaderboardLayer){
         }
         else if (DayAndNightSystem::events == 4){
 
-            if (auto gjListLayer = this->getChildByID("GJListLayer")){
+            if (auto gjListLayer = this->getChildByType<cue::ListNode>(0)){
 
                 if (auto getScrollBar = gjListLayer->getChildByType<Scrollbar>(0)){
 
